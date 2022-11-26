@@ -1,8 +1,14 @@
 import React from 'react';
 import styles from './NavBar.module.css'
 import {NavLink} from "react-router-dom";
+import {friendsInNavBar, NavBarType} from "../../index";
+import {FriendsInNavBar} from "../Header/FriendsInNavBar";
 
-export const NavBar = () => {
+type NavBarPropsType = {
+    navBar: NavBarType
+}
+
+export const NavBar:React.FC<NavBarPropsType> = (props) => {
     return (
         <nav className={styles.nav}>
             <div>
@@ -19,6 +25,14 @@ export const NavBar = () => {
             </div>
             <div>
                 <NavLink to={'/settings'} className={navData => navData.isActive ? styles.active : styles.item}>Settings</NavLink>
+            </div>
+            <h3>Friends</h3>
+            <div className={styles.friendsInNavbar}>
+                {props.navBar.friendsInNavBar.map(el => {
+                    return(
+                        <FriendsInNavBar key={el.id} id={el.id} name={el.name} avatar={el.avatar}/>
+                    )
+                })}
             </div>
         </nav>
     );

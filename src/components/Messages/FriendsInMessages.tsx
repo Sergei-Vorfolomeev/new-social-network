@@ -5,6 +5,7 @@ import React from "react";
 type FriendsInMessagesPropsType = {
     id: string
     name: string
+    avatar: string
 }
 
 export const FriendsInMessages = (props:FriendsInMessagesPropsType) => {
@@ -12,7 +13,10 @@ export const FriendsInMessages = (props:FriendsInMessagesPropsType) => {
     return (
         <div>
             <div className={styles.friend}>
-                <NavLink to={path} className={navData => navData.isActive ? styles.active : styles.friend}>{props.name}</NavLink>
+                <NavLink to={path} className={navData => navData.isActive ? styles.active : styles.friend}>
+                    <img src={props.avatar} alt={'ava'}/>
+                    {props.name}
+                </NavLink>
             </div>
         </div>
     );

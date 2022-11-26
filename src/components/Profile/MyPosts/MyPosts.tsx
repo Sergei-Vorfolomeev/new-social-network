@@ -1,18 +1,36 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styles from './MyPosts.module.css'
 import {Post} from "./Post/Post";
+import {PostsType} from "../../../index";
 
-export const MyPosts = () => {
+type MyPostsPropsType = {
+    posts: PostsType[]
+}
+
+export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
+    const newPostElement = useRef<HTMLTextAreaElement>(null)
+
+    const addPostHandler = () => {
+        if (newPostElement && newPostElement.current) {
+            let text = newPostElement.current.value
+            alert (text)
+        }
+    }
+
     return (
         <div className={styles.myPosts}>
             My posts
             <div>
-                <textarea placeholder={'Write new post'}/>
-                <button>Add Post</button>
+                <textarea
+                    ref={newPostElement}
+                    placeholder={'Write new post'}/>
+                <button onClick={addPostHandler}>Add Post</button>
             </div>
-            <Post text={'Why is everyone silent?'} likesCount={0}/>
-            <Post text={'It\'s my first post!'} likesCount={8}/>
-            <Post text={'Hello!'} likesCount={15}/>
+            {props.posts.map(el => {
+                return (
+                    <Post key={el.id} id={el.id} text={el.text} likesCount={el.likesCount}/>
+                )
+            })}
         </div>
     );
 };

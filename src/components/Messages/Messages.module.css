@@ -6,15 +6,17 @@
 .friendList {
     border: 1px solid black;
     border-radius: 15px;
-    padding: 15px;
+    padding: 10px;
 }
 .friend {
-    padding: 7px 15px;
-    text-align: center;
+    padding: 7px 5px;
     font-size: 16px;
     text-decoration: none;
     color: black
-
+}
+.friend img {
+    max-height: 50px;
+    margin: 2px;
 }
 .active {
     padding: 7px 15px;

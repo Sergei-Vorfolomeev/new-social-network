@@ -3,5 +3,10 @@
     background-color: #432C7A;
 }
 .header img {
-    width: 100px;
+    position: relative;
+    left: 50px;
+    max-height: 100px;
 }
+/*.header img {*/
+/*    max-height: 215px;*/
+/*}*/

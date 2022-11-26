@@ -4,21 +4,28 @@ import {NavLink} from "react-router-dom";
 import {FriendsInMessages} from "./FriendsInMessages";
 import {v1} from "uuid";
 import {Dialogs} from "./Dialogs";
+import {MessagePageType} from "../../index";
 
-export const Messages = () => {
+type MessagesPagePropsType = {
+    messagePage: MessagePageType
+}
+
+export const Messages: React.FC<MessagesPagePropsType> = (props) => {
     return (
         <div className={styles.messages}>
             <div className={styles.friendList}>
-               <FriendsInMessages id={v1()} name={'Vadim'}/>
-               <FriendsInMessages id={v1()} name={'Tolya'}/>
-               <FriendsInMessages id={v1()} name={'Elina'}/>
-               <FriendsInMessages id={v1()} name={'Lenya'}/>
-               <FriendsInMessages id={v1()} name={'Fedya'}/>
+                {props.messagePage.friendsInMessages.map(el => {
+                    return (
+                        <FriendsInMessages key={el.id} id={el.id} name={el.name} avatar={el.avatar}/>
+                    )
+                })}
             </div>
             <div className={styles.dialogs}>
-                <Dialogs message={'Hello'}/>
-                <Dialogs message={'How are you?'}/>
-                <Dialogs message={'The asteroid is flying to our planet!'}/>
+                {props.messagePage.messages.map(el => {
+                    return (
+                        <Dialogs key={el.id} id={el.id} message={el.message}/>
+                    )
+                })}
             </div>
         </div>
     );

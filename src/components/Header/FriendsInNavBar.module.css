@@ -1,0 +1,13 @@
+.friendsInNavBar {
+    /*display: grid;*/
+    /*grid-template-columns: 4fr 4fr 4fr;*/
+    display: inline-block;
+    padding: 4px;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+.friendsInNavBar img{
+    max-height: 40px;
+}
