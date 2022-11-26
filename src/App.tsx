@@ -10,6 +10,7 @@ import {stateType} from "./index";
 
 type appType = {
     state: stateType
+    addPost: (textPost: string) => void
 }
 
 function App (props:appType) {
@@ -20,7 +21,10 @@ function App (props:appType) {
             <NavBar navBar={props.state.navBar}/>
             <div className="appWrapperContent">
                 <Routes>
-                   <Route path={'/profile/*'} element={<Profile profilePage={props.state.profilePage}/>}/>
+                   <Route path={'/profile/*'}
+                          element={<Profile profilePage={props.state.profilePage}
+                                            addPost={(textPost:string)=>props.addPost(textPost)}
+                   />}/>
                    <Route path={'/messages/*'} element={<Messages messagePage={props.state.messagePage}/>}/>
                    <Route path={'/news'} element={<News/>}/>
                 </Routes>

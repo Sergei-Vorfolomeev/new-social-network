@@ -5,6 +5,7 @@ import {PostsType} from "../../../index";
 
 type MyPostsPropsType = {
     posts: PostsType[]
+    addPost: (textPost:string) => void
 }
 
 export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
@@ -13,7 +14,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
     const addPostHandler = () => {
         if (newPostElement && newPostElement.current) {
             let text = newPostElement.current.value
-            alert (text)
+            props.addPost(text)
         }
     }
 

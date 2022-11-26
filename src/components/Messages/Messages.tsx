@@ -1,8 +1,6 @@
 import React, {useRef} from 'react';
 import styles from './Messages.module.css'
-import {NavLink} from "react-router-dom";
 import {FriendsInMessages} from "./FriendsInMessages";
-import {v1} from "uuid";
 import {Dialogs} from "./Dialogs";
 import {MessagePageType} from "../../index";
 

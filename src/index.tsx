@@ -75,13 +75,19 @@ export const state = {
     }
 }
 
+const addPost = (textPost: string) => {
+    const newPost = {id: v1(), text: textPost, likesCount: 0}
+    state.profilePage.posts.unshift(newPost)
+    console.log(state.profilePage.posts)
+}
+
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <BrowserRouter>
         <React.StrictMode>
-            <App state={state}/>
+            <App state={state} addPost={addPost}/>
         </React.StrictMode>
     </BrowserRouter>
 );

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="lesson 31">
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="Add send-message form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messages/Messages.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/Messages.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/Messages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +73,7 @@
       <updated>1669051352109</updated>
       <workItem from="1669051353423" duration="954000" />
       <workItem from="1669054360515" duration="1582000" />
-      <workItem from="1669389614142" duration="28533000" />
+      <workItem from="1669389614142" duration="30571000" />
     </task>
     <task id="LOCAL-00001" summary="routes">
       <created>1669397545256</created>
@@ -93,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669466247527</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add send-message form">
+      <created>1669475901137</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669475901137</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +124,7 @@
     <MESSAGE value="routes" />
     <MESSAGE value="commit" />
     <MESSAGE value="lesson 31" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson 31" />
+    <MESSAGE value="Add send-message form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add send-message form" />
   </component>
 </project>
