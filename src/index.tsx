@@ -47,7 +47,7 @@ export type friendsInNavBar = {
 export const state = {
     profilePage: {
         posts: [
-            {id: v1(), text: 'Why is everyone silent?', likesCount: 0,},
+            {id: v1(), text: 'Life is here?', likesCount: 0,},
             {id: v1(), text: 'It\'s my first post!', likesCount: 8,},
             {id: v1(), text: 'Hello!', likesCount: 15,},
         ],

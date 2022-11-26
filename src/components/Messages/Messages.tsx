@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styles from './Messages.module.css'
 import {NavLink} from "react-router-dom";
 import {FriendsInMessages} from "./FriendsInMessages";
@@ -11,6 +11,14 @@ type MessagesPagePropsType = {
 }
 
 export const Messages: React.FC<MessagesPagePropsType> = (props) => {
+    const newMessage = useRef<HTMLTextAreaElement>(null)
+
+    const sendMessageHandler = () => {
+        if (newMessage.current) {
+            alert(newMessage.current.value)
+        }
+    }
+
     return (
         <div className={styles.messages}>
             <div className={styles.friendList}>
@@ -26,6 +34,10 @@ export const Messages: React.FC<MessagesPagePropsType> = (props) => {
                         <Dialogs key={el.id} id={el.id} message={el.message}/>
                     )
                 })}
+                <div className={styles.sendForm}>
+                    <textarea ref={newMessage}/>
+                    <button onClick={sendMessageHandler}>Send</button>
+                </div>
             </div>
         </div>
     );
