@@ -6,17 +6,16 @@ import {NavBar} from "./components/NavBar/NavBar";
 import {Messages} from "./components/Messages/Messages";
 import {Route, Routes} from "react-router-dom";
 import {News} from "./components/News/News";
-import {stateType} from "./index";
+import {StateType} from "./redux/state";
 
 type appType = {
-    state: stateType
+    state: StateType
     addPost: (textPost: string) => void
 }
 
 function App (props:appType) {
     return (
         <div className="appWrapper">
-
             <Header/>
             <NavBar navBar={props.state.navBar}/>
             <div className="appWrapperContent">

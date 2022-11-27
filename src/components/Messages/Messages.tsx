@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import styles from './Messages.module.css'
 import {FriendsInMessages} from "./FriendsInMessages";
 import {Dialogs} from "./Dialogs";
-import {MessagePageType} from "../../index";
+import {MessagePageType} from "../../redux/state";
 
 type MessagesPagePropsType = {
     messagePage: MessagePageType
