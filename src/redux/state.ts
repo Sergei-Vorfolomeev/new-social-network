@@ -44,8 +44,9 @@ export type FriendsInNavBar = {
     avatar: string
 }
 
-export type GeneralACType = addPostACType
+export type GeneralACType = addPostACType | sendMessageACType
 type addPostACType = ReturnType<typeof addPostAC>
+type sendMessageACType = ReturnType<typeof sendMessageAC>
 
 export const store: StoreType = {
     _state: {
@@ -97,18 +98,36 @@ export const store: StoreType = {
     dispatch(action) {
         switch (action.type) {
             case "ADD-POST": {
-                const newPost = {id: v1(), text: action.textPost, likesCount: 0}
-                    this._state.profilePage.posts.unshift(newPost)
-                    this._callSubscriber(this._state)
+                const newPost = {id: v1(), text: action.payload.textPost, likesCount: 0}
+                this._state.profilePage.posts.unshift(newPost)
+                this._callSubscriber(this._state)
             }
+                break
+            case "SEND-MESSAGE": {
+                const newMessage = {id: v1(), message: action.payload.textMessage}
+                this._state.messagePage.messages.push(newMessage)
+                this._callSubscriber(this._state)
+            }
+                break
+            default: return this._state
         }
     }
 
 }
 
-export const addPostAC = (text:string) => {
+export const addPostAC = (text: string) => {
     return {
         type: 'ADD-POST',
-        textPost: text,
+        payload: {
+            textPost: text
+        }
+    } as const
+}
+export const sendMessageAC = (text: string) => {
+    return {
+        type: "SEND-MESSAGE",
+        payload: {
+            textMessage: text
+        }
     } as const
 }

@@ -2,10 +2,11 @@ import React, {useRef} from 'react';
 import styles from './Messages.module.css'
 import {FriendsInMessages} from "./FriendsInMessages";
 import {Dialogs} from "./Dialogs";
-import {MessagePageType} from "../../redux/state";
+import {GeneralACType, MessagePageType, sendMessageAC} from "../../redux/state";
 
 type MessagesPagePropsType = {
     messagePage: MessagePageType
+    dispatch: (action: GeneralACType) => void
 }
 
 export const Messages: React.FC<MessagesPagePropsType> = (props) => {
@@ -13,7 +14,10 @@ export const Messages: React.FC<MessagesPagePropsType> = (props) => {
 
     const sendMessageHandler = () => {
         if (newMessage.current) {
-            alert(newMessage.current.value)
+            const text = newMessage.current.value
+            const action = sendMessageAC(text)
+            props.dispatch(action)
+            newMessage.current.value = ''
         }
     }
 
@@ -29,7 +33,9 @@ export const Messages: React.FC<MessagesPagePropsType> = (props) => {
             <div className={styles.dialogs}>
                 {props.messagePage.messages.map(el => {
                     return (
-                        <Dialogs key={el.id} id={el.id} message={el.message}/>
+                        <Dialogs key={el.id}
+                                 id={el.id}
+                                 message={el.message}/>
                     )
                 })}
                 <div className={styles.sendForm}>

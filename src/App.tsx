@@ -13,19 +13,20 @@ type appType = {
     dispatch: (action: GeneralACType) => void
 }
 
-function App (props:appType) {
+function App(props: appType) {
     return (
         <div className="appWrapper">
             <Header/>
             <NavBar navBar={props.state.navBar}/>
             <div className="appWrapperContent">
                 <Routes>
-                   <Route path={'/profile/*'}
-                          element={<Profile profilePage={props.state.profilePage}
-                                            dispatch={(action)=>props.dispatch(action)}
-                   />}/>
-                   <Route path={'/messages/*'} element={<Messages messagePage={props.state.messagePage}/>}/>
-                   <Route path={'/news'} element={<News/>}/>
+                    <Route path={'/profile/*'}
+                           element={<Profile profilePage={props.state.profilePage}
+                                             dispatch={(action) => props.dispatch(action)}
+                           />}/>
+                    <Route path={'/messages/*'} element={<Messages messagePage={props.state.messagePage}
+                                                                   dispatch={(action) => props.dispatch(action)}/>}/>
+                    <Route path={'/news'} element={<News/>}/>
                 </Routes>
             </div>
         </div>
