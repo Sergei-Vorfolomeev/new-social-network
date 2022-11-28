@@ -15,6 +15,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
         if (newPostElement && newPostElement.current) {
             let text = newPostElement.current.value
             props.addPost(text)
+            newPostElement.current.value = ''
         }
     }
 
