@@ -6,11 +6,11 @@ import {NavBar} from "./components/NavBar/NavBar";
 import {Messages} from "./components/Messages/Messages";
 import {Route, Routes} from "react-router-dom";
 import {News} from "./components/News/News";
-import {StateType} from "./redux/state";
+import {GeneralACType, StateType} from "./redux/state";
 
 type appType = {
     state: StateType
-    addPost: (textPost: string) => void
+    dispatch: (action: GeneralACType) => void
 }
 
 function App (props:appType) {
@@ -22,7 +22,7 @@ function App (props:appType) {
                 <Routes>
                    <Route path={'/profile/*'}
                           element={<Profile profilePage={props.state.profilePage}
-                                            addPost={(textPost:string)=>props.addPost(textPost)}
+                                            dispatch={(action)=>props.dispatch(action)}
                    />}/>
                    <Route path={'/messages/*'} element={<Messages messagePage={props.state.messagePage}/>}/>
                    <Route path={'/news'} element={<News/>}/>

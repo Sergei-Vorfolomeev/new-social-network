@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './Profile.module.css'
 import {MyPosts} from "./MyPosts/MyPosts";
 import {ProfileInfo} from "./MyPosts/ProfileInfo";
-import {ProfilePageType} from "../../redux/state";
+import {GeneralACType, ProfilePageType} from "../../redux/state";
 
 type ProfilePagePropsType = {
     profilePage: ProfilePageType
-    addPost: (textPost:string) => void
+    dispatch: (action: GeneralACType) => void
 }
 
 export const Profile:React.FC<ProfilePagePropsType> = (props) => {
@@ -14,7 +14,7 @@ export const Profile:React.FC<ProfilePagePropsType> = (props) => {
         <div className={styles.content}>
             <ProfileInfo/>
             <MyPosts posts={props.profilePage.posts}
-            addPost={(textPost:string) => props.addPost(textPost)}/>
+                     dispatch={(action) => props.dispatch(action)}/>
         </div>
     );
 };

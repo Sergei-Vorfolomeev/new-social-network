@@ -1,12 +1,13 @@
 import React, {useRef} from 'react';
 import styles from './MyPosts.module.css'
 import {Post} from "./Post/Post";
-import {PostsType} from "../../../redux/state";
+import {addPostAC, GeneralACType, PostsType} from "../../../redux/state";
 
 type MyPostsPropsType = {
     posts: PostsType[]
-    addPost: (textPost:string) => void
+    dispatch: (action: GeneralACType) => void
 }
+
 
 export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
     const newPostElement = useRef<HTMLTextAreaElement>(null)
@@ -14,7 +15,8 @@ export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
     const addPostHandler = () => {
         if (newPostElement && newPostElement.current) {
             let text = newPostElement.current.value
-            props.addPost(text)
+            const action = addPostAC(text)
+            props.dispatch(action)
             newPostElement.current.value = ''
         }
     }

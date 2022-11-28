@@ -3,9 +3,10 @@ import {v1} from "uuid";
 export type StoreType = {
     _state: StateType
     getState: () => StateType
-    addPost: (textPost: string) => void
-    _callSubscriber: (state:StateType) => void
+    // addPost: (textPost: string) => void
+    _callSubscriber: (state: StateType) => void
     subscribe: (observer: (state: StateType) => void) => void
+    dispatch: (action: GeneralACType) => void
 }
 export type StateType = {
     profilePage: ProfilePageType
@@ -20,7 +21,7 @@ export type MessagePageType = {
     messages: MessagesType[]
 }
 export type NavBarType = {
-    friendsInNavBar: friendsInNavBar[]
+    friendsInNavBar: FriendsInNavBar[]
 }
 
 export type PostsType = {
@@ -37,13 +38,16 @@ export type MessagesType = {
     id: string
     message: string
 }
-export type friendsInNavBar = {
+export type FriendsInNavBar = {
     id: string
     name: string
     avatar: string
 }
 
-export const store:StoreType = {
+export type GeneralACType = addPostACType
+type addPostACType = ReturnType<typeof addPostAC>
+
+export const store: StoreType = {
     _state: {
         profilePage: {
             posts: [
@@ -74,18 +78,37 @@ export const store:StoreType = {
             ]
         },
     },
-    getState () {
+    _callSubscriber(state: StateType) {
+    },
+
+    getState() {
         return this._state
     },
-    addPost(textPost: string){
-        const newPost = {id: v1(), text: textPost, likesCount: 0}
-        this._state.profilePage.posts.unshift(newPost)
-        this._callSubscriber(this._state)
+    subscribe(observer: (state: StateType) => void) {
+        this._callSubscriber = observer
     },
 
-    _callSubscriber(state:StateType){},
+    // addPost(textPost: string){
+    //     const newPost = {id: v1(), text: textPost, likesCount: 0}
+    //     this._state.profilePage.posts.unshift(newPost)
+    //     this._callSubscriber(this._state)
+    // },
 
-    subscribe(observer:(state: StateType) => void) {
-        this._callSubscriber = observer
+    dispatch(action) {
+        switch (action.type) {
+            case "ADD-POST": {
+                const newPost = {id: v1(), text: action.textPost, likesCount: 0}
+                    this._state.profilePage.posts.unshift(newPost)
+                    this._callSubscriber(this._state)
+            }
+        }
     }
+
+}
+
+export const addPostAC = (text:string) => {
+    return {
+        type: 'ADD-POST',
+        textPost: text,
+    } as const
 }
