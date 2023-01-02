@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import './App.css';
 import {Profile} from "./components/Profile/Profile";
 import {Header} from "./components/Header/Header";
@@ -6,26 +6,28 @@ import {NavBar} from "./components/NavBar/NavBar";
 import {Messages} from "./components/Messages/Messages";
 import {Route, Routes} from "react-router-dom";
 import {News} from "./components/News/News";
-import {GeneralACType, StateType} from "./redux/state";
+import {StateType} from "./redux/store-redux";
+import {AppRootStateType} from "./redux/store-redux";
+import {useSelector} from "react-redux";
 
 type appType = {
-    state: StateType
-    dispatch: (action: GeneralACType) => void
+    // state: StateType
+    // dispatch: (action: GeneralACType) => void
 }
 
-function App(props: appType) {
+function App() {
+
+    const state = useSelector<AppRootStateType, StateType>(state => state)
+
     return (
         <div className="appWrapper">
             <Header/>
-            <NavBar navBar={props.state.navBar}/>
+            <NavBar/>
             <div className="appWrapperContent">
                 <Routes>
                     <Route path={'/profile/*'}
-                           element={<Profile profilePage={props.state.profilePage}
-                                             dispatch={(action) => props.dispatch(action)}
-                           />}/>
-                    <Route path={'/messages/*'} element={<Messages messagePage={props.state.messagePage}
-                                                                   dispatch={(action) => props.dispatch(action)}/>}/>
+                           element={<Profile/>}/>
+                    <Route path={'/messages/*'} element={<Messages/>}/>
                     <Route path={'/news'} element={<News/>}/>
                 </Routes>
             </div>

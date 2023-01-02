@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "./Messages.module.css";
-import {GeneralACType} from "../../redux/state";
 
 type DialogsPropsType = {
     id: string

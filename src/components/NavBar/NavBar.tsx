@@ -1,14 +1,20 @@
 import React from 'react';
 import styles from './NavBar.module.css'
 import {NavLink} from "react-router-dom";
-import {NavBarType} from "../../redux/state";
+import {NavBarType} from "../../redux/store-redux";
 import {FriendsInNavBar} from "../Header/FriendsInNavBar";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "../../redux/store-redux";
 
 type NavBarPropsType = {
-    navBar: NavBarType
+    // navBar: NavBarType
 }
 
-export const NavBar:React.FC<NavBarPropsType> = (props) => {
+export const NavBar:React.FC<NavBarPropsType> = () => {
+
+    const navBar = useSelector<AppRootStateType, NavBarType>(state => state.navBar)
+    const dispatch = useDispatch()
+
     return (
         <nav className={styles.nav}>
             <div>
@@ -28,7 +34,7 @@ export const NavBar:React.FC<NavBarPropsType> = (props) => {
             </div>
             <h3>Friends</h3>
             <div className={styles.friendsInNavbar}>
-                {props.navBar.friendsInNavBar.map(el => {
+                {navBar.friendsInNavBar.map(el => {
                     return(
                         <FriendsInNavBar key={el.id} id={el.id} name={el.name} avatar={el.avatar}/>
                     )
