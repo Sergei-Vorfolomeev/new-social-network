@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="create fn sendMessage">
-      <change afterPath="$PROJECT_DIR$/src/redux/messagePageReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/navBarReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/profilePageReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/store-redux.ts" afterDir="false" />
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="create redux-store">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messages/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/Dialogs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/Messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavBar/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/NavBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/state.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/messagePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/messagePageReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profilePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profilePageReducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +76,8 @@
       <workItem from="1669884345212" duration="118000" />
       <workItem from="1669970028567" duration="4236000" />
       <workItem from="1670169502132" duration="469000" />
-      <workItem from="1672656755826" duration="9847000" />
+      <workItem from="1672656755826" duration="10408000" />
+      <workItem from="1672769725010" duration="3133000" />
     </task>
     <task id="LOCAL-00001" summary="routes">
       <created>1669397545256</created>
@@ -153,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669667064926</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="create redux-store">
+      <created>1672675298318</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1672675298318</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +176,7 @@
     <MESSAGE value="create store, method bind" />
     <MESSAGE value="lesson 39" />
     <MESSAGE value="create fn sendMessage" />
-    <option name="LAST_COMMIT_MESSAGE" value="create fn sendMessage" />
+    <MESSAGE value="create redux-store" />
+    <option name="LAST_COMMIT_MESSAGE" value="create redux-store" />
   </component>
 </project>

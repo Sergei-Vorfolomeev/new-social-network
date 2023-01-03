@@ -37,7 +37,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
                     placeholder={'Write new post'}/>
                 <button onClick={addPostHandler}>Add Post</button>
             </div>
-            {profilePage.posts?.map((el, index) => {
+            {profilePage.posts.map((el, index) => {
                 return (
                     <Post key={el.id}
                           id={el.id}

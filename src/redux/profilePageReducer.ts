@@ -13,7 +13,11 @@ export const profilePageReducer = (state: ProfilePageType = initialState, action
     switch (action.type) {
         case "ADD-POST": {
             const newPost = {id: v1(), text: action.payload.textPost, likesCount: 0}
-            return state.posts.unshift(newPost)
+           // state.posts.unshift(newPost)
+            return {
+                ...state,
+                posts: [...state.posts, newPost]
+            }
         }
         default:
             return state

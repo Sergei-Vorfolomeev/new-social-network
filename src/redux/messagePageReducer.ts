@@ -21,7 +21,8 @@ export const messagePageReducer = (state: MessagePageType = initialState, action
     switch (action.type) {
         case "SEND-MESSAGE": {
             const newMessage = {id: v1(), message: action.payload.textMessage}
-            return state.messages.push(newMessage)
+            return {...state, messages: [...state.messages, newMessage]}
+            // state.messages.push(newMessage)
         }
         default:
             return state
