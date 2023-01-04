@@ -9,7 +9,7 @@ type mapStateToPropsType = {
     messagePage: MessagePageType
 }
 type mapDispatchToPropsType = {
-    sendMessageHandler: (newMessage: string) => void
+    sendMessage: (newMessage: string) => void
 }
 export type MessagesPagePropsType = mapStateToPropsType & mapDispatchToPropsType
 
@@ -21,7 +21,7 @@ const mapStateToProps = (state: AppRootStateType): mapStateToPropsType => {
 
 const mapDispatchToProps = (dispatch: Dispatch): mapDispatchToPropsType => {
     return {
-        sendMessageHandler: (newMessage: string) => {
+        sendMessage: (newMessage: string) => {
                 dispatch(sendMessageAC(newMessage))
             }
         }

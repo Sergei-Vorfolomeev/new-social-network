@@ -2,7 +2,6 @@ import React, {useRef} from 'react';
 import styles from './Messages.module.css'
 import {FriendsInMessages} from "./FriendsInMessages";
 import {Dialogs} from "./Dialogs";
-import {sendMessageAC} from "../../redux/messagePageReducer";
 import {MessagesPagePropsType} from "./MessagesContainer";
 
 export const Messages: React.FC<MessagesPagePropsType> = (props) => {
@@ -13,7 +12,7 @@ export const Messages: React.FC<MessagesPagePropsType> = (props) => {
         if (newMessage.current) {
             const text = newMessage.current.value
             // dispatch(sendMessageAC(text))
-            props.sendMessageHandler(text)
+            props.sendMessage(text)
             newMessage.current.value = ''
         }
     }

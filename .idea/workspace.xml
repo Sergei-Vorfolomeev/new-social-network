@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="create redux-store">
-      <change afterPath="$PROJECT_DIR$/src/components/Messages/MessagesContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="create messagesContainer">
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/Messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/messagePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/messagePageReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profilePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profilePageReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messages/MessagesContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/MessagesContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/sergey/Documents/Programming/react/new-social-network/src/components/Messages",
+    "last_opened_file_path": "/Users/sergey/Documents/Programming/react/new-social-network/src/components/Profile/MyPosts",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -50,10 +48,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Profile/MyPosts" />
       <recent name="$PROJECT_DIR$/src/components/Messages" />
       <recent name="$PROJECT_DIR$/src/redux" />
       <recent name="$PROJECT_DIR$/src/components/Header" />
-      <recent name="$PROJECT_DIR$/src/components/Profile/MyPosts" />
       <recent name="$PROJECT_DIR$/src/components/Dialogs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -81,7 +79,7 @@
       <workItem from="1672656755826" duration="10408000" />
       <workItem from="1672769725010" duration="3133000" />
       <workItem from="1672776380171" duration="37000" />
-      <workItem from="1672831719710" duration="4737000" />
+      <workItem from="1672831719710" duration="5576000" />
     </task>
     <task id="LOCAL-00001" summary="routes">
       <created>1669397545256</created>
@@ -160,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672776394849</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="create messagesContainer">
+      <created>1672839762780</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1672839762780</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +193,7 @@
     <MESSAGE value="lesson 39" />
     <MESSAGE value="create fn sendMessage" />
     <MESSAGE value="create redux-store" />
-    <option name="LAST_COMMIT_MESSAGE" value="create redux-store" />
+    <MESSAGE value="create messagesContainer" />
+    <option name="LAST_COMMIT_MESSAGE" value="create messagesContainer" />
   </component>
 </project>
