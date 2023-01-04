@@ -9,7 +9,7 @@ const initialState = {
     ],
 }
 
-export const profilePageReducer = (state: ProfilePageType = initialState, action: GeneralACType) => {
+export const profilePageReducer = (state: ProfilePageType = initialState, action: GeneralACType): ProfilePageType => {
     switch (action.type) {
         case "ADD-POST": {
             const newPost = {id: v1(), text: action.payload.textPost, likesCount: 0}
