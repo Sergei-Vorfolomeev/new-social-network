@@ -1,24 +1,17 @@
 import React from 'react';
 import styles from './NavBar.module.css'
 import {NavLink} from "react-router-dom";
-import {NavBarType} from "../../redux/store-redux";
-import {FriendsInNavBar} from "../Header/FriendsInNavBar";
-import {useDispatch, useSelector} from "react-redux";
-import {AppRootStateType} from "../../redux/store-redux";
+import {NavBarPropsType} from "./NavBarContainer";
+import {FriendsInNavBar, FriendsInNavBarPropsType} from "../Header/FriendsInNavBar";
 
-type NavBarPropsType = {
-    // navBar: NavBarType
-}
-
-export const NavBar:React.FC<NavBarPropsType> = () => {
-
-    const navBar = useSelector<AppRootStateType, NavBarType>(state => state.navBar)
-    const dispatch = useDispatch()
-
+export const NavBar = (props: NavBarPropsType) => {
     return (
         <nav className={styles.nav}>
             <div>
                 <NavLink to={'/profile'} className={navData => navData.isActive ? styles.active : styles.item}>Profile</NavLink>
+            </div>
+            <div>
+                <NavLink to={'/users'} className={navData => navData.isActive ? styles.active : styles.item}>Users</NavLink>
             </div>
             <div>
                 <NavLink to={'/news'} className={navData => navData.isActive ? styles.active : styles.item}>News</NavLink>
@@ -34,7 +27,7 @@ export const NavBar:React.FC<NavBarPropsType> = () => {
             </div>
             <h3>Friends</h3>
             <div className={styles.friendsInNavbar}>
-                {navBar.friendsInNavBar.map(el => {
+                {props.navBar.friendsInNavBar.map((el: FriendsInNavBarPropsType) => {
                     return(
                         <FriendsInNavBar key={el.id} id={el.id} name={el.name} avatar={el.avatar}/>
                     )

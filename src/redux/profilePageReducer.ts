@@ -16,7 +16,7 @@ export const profilePageReducer = (state: ProfilePageType = initialState, action
            // state.posts.unshift(newPost)
             return {
                 ...state,
-                posts: [...state.posts, newPost]
+                posts: [newPost, ...state.posts]
             }
         }
         default:
