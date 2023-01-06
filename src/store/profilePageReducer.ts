@@ -1,4 +1,4 @@
-import {ProfilePageType} from "./store-redux";
+import {ProfilePageType} from "./store";
 import {v1} from "uuid";
 
 const initialState = {

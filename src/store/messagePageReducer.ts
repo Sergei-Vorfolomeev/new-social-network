@@ -1,6 +1,6 @@
 
 import {v1} from "uuid";
-import {MessagePageType} from "./store-redux";
+import {MessagePageType} from "./store";
 
 const initialState = {
     friendsInMessages: [

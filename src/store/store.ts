@@ -2,11 +2,13 @@ import {combineReducers, legacy_createStore} from "redux";
 import {profilePageReducer} from "./profilePageReducer";
 import {messagePageReducer} from "./messagePageReducer";
 import {navBarReducer} from "./navBarReducer";
+import {UsersPageReducer} from "./UsersPageReducer";
 
 export const rootReducer = combineReducers({
     profilePage: profilePageReducer,
     messagePage: messagePageReducer,
     navBar: navBarReducer,
+    usersPage: UsersPageReducer,
 })
 
 export const store = legacy_createStore(rootReducer)
@@ -31,6 +33,21 @@ export type ProfilePageType = {
 export type MessagePageType = {
     friendsInMessages: FriendsInMessagesType[]
     messages: MessagesType[]
+}
+export type UsersPageType = {
+    users: UserType[]
+}
+export type UserType = {
+    id: string,
+    name: string
+    age: number
+    followStatus: boolean
+    textStatus: string
+    location: LocationType
+}
+type LocationType = {
+    country: string
+    city: string
 }
 export type NavBarType = {
     friendsInNavBar: FriendsInNavBar[]

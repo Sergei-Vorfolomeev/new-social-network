@@ -1,4 +1,4 @@
-import {NavBarType} from "./store-redux";
+import {NavBarType} from "./store";
 import {v1} from "uuid";
 
 const initialState = {
