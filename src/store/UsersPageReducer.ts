@@ -3,10 +3,10 @@ import {UsersPageType, UserType} from "./store";
 
 const initialState = {
     users: [
-        // {id: v1(), name: 'Artem', age: 22, followStatus: true, textStatus: 'Hey, I am photographer', location: {country: 'Russia', city: 'Vyksa'},},
-        // {id: v1(), name: 'Anton', age: 18, followStatus: true, textStatus: 'Hello, I am 3D designer', location: {country: 'Ukraine', city: 'Kiev'},},
-        // {id: v1(), name: 'Nikita', age: 20, followStatus: true, textStatus: 'Hi, I am weed smoker', location: {country: 'Russia', city: 'Penza'},},
-        // {id: v1(), name: 'Jirka', age: 24, followStatus: false, textStatus: 'I am looking for new friends', location: {country: 'Czech Republic', city: 'Prague'},},
+        {id: v1(), name: 'Artem', age: 22, avatar: 'https://pngimg.com/uploads/alien/alien_PNG25.png', followStatus: true, textStatus: 'Hey, I am photographer', location: {country: 'Russia', city: 'Vyksa'},},
+        {id: v1(), name: 'Anton', age: 18, avatar: 'https://pngimg.com/uploads/alien/alien_PNG37.png', followStatus: true, textStatus: 'Hello, I am 3D designer', location: {country: 'Ukraine', city: 'Kiev'},},
+        {id: v1(), name: 'Nikita', age: 20, avatar: 'https://pngimg.com/uploads/alien/alien_PNG16.png', followStatus: true, textStatus: 'Hi, I am weed smoker', location: {country: 'Russia', city: 'Penza'},},
+        {id: v1(), name: 'Jirka', age: 24, avatar: 'https://pngimg.com/uploads/alien/alien_PNG22.png', followStatus: false, textStatus: 'I am looking for new friends', location: {country: 'Czech Republic', city: 'Prague'},},
     ]
 }
 

@@ -1,0 +1,17 @@
+.rootContainer {
+    padding: 0 30%;
+    display: flex;
+    justify-content: space-between;
+}
+.rootContainer:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+.avatar {
+    height: 100px;
+}
+.infoUserContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

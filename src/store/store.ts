@@ -41,6 +41,7 @@ export type UserType = {
     id: string,
     name: string
     age: number
+    avatar: string
     followStatus: boolean
     textStatus: string
     location: LocationType
