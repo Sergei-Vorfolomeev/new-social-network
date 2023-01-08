@@ -4,11 +4,12 @@ import {Users} from "./Users";
 import {AppRootStateType, UserType} from "../../store/store";
 import {Dispatch} from "redux";
 import {followAC, setUsersAC, unfollowAC} from "../../store/UsersPageReducer";
+import {UsersClass} from "./UsersClass";
 
-type mapStateToPropsType = {
+export type mapStateToPropsType = {
     users: ItemsResponseType[]
 }
-type mapDispatchToPropsType = {
+export type mapDispatchToPropsType = {
     follow: (userID: number) => void,
     unfollow: (userID: number) => void,
     setUsers: (items: ResponseType) => void,
@@ -44,4 +45,4 @@ const mapDispatchToProps = (dispatch: Dispatch): mapDispatchToPropsType => {
     }
 }
 
-export const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users)
+export const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersClass)

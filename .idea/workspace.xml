@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="get Users from server">
-      <change afterPath="$PROJECT_DIR$/src/components/Users/User/User.tsx" afterDir="false" />
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="create user component">
+      <change afterPath="$PROJECT_DIR$/src/components/Users/UsersClass.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <workItem from="1672957507821" duration="597000" />
       <workItem from="1673002201983" duration="11007000" />
       <workItem from="1673124591883" duration="2069000" />
-      <workItem from="1673185505842" duration="6156000" />
+      <workItem from="1673185505842" duration="8607000" />
     </task>
     <task id="LOCAL-00001" summary="routes">
       <created>1669397545256</created>
@@ -205,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673190396896</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="create user component">
+      <created>1673196937506</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673196937506</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +245,7 @@
     <MESSAGE value="create usersReducer" />
     <MESSAGE value="create UsersContainer and Users" />
     <MESSAGE value="get Users from server" />
-    <option name="LAST_COMMIT_MESSAGE" value="get Users from server" />
+    <MESSAGE value="create user component" />
+    <option name="LAST_COMMIT_MESSAGE" value="create user component" />
   </component>
 </project>

@@ -1,32 +1,26 @@
-import React from 'react';
-import styles from './Users.module.css'
-import {UsersPropsType} from "./UsersContainer";
-import {v1} from "uuid";
+import React from "react";
+import styles from "./Users.module.css";
+import {ItemsResponseType, UsersPropsType} from "./UsersContainer";
 import axios from "axios";
 
-
-
-export const Users = (props: UsersPropsType) => {
-
-    const getUsers = () => {
-        if (props.users.length === 0) {
-            axios.get('https://social-network.samuraijs.com/api/1.0/users')
-                .then(response => props.setUsers(response.data))
-        }
+export class UsersClass extends React.Component<any, any> {
+    constructor(props: UsersPropsType) {
+        super(props);
+        axios.get('https://social-network.samuraijs.com/api/1.0/users')
+            .then(response => props.setUsers(response.data))
     }
 
-    return (
-        <>
-            <button onClick={getUsers}>Get Users</button>
-            {props.users.map(el => {
+    render () {
+        return <>
+            {this.props.users.map((el: ItemsResponseType) => {
                 return (
                     <div className={styles.rootContainer}>
                         <div className={styles.avatarAndButtonContainer}>
                             <img src={el.photos.small} alt="" className={styles.avatar}/>
                             <div>
                                 {el.followed
-                                ? <button onClick={() => props.unfollow(el.id)}>Unfollow</button>
-                                : <button onClick={() => props.follow(el.id)}>Follow</button>}
+                                    ? <button onClick={() => this.props.unfollow(el.id)}>Unfollow</button>
+                                    : <button onClick={() => this.props.follow(el.id)}>Follow</button>}
                             </div>
                         </div>
                         <div className={styles.infoUserContainer}>
@@ -43,5 +37,6 @@ export const Users = (props: UsersPropsType) => {
                 )
             })}
         </>
-    );
-};
+
+    }
+}
