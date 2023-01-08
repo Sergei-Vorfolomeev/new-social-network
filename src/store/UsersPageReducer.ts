@@ -1,6 +1,6 @@
 import {v1} from "uuid";
 import {UsersPageType, UserType} from "./store";
-import {ResponseType} from "../components/Users/Users";
+import {ResponseType} from "../components/Users/UsersContainer";
 
 // const initialState = {
 //     users: [

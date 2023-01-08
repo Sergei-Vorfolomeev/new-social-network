@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {Users, ResponseType, ItemsResponseType} from "./Users";
+import {Users} from "./Users";
 import {AppRootStateType, UserType} from "../../store/store";
 import {Dispatch} from "redux";
 import {followAC, setUsersAC, unfollowAC} from "../../store/UsersPageReducer";
@@ -14,6 +14,22 @@ type mapDispatchToPropsType = {
     setUsers: (items: ResponseType) => void,
 }
 export type UsersPropsType = mapStateToPropsType & mapDispatchToPropsType
+
+export type ResponseType = {
+    items: ItemsResponseType[]
+    totalCount: number
+    error: string | null
+}
+export type ItemsResponseType = {
+    name: string
+    id: number
+    photos: {
+        small: undefined | string
+        large: undefined | string
+    },
+    status: null | string
+    "followed": boolean
+}
 
 const mapStateToProps = (state: AppRootStateType): mapStateToPropsType  => {
     return {
