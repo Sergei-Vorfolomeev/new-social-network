@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Users.module.css";
-import {ItemsResponseType, UsersPropsType} from "./UsersContainer";
+import {ItemsResponseType, ResponseType, UsersPropsType} from "./UsersContainer";
 import axios from "axios";
+import {AppRootStateType} from "../../store/store";
 
-export class UsersClass extends React.Component<any, any> {
+export class UsersClass extends React.Component<UsersPropsType, ResponseType> {
     constructor(props: UsersPropsType) {
         super(props);
         axios.get('https://social-network.samuraijs.com/api/1.0/users')
