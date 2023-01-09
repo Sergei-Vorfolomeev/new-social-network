@@ -5,10 +5,10 @@ import axios from "axios";
 import {AppRootStateType} from "../../store/store";
 
 export class UsersClass extends React.Component<UsersPropsType, ResponseType> {
-    constructor(props: UsersPropsType) {
-        super(props);
+
+    componentDidMount() {
         axios.get('https://social-network.samuraijs.com/api/1.0/users')
-            .then(response => props.setUsers(response.data))
+            .then(response => this.props.setUsers(response.data))
     }
 
     render () {
@@ -17,7 +17,9 @@ export class UsersClass extends React.Component<UsersPropsType, ResponseType> {
                 return (
                     <div className={styles.rootContainer}>
                         <div className={styles.avatarAndButtonContainer}>
-                            <img src={el.photos.small} alt="" className={styles.avatar}/>
+                            {el.photos.small
+                            ? <img src={el.photos.small} alt="avatar" className={styles.avatar}/>
+                            : <img src="https://pngimg.com/uploads/alien/alien_PNG28.png" alt="default-avatar" className={styles.avatar}/>}
                             <div>
                                 {el.followed
                                     ? <button onClick={() => this.props.unfollow(el.id)}>Unfollow</button>

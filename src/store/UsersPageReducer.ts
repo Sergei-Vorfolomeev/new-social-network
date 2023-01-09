@@ -54,7 +54,10 @@ export const UsersPageReducer = (state:ResponseType = initialState, action: Gene
         case 'SET-USERS': {
             return {
                 ...state,
-                items: [...state.items, ...action.payload.data.items]
+                items: [
+                    ...state.items,
+                    ...action.payload.data.items
+                ]
             }
         }
         default: return state

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="create class component">
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="typing class component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/UsersClass.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersClass.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,7 @@
       <workItem from="1672957507821" duration="597000" />
       <workItem from="1673002201983" duration="11007000" />
       <workItem from="1673124591883" duration="2069000" />
-      <workItem from="1673185505842" duration="9592000" />
+      <workItem from="1673185505842" duration="10793000" />
     </task>
     <task id="LOCAL-00001" summary="routes">
       <created>1669397545256</created>
@@ -216,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673216235887</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="typing class component">
+      <created>1673217218487</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1673217218487</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +260,7 @@
     <MESSAGE value="get Users from server" />
     <MESSAGE value="create user component" />
     <MESSAGE value="create class component" />
-    <option name="LAST_COMMIT_MESSAGE" value="create class component" />
+    <MESSAGE value="typing class component" />
+    <option name="LAST_COMMIT_MESSAGE" value="typing class component" />
   </component>
 </project>
