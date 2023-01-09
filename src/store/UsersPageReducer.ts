@@ -1,6 +1,5 @@
 import {v1} from "uuid";
-import {UsersPageType, UserType} from "./store";
-import {ResponseType} from "../components/Users/UsersContainer";
+import {ItemsResponseType, ResponseType} from "../components/Users/UsersContainer";
 
 // const initialState = {
 //     users: [
@@ -10,6 +9,7 @@ import {ResponseType} from "../components/Users/UsersContainer";
 //         // {id: v1(), name: 'Jirka', age: 24, avatar: 'https://pngimg.com/uploads/alien/alien_PNG22.png', followStatus: false, textStatus: 'I am looking for new friends', location: {country: 'Czech Republic', city: 'Prague'},},
 //     ]
 // }
+
 const initialState = {
     items: [
         // {
@@ -33,8 +33,10 @@ const initialState = {
         //     "followed": false
         // }
     ],
-    totalCount: 30,
-    error: null
+    totalCount: 0,
+    error: null,
+    pageSize: 10,
+    currentPage: 1
 }
 
 export const UsersPageReducer = (state:ResponseType = initialState, action: GeneralACType):ResponseType => {
@@ -55,19 +57,33 @@ export const UsersPageReducer = (state:ResponseType = initialState, action: Gene
             return {
                 ...state,
                 items: [
-                    ...state.items,
-                    ...action.payload.data.items
+                    // ...state.items,
+                    ...action.payload.items
                 ]
+            }
+        }
+        case "SET-TOTAL-COUNT": {
+            return {
+                ...state,
+                totalCount: action.payload.totalCount
+            }
+        }
+        case "SET-CURRENT-PAGE": {
+            return {
+                ...state,
+                currentPage: action.payload.pageNumber
             }
         }
         default: return state
     }
 }
 
-type GeneralACType = FollowACType | UnfollowACType | SetUsersACType
+type GeneralACType = FollowACType | UnfollowACType | SetUsersACType | SetTotalCountACType | SetCurrentPageACType
 type FollowACType = ReturnType<typeof followAC>
 type UnfollowACType = ReturnType<typeof unfollowAC>
 type SetUsersACType = ReturnType<typeof setUsersAC>
+type SetTotalCountACType = ReturnType<typeof setTotalCountAC>
+type SetCurrentPageACType = ReturnType<typeof setCurrentPageAC>
 
 export const followAC = (userID: number) => {
     return {
@@ -85,11 +101,27 @@ export const unfollowAC = (userID: number) => {
         }
     } as const
 }
-export const setUsersAC = (data: ResponseType) => {
+export const setUsersAC = (items: ItemsResponseType[]) => {
     return {
         type: 'SET-USERS',
         payload: {
-            data
+            items
+        }
+    } as const
+}
+export const setTotalCountAC = (totalCount: number) => {
+    return {
+        type: 'SET-TOTAL-COUNT',
+        payload: {
+            totalCount
+        }
+    } as const
+}
+export const setCurrentPageAC = (pageNumber: number) => {
+    return {
+        type: 'SET-CURRENT-PAGE',
+        payload: {
+            pageNumber
         }
     } as const
 }
