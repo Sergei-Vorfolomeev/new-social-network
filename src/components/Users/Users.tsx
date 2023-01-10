@@ -1,32 +1,50 @@
 import React from 'react';
 import styles from './Users.module.css'
-import {UsersPropsType} from "./UsersContainer";
+import {ItemsResponseType, UsersPropsType} from "./UsersContainer";
 import {v1} from "uuid";
 import axios from "axios";
 
 
+type PropsType = {
+    users: ItemsResponseType[]
+    pageSize: number
+    currentPage: number
+    totalCount: number
+    follow: (userID: number) => void,
+    unfollow: (userID: number) => void,
+    setCurrentPageHandler: (pageNumber: number) => void
+}
 
-export const Users = (props: UsersPropsType) => {
+export const Users = (props: PropsType) => {
 
-    const getUsers = () => {
-        if (props.users.length === 0) {
-            axios.get('https://social-network.samuraijs.com/api/1.0/users')
-                .then(response => props.setUsers(response.data))
-        }
+    const pagesCount = Math.ceil(props.totalCount / props.pageSize)
+    const pages = []
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i)
     }
 
     return (
         <>
-            <button onClick={getUsers}>Get Users</button>
-            {props.users.map(el => {
+            {pages.map(el => {
                 return (
-                    <div className={styles.rootContainer}>
+                    <span key={el}
+                        className={props.currentPage === el ? styles.selectedPage : ''}
+                          onClick={() => props.setCurrentPageHandler(el)}>{el + ' '}</span>
+                )
+            })}
+
+            {props.users.map((el: ItemsResponseType) => {
+                return (
+                    <div className={styles.rootContainer} key={el.id}>
                         <div className={styles.avatarAndButtonContainer}>
-                            <img src={el.photos.small} alt="" className={styles.avatar}/>
+                            {el.photos.small
+                                ? <img src={el.photos.small} alt="avatar" className={styles.avatar}/>
+                                : <img src="https://pngimg.com/uploads/alien/alien_PNG28.png" alt="default-avatar"
+                                       className={styles.avatar}/>}
                             <div>
                                 {el.followed
-                                ? <button onClick={() => props.unfollow(el.id)}>Unfollow</button>
-                                : <button onClick={() => props.follow(el.id)}>Follow</button>}
+                                    ? <button onClick={() => props.unfollow(el.id)}>Unfollow</button>
+                                    : <button onClick={() => props.follow(el.id)}>Follow</button>}
                             </div>
                         </div>
                         <div className={styles.infoUserContainer}>
