@@ -1,5 +1,4 @@
 import {v1} from "uuid";
-import {ItemsResponseType, ResponseType} from "../components/Users/UsersContainer";
 
 // const initialState = {
 //     users: [
@@ -9,6 +8,25 @@ import {ItemsResponseType, ResponseType} from "../components/Users/UsersContaine
 //         // {id: v1(), name: 'Jirka', age: 24, avatar: 'https://pngimg.com/uploads/alien/alien_PNG22.png', followStatus: false, textStatus: 'I am looking for new friends', location: {country: 'Czech Republic', city: 'Prague'},},
 //     ]
 // }
+
+export type ResponseType = {
+    items: ItemsResponseType[]
+    totalCount: number
+    error: string | null
+    pageSize: number
+    currentPage: number
+    isFetching: boolean
+}
+export type ItemsResponseType = {
+    name: string
+    id: number
+    photos: {
+        small: undefined | string
+        large: undefined | string
+    },
+    status: null | string
+    "followed": boolean
+}
 
 const initialState = {
     items: [
@@ -36,7 +54,8 @@ const initialState = {
     totalCount: 0,
     error: null,
     pageSize: 10,
-    currentPage: 1
+    currentPage: 1,
+    isFetching: false
 }
 
 export const UsersPageReducer = (state:ResponseType = initialState, action: GeneralACType):ResponseType => {
@@ -74,18 +93,31 @@ export const UsersPageReducer = (state:ResponseType = initialState, action: Gene
                 currentPage: action.payload.pageNumber
             }
         }
+        case "TOGGLE-IS-FETCHING": {
+            return {
+                ...state,
+                isFetching: action.payload.value
+            }
+        }
         default: return state
     }
 }
 
-type GeneralACType = FollowACType | UnfollowACType | SetUsersACType | SetTotalCountACType | SetCurrentPageACType
-type FollowACType = ReturnType<typeof followAC>
-type UnfollowACType = ReturnType<typeof unfollowAC>
-type SetUsersACType = ReturnType<typeof setUsersAC>
-type SetTotalCountACType = ReturnType<typeof setTotalCountAC>
-type SetCurrentPageACType = ReturnType<typeof setCurrentPageAC>
+type GeneralACType =
+    FollowACType |
+    UnfollowACType |
+    SetUsersACType |
+    SetTotalCountACType |
+    SetCurrentPageACType |
+    ToggleIsFetchingACType
+type FollowACType = ReturnType<typeof follow>
+type UnfollowACType = ReturnType<typeof unfollow>
+type SetUsersACType = ReturnType<typeof setUsers>
+type SetTotalCountACType = ReturnType<typeof setTotalCount>
+type SetCurrentPageACType = ReturnType<typeof setCurrentPage>
+type ToggleIsFetchingACType = ReturnType<typeof toggleIsFetching>
 
-export const followAC = (userID: number) => {
+export const follow = (userID: number) => {
     return {
         type: 'FOLLOW',
         payload: {
@@ -93,7 +125,7 @@ export const followAC = (userID: number) => {
         }
     } as const
 }
-export const unfollowAC = (userID: number) => {
+export const unfollow = (userID: number) => {
     return {
         type: 'UNFOLLOW',
         payload: {
@@ -101,7 +133,7 @@ export const unfollowAC = (userID: number) => {
         }
     } as const
 }
-export const setUsersAC = (items: ItemsResponseType[]) => {
+export const setUsers = (items: ItemsResponseType[]) => {
     return {
         type: 'SET-USERS',
         payload: {
@@ -109,7 +141,7 @@ export const setUsersAC = (items: ItemsResponseType[]) => {
         }
     } as const
 }
-export const setTotalCountAC = (totalCount: number) => {
+export const setTotalCount = (totalCount: number) => {
     return {
         type: 'SET-TOTAL-COUNT',
         payload: {
@@ -117,11 +149,19 @@ export const setTotalCountAC = (totalCount: number) => {
         }
     } as const
 }
-export const setCurrentPageAC = (pageNumber: number) => {
+export const setCurrentPage = (pageNumber: number) => {
     return {
         type: 'SET-CURRENT-PAGE',
         payload: {
             pageNumber
+        }
+    } as const
+}
+export const toggleIsFetching = (value: boolean) => {
+    return {
+        type: 'TOGGLE-IS-FETCHING',
+        payload: {
+            value
         }
     } as const
 }

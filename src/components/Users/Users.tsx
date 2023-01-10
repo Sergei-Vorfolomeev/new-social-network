@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './Users.module.css'
-import {ItemsResponseType, UsersPropsType} from "./UsersContainer";
-import {v1} from "uuid";
-import axios from "axios";
+import {ItemsResponseType} from "../../store/UsersPageReducer";
+import {Preloader} from "../common/Preloader/Preloader";
 
 
 type PropsType = {
@@ -13,6 +12,7 @@ type PropsType = {
     follow: (userID: number) => void,
     unfollow: (userID: number) => void,
     setCurrentPageHandler: (pageNumber: number) => void
+    isFetching: boolean
 }
 
 export const Users = (props: PropsType) => {
@@ -25,6 +25,7 @@ export const Users = (props: PropsType) => {
 
     return (
         <>
+            {props.isFetching && <Preloader/>}
             {pages.map(el => {
                 return (
                     <span key={el}
