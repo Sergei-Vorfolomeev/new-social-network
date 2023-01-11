@@ -9,7 +9,7 @@ import {v1} from "uuid";
 //     ]
 // }
 
-export type ResponseType = {
+export type UsersResponseType = {
     items: ItemsResponseType[]
     totalCount: number
     error: string | null
@@ -58,7 +58,7 @@ const initialState = {
     isFetching: false
 }
 
-export const UsersPageReducer = (state:ResponseType = initialState, action: GeneralACType):ResponseType => {
+export const UsersPageReducer = (state:UsersResponseType = initialState, action: GeneralACType):UsersResponseType => {
     switch (action.type) {
         case 'FOLLOW': {
             return  {

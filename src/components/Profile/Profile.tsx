@@ -2,17 +2,17 @@ import React from 'react';
 import styles from './Profile.module.css'
 import {ProfileInfo} from "./MyPosts/ProfileInfo";
 import {MyPostsContainer} from "./MyPosts/MyPostsContainer";
+import {ProfileResponseType} from "../../store/store";
 
 type ProfilePagePropsType = {
-    // profilePage: ProfilePageType
-    // dispatch: (action: GeneralACType) => void
+    profile: ProfileResponseType | null
 }
 
 export const Profile:React.FC<ProfilePagePropsType> = (props) => {
 
     return (
         <div className={styles.content}>
-            <ProfileInfo/>
+            <ProfileInfo profile={props.profile}/>
             <MyPostsContainer />
         </div>
     );

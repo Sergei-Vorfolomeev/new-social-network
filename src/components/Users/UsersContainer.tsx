@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {AppRootStateType} from "../../store/store";
-import {Dispatch} from "redux";
 import {
     follow,
     ItemsResponseType,
@@ -9,19 +8,19 @@ import {
     setTotalCount,
     setUsers,
     unfollow,
-    ResponseType, toggleIsFetching,
+    UsersResponseType, toggleIsFetching,
 } from "../../store/UsersPageReducer";
 import {Users} from "./Users";
 import axios from "axios";
 
-export type mapStateToPropsType = {
+type MapStateToPropsType = {
     users: ItemsResponseType[]
     pageSize: number
     currentPage: number
     totalCount: number
     isFetching: boolean
 }
-export type mapDispatchToPropsType = {
+type MapDispatchToPropsType = {
     follow: (userID: number) => void,
     unfollow: (userID: number) => void,
     setUsers: (items: ItemsResponseType[]) => void,
@@ -29,9 +28,9 @@ export type mapDispatchToPropsType = {
     setCurrentPage: (pageNumber: number) => void
     toggleIsFetching: (value: boolean) => void
 }
-export type UsersPropsType = mapStateToPropsType & mapDispatchToPropsType
+export type UsersPropsType = MapStateToPropsType & MapDispatchToPropsType
 
-const mapStateToProps = (state: AppRootStateType): mapStateToPropsType  => {
+const mapStateToProps = (state: AppRootStateType): MapStateToPropsType  => {
     return {
         users: state.usersPage.items,
         pageSize: state.usersPage.pageSize,
@@ -50,7 +49,7 @@ const mapDispatchToProps = {
     }
 
 
-export class UsersAPIContainerClass extends React.Component<UsersPropsType, ResponseType> {
+class UsersAPIContainerClass extends React.Component<UsersPropsType, UsersResponseType> {
 
     componentDidMount() {
         this.props.toggleIsFetching(true)

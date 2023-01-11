@@ -3,4 +3,7 @@
 }
 .description {
     padding: 50px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
 }

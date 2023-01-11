@@ -29,6 +29,7 @@ export type StateType = {
 }
 export type ProfilePageType = {
     posts: PostsType[]
+    profile: null | ProfileResponseType
 }
 export type MessagePageType = {
     friendsInMessages: FriendsInMessagesType[]
@@ -72,6 +73,29 @@ export type FriendsInNavBar = {
     id: string
     name: string
     avatar: string
+}
+export type ProfileResponseType = {
+    aboutMe: string,
+    contacts: ContactType,
+    lookingForAJob: boolean,
+    lookingForAJobDescription: string,
+    fullName: string,
+    userId: number,
+    photos: PhotosType
+}
+type ContactType = {
+    facebook: string | null,
+    website: null | string,
+    vk: string | null,
+    twitter: string | null,
+    instagram: string | null,
+    youtube: string | null,
+    github: string | null,
+    mainLink: string | null
+}
+type PhotosType = {
+    small: string | undefined
+    large: string | undefined
 }
 
 //@ts-ignore

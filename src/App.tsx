@@ -7,6 +7,7 @@ import {News} from "./components/News/News";
 import {MessagesContainer} from "./components/Messages/MessagesContainer";
 import {NavBarContainer} from "./components/NavBar/NavBarContainer";
 import {UsersContainer} from "./components/Users/UsersContainer";
+import {ProfileContainer} from "./components/Profile/ProfileContainer";
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
             <NavBarContainer/>
             <div className="appWrapperContent">
                 <Routes>
-                    <Route path={'/profile/*'} element={<Profile/>}/>
+                    <Route path={'/profile/*'} element={<ProfileContainer/>}/>
                     <Route path={'/users/*'} element={<UsersContainer/>}/>
                     <Route path={'/messages/*'} element={<MessagesContainer/>}/>
                     <Route path={'/news'} element={<News/>}/>

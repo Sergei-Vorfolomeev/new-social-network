@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Users.module.css'
 import {ItemsResponseType} from "../../store/UsersPageReducer";
 import {Preloader} from "../common/Preloader/Preloader";
-
+import {NavLink} from "react-router-dom";
 
 type PropsType = {
     users: ItemsResponseType[]
@@ -29,36 +29,40 @@ export const Users = (props: PropsType) => {
             {pages.map(el => {
                 return (
                     <span key={el}
-                        className={props.currentPage === el ? styles.selectedPage : ''}
+                          className={props.currentPage === el ? styles.selectedPage : ''}
                           onClick={() => props.setCurrentPageHandler(el)}>{el + ' '}</span>
                 )
             })}
 
             {props.users.map((el: ItemsResponseType) => {
                 return (
-                    <div className={styles.rootContainer} key={el.id}>
-                        <div className={styles.avatarAndButtonContainer}>
-                            {el.photos.small
-                                ? <img src={el.photos.small} alt="avatar" className={styles.avatar}/>
-                                : <img src="https://pngimg.com/uploads/alien/alien_PNG28.png" alt="default-avatar"
-                                       className={styles.avatar}/>}
-                            <div>
-                                {el.followed
-                                    ? <button onClick={() => props.unfollow(el.id)}>Unfollow</button>
-                                    : <button onClick={() => props.follow(el.id)}>Follow</button>}
+
+                        <div className={styles.rootContainer} key={el.id}>
+                            <div className={styles.avatarAndButtonContainer}>
+                                <NavLink to={'/profile/' + el.id}>
+                                {el.photos.small
+                                    ? <img src={el.photos.small} alt="avatar" className={styles.avatar}/>
+                                    : <img src="https://pngimg.com/uploads/alien/alien_PNG28.png" alt="default-avatar"
+                                           className={styles.avatar}/>}
+                                </NavLink>
+                                <div>
+                                    {el.followed
+                                        ? <button onClick={() => props.unfollow(el.id)}>Unfollow</button>
+                                        : <button onClick={() => props.follow(el.id)}>Follow</button>}
+                                </div>
+                            </div>
+                            <div className={styles.infoUserContainer}>
+                                <div>
+                                    <h4>{el.name}</h4>
+                                    {el.status}
+                                </div>
+                                {/*<div>*/}
+                                {/*    <div>{el.location.country}</div>*/}
+                                {/*    {el.location.city}*/}
+                                {/*</div>*/}
                             </div>
                         </div>
-                        <div className={styles.infoUserContainer}>
-                            <div>
-                                <h4>{el.name}</h4>
-                                {el.status}
-                            </div>
-                            {/*<div>*/}
-                            {/*    <div>{el.location.country}</div>*/}
-                            {/*    {el.location.city}*/}
-                            {/*</div>*/}
-                        </div>
-                    </div>
+
                 )
             })}
         </>
