@@ -2,13 +2,13 @@ import React from 'react';
 import styles from './NavBar.module.css'
 import {NavLink} from "react-router-dom";
 import {NavBarPropsType} from "./NavBarContainer";
-import {FriendsInNavBar, FriendsInNavBarPropsType} from "../Header/FriendsInNavBar";
+import {FriendsInNavBar, FriendsInNavBarPropsType} from "./FriendsInNavBar";
 
 export const NavBar = (props: NavBarPropsType) => {
     return (
         <nav className={styles.nav}>
             <div>
-                <NavLink to={'/profile'} className={navData => navData.isActive ? styles.active : styles.item}>Profile</NavLink>
+                <NavLink to={'/profile/:userId?'} className={navData => navData.isActive ? styles.active : styles.item}>Profile</NavLink>
             </div>
             <div>
                 <NavLink to={'/users'} className={navData => navData.isActive ? styles.active : styles.item}>Users</NavLink>
@@ -26,12 +26,14 @@ export const NavBar = (props: NavBarPropsType) => {
                 <NavLink to={'/settings'} className={navData => navData.isActive ? styles.active : styles.item}>Settings</NavLink>
             </div>
             <h3>Friends</h3>
-            <div className={styles.friendsInNavbar}>
-                {props.navBar.friendsInNavBar.map((el: FriendsInNavBarPropsType) => {
-                    return(
-                        <FriendsInNavBar key={el.id} id={el.id} name={el.name} avatar={el.avatar}/>
-                    )
-                })}
+            <div className={styles.friendsInNavbarContainer}>
+                <div className={styles.friends}>
+                    {props.navBar.friendsInNavBar.map((el: FriendsInNavBarPropsType) => {
+                        return(
+                            <FriendsInNavBar key={el.id} id={el.id} name={el.name} avatar={el.avatar}/>
+                        )
+                    })}
+                </div>
             </div>
         </nav>
     );

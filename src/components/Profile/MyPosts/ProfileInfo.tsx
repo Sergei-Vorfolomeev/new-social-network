@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './ProfileInfo.module.css'
 import {ProfileResponseType} from "../../../store/store";
-import {Preloader} from "../../common/Preloader/Preloader";
 
 type ProfileInfoPropsType = {
     profile: ProfileResponseType | null
