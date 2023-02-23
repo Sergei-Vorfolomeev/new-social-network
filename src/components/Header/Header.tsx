@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css'
+import {NavLink} from "react-router-dom";
 
 export const Header = () => {
     return (
@@ -10,6 +11,9 @@ export const Header = () => {
             <img
                 src="https://pngimg.com/uploads/alien/alien_PNG21.png"
                 alt='logo'/>
+            <NavLink to={'/login'} className={styles.login}>Login</NavLink>
         </header>
     );
 };
+
+

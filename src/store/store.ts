@@ -3,12 +3,14 @@ import {profilePageReducer} from "./profilePageReducer";
 import {messagePageReducer} from "./messagePageReducer";
 import {navBarReducer} from "./navBarReducer";
 import {UsersPageReducer} from "./UsersPageReducer";
+import {authReducer} from "./authReducer";
 
 export const rootReducer = combineReducers({
     profilePage: profilePageReducer,
     messagePage: messagePageReducer,
     navBar: navBarReducer,
     usersPage: UsersPageReducer,
+    auth: authReducer,
 })
 
 export const store = legacy_createStore(rootReducer)
