@@ -5,12 +5,13 @@ import {connect} from "react-redux";
 import {AppRootStateType, ProfileResponseType} from "../../store/store";
 import {setProfileUser} from "../../store/profilePageReducer";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {compose} from "redux";
 
 class ProfileAPIContainerClass extends React.Component<ProfilePropsType, ProfileResponseType> {
 
     componentDidMount() {
-        const userId = this.props
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
+        const userId = this.props.params.userId
+        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
             .then(response => this.props.setProfileUser(response.data))
         console.log(this.props)
     }
@@ -21,14 +22,14 @@ class ProfileAPIContainerClass extends React.Component<ProfilePropsType, Profile
 }
 
 // TYPES
-type ProfilePropsType = MapStateToPropsType & MapDispatchToPropsType
+type ProfilePropsType = MapStateToPropsType & MapDispatchToPropsType & WithRouterProps
 type MapStateToPropsType = {
     profile: null | ProfileResponseType
 }
 type MapDispatchToPropsType = {
     setProfileUser: (profile: ProfileResponseType) => void
 }
-export interface WithRouterProps {
+export type WithRouterProps = {
     location: ReturnType<typeof useLocation>;
     params: Record<string, string>;
     navigate: ReturnType<typeof useNavigate>;
@@ -65,7 +66,9 @@ export const withRouter = <Props extends WithRouterProps>(
 };
 
 // WRAPPING
-const profileContainerWithRouter = withRouter(ProfileAPIContainerClass)
-export const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(profileContainerWithRouter)
+export const ProfileContainer = compose<React.FC>(
+    connect(mapStateToProps, mapDispatchToProps),
+    withRouter
+)(ProfileAPIContainerClass)
 
 

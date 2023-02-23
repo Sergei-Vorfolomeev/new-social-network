@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="create user profile">
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="with router">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/FriendsInNavBar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/FriendsInNavBar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/FriendsInNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/FriendsInNavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavBar/NavBar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/NavBar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavBar/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/ProfileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/ProfileInfo.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/ProfileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +90,8 @@
       <workItem from="1675595376181" duration="1252000" />
       <workItem from="1675689871593" duration="512000" />
       <workItem from="1675697011664" duration="3000" />
-      <workItem from="1677081474358" duration="6742000" />
+      <workItem from="1677081474358" duration="7113000" />
+      <workItem from="1677152918464" duration="727000" />
     </task>
     <task id="LOCAL-00001" summary="routes">
       <created>1669397545256</created>
@@ -274,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673458272385</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="with router">
+      <created>1677092789148</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1677092789148</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +317,7 @@
     <MESSAGE value="create one more container component" />
     <MESSAGE value="create preloader + refactor mapDispatchToProps" />
     <MESSAGE value="create user profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="create user profile" />
+    <MESSAGE value="with router" />
+    <option name="LAST_COMMIT_MESSAGE" value="with router" />
   </component>
 </project>
