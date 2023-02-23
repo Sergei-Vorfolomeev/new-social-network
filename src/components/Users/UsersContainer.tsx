@@ -13,6 +13,7 @@ import {
 import {Users} from "./Users";
 import axios from "axios";
 
+// TYPES
 type MapStateToPropsType = {
     users: ItemsResponseType[]
     pageSize: number
@@ -30,6 +31,7 @@ type MapDispatchToPropsType = {
 }
 export type UsersPropsType = MapStateToPropsType & MapDispatchToPropsType
 
+// MSTP / MDTP
 const mapStateToProps = (state: AppRootStateType): MapStateToPropsType  => {
     return {
         users: state.usersPage.items,

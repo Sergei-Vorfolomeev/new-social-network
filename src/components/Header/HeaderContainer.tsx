@@ -31,6 +31,7 @@ type HeaderPropsType = MapStateToPropsType & MapDispatchToPropsType
 type MapStateToPropsType = {}
 type MapDispatchToPropsType = {
     setUserData: (data: DataAuthMeResponseType) => void
+
 }
 
 // MSTP / MDTP
