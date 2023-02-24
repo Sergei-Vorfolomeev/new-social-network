@@ -76,6 +76,12 @@ export type FriendsInNavBar = {
     name: string
     avatar: string
 }
+export type ResponseType<T = {}> = {
+    resultCode: number
+    messages: string[]
+    data: T
+}
+
 export type ProfileResponseType = {
     aboutMe: string,
     contacts: ContactType,
