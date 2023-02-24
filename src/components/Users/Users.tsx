@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './Users.module.css'
 import {ItemsResponseType} from "../../store/UsersPageReducer";
-import {Preloader} from "../common/Preloader/Preloader";
 import {NavLink} from "react-router-dom";
-import axios from "axios";
-import {ResponseType} from "../../store/store";
 import Pagination from '@mui/material/Pagination';
 import {followAPI} from "../../api/api";
+import CircularProgress from "@mui/material/CircularProgress";
 
 type PropsType = {
     users: ItemsResponseType[]
@@ -17,6 +15,8 @@ type PropsType = {
     unfollow: (userID: number) => void,
     setCurrentPageHandler: (pageNumber: number) => void
     isFetching: boolean
+    toggleFollowingProgress: (isFetching: boolean, id: number) => void
+    followingProgress: number[]
 }
 
 export const Users = (props: PropsType) => {
@@ -36,7 +36,7 @@ export const Users = (props: PropsType) => {
 
     return (
         <>
-            {props.isFetching && <Preloader/>}
+            {props.isFetching && <CircularProgress />}
             <Pagination count={pagesCount} page={page} onChange={handleChange}/>
             {/*{pages.map(el => {*/}
             {/*    return (*/}
@@ -58,7 +58,8 @@ export const Users = (props: PropsType) => {
                             </NavLink>
                             <div>
                                 {el.followed
-                                    ? <button onClick={() => {
+                                    ? <button disabled={props.followingProgress.some(id => id === el.id)} onClick={() => {
+                                        props.toggleFollowingProgress(true, el.id)
                                         followAPI.unfollow(el.id)
                                             .then(data => {
                                                 if (data.resultCode === 0) {
@@ -70,8 +71,12 @@ export const Users = (props: PropsType) => {
                                             .catch((e) => {
                                                 alert(e.message)
                                             })
+                                            .finally(() => {
+                                                props.toggleFollowingProgress(false, el.id)
+                                            })
                                     }}>Unfollow</button>
-                                    : <button onClick={() => {
+                                    : <button disabled={props.followingProgress.some(id => id === el.id)} onClick={() => {
+                                        props.toggleFollowingProgress(true, el.id)
                                         followAPI.follow(el.id)
                                             .then(data => {
                                                 if (data.resultCode === 0) {
@@ -83,6 +88,9 @@ export const Users = (props: PropsType) => {
                                             .catch((e) => {
                                                 alert(e.message)
                                             })
+                                            .finally(() => {
+                                            props.toggleFollowingProgress(false, el.id)
+                                        })
                                     }}>Follow</button>}
                             </div>
                         </div>
