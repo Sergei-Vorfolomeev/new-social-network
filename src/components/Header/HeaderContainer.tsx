@@ -3,17 +3,17 @@ import {Header} from "./Header";
 import {connect} from "react-redux";
 import {AppRootStateType} from "../../store/store";
 import {AuthMeResponseType, DataAuthMeResponseType, setUserData} from "../../store/authReducer";
-import axios from "axios";
+import {authAPI} from "../../api/api";
 
 class HeaderAPIContainerClass extends React.Component<HeaderPropsType, AuthMeResponseType> {
 
     componentDidMount() {
-        axios.get<AuthMeResponseType>(`https://social-network.samuraijs.com/api/1.0/auth/me`, {withCredentials: true})
-            .then(response => {
-                if (response.data.resultCode === 0) {
-                    this.props.setUserData(response.data.data)
+        authAPI.me()
+            .then(data => {
+                if (data.resultCode === 0) {
+                    this.props.setUserData(data.data)
                 } else {
-                    alert(response.data.messages[0])
+                    alert(data.messages[0])
                 }
             })
     }

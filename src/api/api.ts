@@ -1,4 +1,6 @@
 import axios from "axios";
+import {ResponseType} from "../store/store";
+import {AuthMeResponseType} from "../store/authReducer";
 
 const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
@@ -18,4 +20,30 @@ export const usersAPI = {
        return instance.get(`users?page=${pageNumber}&count=${pageSize}`)
            .then(response => response.data)
     }
+}
+
+export const followAPI = {
+    follow (userId: number) {
+        return instance.post<ResponseType>(`/follow/${userId}`, {})
+            .then(response => response.data)
+    },
+
+    unfollow (userId: number) {
+        return instance.delete<ResponseType>(`/follow/${userId}`)
+            .then(response => response.data)
+    },
+}
+
+export const profileAPI = {
+    getProfile (userId: string = '2') {
+        return instance.get(`profile/${userId}`)
+            .then(response => response.data)
+    },
+}
+
+export const authAPI = {
+    me () {
+        return instance.get<AuthMeResponseType>(`auth/me`)
+            .then(response => response.data)
+    },
 }

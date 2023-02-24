@@ -6,6 +6,7 @@ import {NavLink} from "react-router-dom";
 import axios from "axios";
 import {ResponseType} from "../../store/store";
 import Pagination from '@mui/material/Pagination';
+import {followAPI} from "../../api/api";
 
 type PropsType = {
     users: ItemsResponseType[]
@@ -58,17 +59,12 @@ export const Users = (props: PropsType) => {
                             <div>
                                 {el.followed
                                     ? <button onClick={() => {
-                                        axios.delete<ResponseType>(`https://social-network.samuraijs.com/api/1.0/follow/${el.id}`, {
-                                            withCredentials: true,
-                                            headers: {
-                                                'API-KEY': '9b7bf10d-55fc-4d6e-b69f-50e6002c9999'
-                                            }
-                                        })
-                                            .then(response => {
-                                                if (response.data.resultCode === 0) {
+                                        followAPI.unfollow(el.id)
+                                            .then(data => {
+                                                if (data.resultCode === 0) {
                                                     props.unfollow(el.id)
                                                 } else {
-                                                    alert(response.data.messages[0])
+                                                    alert(data.messages[0])
                                                 }
                                             })
                                             .catch((e) => {
@@ -76,17 +72,12 @@ export const Users = (props: PropsType) => {
                                             })
                                     }}>Unfollow</button>
                                     : <button onClick={() => {
-                                        axios.post<ResponseType>(`https://social-network.samuraijs.com/api/1.0/follow/${el.id}`, {}, {
-                                            withCredentials: true,
-                                            headers: {
-                                                'API-KEY': '9b7bf10d-55fc-4d6e-b69f-50e6002c9999'
-                                            }
-                                        })
-                                            .then(response => {
-                                                if (response.data.resultCode === 0) {
+                                        followAPI.follow(el.id)
+                                            .then(data => {
+                                                if (data.resultCode === 0) {
                                                     props.follow(el.id)
                                                 } else {
-                                                    alert(response.data.messages[0])
+                                                    alert(data.messages[0])
                                                 }
                                             })
                                             .catch((e) => {

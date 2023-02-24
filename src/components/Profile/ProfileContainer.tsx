@@ -1,24 +1,23 @@
 import {Profile} from "./Profile";
 import React from "react";
-import axios from "axios";
 import {connect} from "react-redux";
 import {AppRootStateType, ProfileResponseType} from "../../store/store";
 import {setProfileUser} from "../../store/profilePageReducer";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {compose} from "redux";
 import {toggleIsFetching} from "../../store/UsersPageReducer";
+import {profileAPI} from "../../api/api";
 
 class ProfileAPIContainerClass extends React.Component<ProfilePropsType, ProfileResponseType> {
 
     componentDidMount() {
         this.props.toggleIsFetching(true)
         const userId = this.props.params.userId
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
-            .then(response => {
-                this.props.setProfileUser(response.data)
+        profileAPI.getProfile(userId)
+            .then(data => {
+                this.props.setProfileUser(data)
                 this.props.toggleIsFetching(false)
             })
-        // console.log(this.props)
     }
 
     render() {
