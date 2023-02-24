@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import {Header} from "./components/Header/Header";
 import {Route, Routes} from "react-router-dom";
 import {News} from "./components/News/News";
 import {MessagesContainer} from "./components/Messages/MessagesContainer";

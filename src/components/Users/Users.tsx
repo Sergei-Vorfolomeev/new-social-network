@@ -25,7 +25,7 @@ export const Users = (props: PropsType) => {
         setPage(value);
         props.setCurrentPageHandler(value)
     };
-    console.log(page)
+
 
     const pagesCount = Math.ceil(props.totalCount / props.pageSize)
     // const pages = []
