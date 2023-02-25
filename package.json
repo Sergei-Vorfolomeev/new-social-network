@@ -13,6 +13,7 @@
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
+    "@types/redux-thunk": "^2.1.0",
     "@types/uuid": "^8.3.4",
     "axios": "^1.2.2",
     "dom": "^0.0.3",

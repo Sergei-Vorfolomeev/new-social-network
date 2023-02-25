@@ -3,16 +3,17 @@ import {connect} from "react-redux";
 import {AppRootStateType} from "../../store/store";
 import {
     follow,
+    getUsersTC,
     ItemsResponseType,
     setCurrentPage,
     setTotalCount,
-    setUsers, toggleFollowingProgress,
+    setUsersTC,
+    toggleFollowingProgress,
     toggleIsFetching,
     unfollow,
     UsersResponseType,
 } from "../../store/UsersPageReducer";
 import {Users} from "./Users";
-import {usersAPI} from "../../api/api";
 
 // TYPES
 type MapStateToPropsType = {
@@ -26,11 +27,12 @@ type MapStateToPropsType = {
 type MapDispatchToPropsType = {
     follow: (userID: number) => void,
     unfollow: (userID: number) => void,
-    setUsers: (items: ItemsResponseType[]) => void,
+    setUsers: (pageNumber: number, pageSize: number) => void,
     setTotalCount: (totalCount: number) => void
     setCurrentPage: (pageNumber: number) => void
-    toggleIsFetching: (value: boolean) => void
+    // toggleIsFetching: (value: boolean) => void
     toggleFollowingProgress: (isFetching: boolean, id: number) => void
+    getUsers: (currentPage: number, pageSize: number) => void
 }
 export type UsersPropsType = MapStateToPropsType & MapDispatchToPropsType
 
@@ -48,36 +50,23 @@ const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
 const mapDispatchToProps = {
     follow,
     unfollow,
-    setUsers,
     setTotalCount,
     setCurrentPage,
-    toggleIsFetching,
+    // toggleIsFetching,
     toggleFollowingProgress,
+    getUsers: getUsersTC,
+    setUsers: setUsersTC
 }
 
 
 class UsersAPIContainerClass extends React.Component<UsersPropsType, UsersResponseType> {
 
     componentDidMount() {
-        this.props.toggleIsFetching(true)
-
-        usersAPI.getUsers(this.props.currentPage, this.props.pageSize)
-            .then(data => {
-                this.props.setUsers(data.items)
-                this.props.setTotalCount(data.totalCount)
-                this.props.toggleIsFetching(false)
-            })
+        this.props.getUsers(this.props.currentPage, this.props.pageSize)
     }
 
     setCurrentPageHandler(pageNumber: number) {
-        this.props.toggleIsFetching(true)
-        this.props.setCurrentPage(pageNumber)
-
-        usersAPI.setCurrentPage(pageNumber, this.props.pageSize)
-            .then(data => {
-                this.props.setUsers(data.items)
-                this.props.toggleIsFetching(false)
-            })
+        this.props.setUsers(pageNumber, this.props.pageSize)
     }
 
     render() {

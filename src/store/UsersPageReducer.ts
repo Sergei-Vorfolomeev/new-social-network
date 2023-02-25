@@ -1,3 +1,5 @@
+import {Dispatch} from "redux";
+import {usersAPI} from "../api/api";
 
 export type UsersResponseType = {
     items: ItemsResponseType[]
@@ -113,6 +115,8 @@ type SetCurrentPageACType = ReturnType<typeof setCurrentPage>
 type ToggleIsFetchingACType = ReturnType<typeof toggleIsFetching>
 type ToggleFollowingProgressACType = ReturnType<typeof toggleFollowingProgress>
 
+
+// ACTION CREATORS
 export const follow = (userID: number) => {
     return {
         type: 'FOLLOW',
@@ -168,4 +172,26 @@ export const toggleFollowingProgress = (isFetching: boolean, id: number) => {
             isFetching, id
         }
     } as const
+}
+
+// THUNK CREATORS
+export const getUsersTC = (currentPage: number, pageSize: number) => (dispatch: Dispatch) => {
+    dispatch(toggleIsFetching(true))
+    usersAPI.getUsers(currentPage, pageSize)
+        .then(data => {
+            dispatch(setUsers(data.items))
+            dispatch(setTotalCount(data.totalCount))
+            dispatch(toggleIsFetching(false))
+        })
+}
+
+export const setUsersTC = (pageNumber: number, pageSize: number) => (dispatch: Dispatch) => {
+    dispatch(toggleIsFetching(true))
+    dispatch(setCurrentPage(pageNumber))
+
+    usersAPI.setCurrentPage(pageNumber, pageSize)
+        .then(data => {
+            dispatch(setUsers(data.items))
+            dispatch(toggleIsFetching(false))
+        })
 }
