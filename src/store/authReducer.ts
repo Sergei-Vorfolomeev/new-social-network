@@ -1,3 +1,6 @@
+import {Dispatch} from "redux";
+import {authAPI, usersAPI} from "../api/api";
+import {toggleFollowingProgress, unfollow} from "./UsersPageReducer";
 
 type initialStateType = {
     id: number | null,
@@ -23,16 +26,6 @@ export const authReducer = (state: initialStateType = initialState, action: Acti
     }
 }
 
-// ACTION CREATORS
-export const setUserData = (data: DataAuthMeResponseType) => {
-    return {
-        type: 'SET-USER-DATA',
-        payload: {
-            data
-        }
-    } as const
-}
-
 // TYPES
 type ActionsType = SetUserDataACType
 type SetUserDataACType = ReturnType<typeof setUserData>
@@ -48,5 +41,29 @@ export type DataAuthMeResponseType = {
     email: string,
     login: string,
 }
+
+// ACTION CREATORS
+export const setUserData = (data: DataAuthMeResponseType) => {
+    return {
+        type: 'SET-USER-DATA',
+        payload: {
+            data
+        }
+    } as const
+}
+
+// THUNK CREATORS
+export const meTC = () => (dispatch: Dispatch) => {
+    authAPI.me()
+        .then(data => {
+            if (data.resultCode === 0) {
+                dispatch(setUserData(data.data))
+            } else {
+                alert(data.messages[0])
+            }
+        })
+}
+
+
 
 

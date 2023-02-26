@@ -2,20 +2,12 @@ import React from 'react';
 import {Header} from "./Header";
 import {connect} from "react-redux";
 import {AppRootStateType} from "../../store/store";
-import {AuthMeResponseType, DataAuthMeResponseType, setUserData} from "../../store/authReducer";
-import {authAPI} from "../../api/api";
+import {AuthMeResponseType, DataAuthMeResponseType, meTC, setUserData} from "../../store/authReducer";
 
 class HeaderAPIContainerClass extends React.Component<HeaderPropsType, AuthMeResponseType> {
 
     componentDidMount() {
-        authAPI.me()
-            .then(data => {
-                if (data.resultCode === 0) {
-                    this.props.setUserData(data.data)
-                } else {
-                    alert(data.messages[0])
-                }
-            })
+        this.props.me()
     }
 
     render() {
@@ -31,7 +23,7 @@ type HeaderPropsType = MapStateToPropsType & MapDispatchToPropsType
 type MapStateToPropsType = {}
 type MapDispatchToPropsType = {
     setUserData: (data: DataAuthMeResponseType) => void
-
+    me: () => void
 }
 
 // MSTP / MDTP
@@ -40,7 +32,8 @@ const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
 }
 
 const mapDispatchToProps: MapDispatchToPropsType = {
-    setUserData
+    setUserData,
+    me: meTC
 }
 
 export const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(HeaderAPIContainerClass)
