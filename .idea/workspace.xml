@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="step 64 --&gt; disable buttons follow/unfollow during request to server">
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="step 66 --&gt; thunks (get request in the usersContainer)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/profilePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/profilePageReducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +97,8 @@
       <workItem from="1675697011664" duration="3000" />
       <workItem from="1677081474358" duration="7113000" />
       <workItem from="1677152918464" duration="21265000" />
-      <workItem from="1677337035261" duration="2186000" />
+      <workItem from="1677337035261" duration="2935000" />
+      <workItem from="1677426530499" duration="1735000" />
     </task>
     <task id="LOCAL-00001" summary="routes">
       <created>1669397545256</created>
@@ -336,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677272354835</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="step 66 --&gt; thunks (get request in the usersContainer)">
+      <created>1677339613646</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1677339613646</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +363,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create fn sendMessage" />
     <MESSAGE value="create redux-store" />
     <MESSAGE value="create messagesContainer" />
     <MESSAGE value="create MyPostsContainer" />
@@ -379,6 +387,7 @@
     <MESSAGE value="step 63 --&gt; adding DAL. Creating usersAPI" />
     <MESSAGE value="step 63 --&gt; Creating followAPI, profileAPI, authAPI" />
     <MESSAGE value="step 64 --&gt; disable buttons follow/unfollow during request to server" />
-    <option name="LAST_COMMIT_MESSAGE" value="step 64 --&gt; disable buttons follow/unfollow during request to server" />
+    <MESSAGE value="step 66 --&gt; thunks (get request in the usersContainer)" />
+    <option name="LAST_COMMIT_MESSAGE" value="step 66 --&gt; thunks (get request in the usersContainer)" />
   </component>
 </project>

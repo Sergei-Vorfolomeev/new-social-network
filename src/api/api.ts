@@ -16,13 +16,10 @@ export const usersAPI = {
            .then(response => response.data)
     },
 
-    setCurrentPage (pageNumber: number, pageSize: number) {
+    setSelectedPage (pageNumber: number, pageSize: number) {
        return instance.get(`users?page=${pageNumber}&count=${pageSize}`)
            .then(response => response.data)
-    }
-}
-
-export const followAPI = {
+    },
     follow (userId: number) {
         return instance.post<ResponseType>(`/follow/${userId}`, {})
             .then(response => response.data)
@@ -32,9 +29,6 @@ export const followAPI = {
         return instance.delete<ResponseType>(`/follow/${userId}`)
             .then(response => response.data)
     },
-}
-
-export const profileAPI = {
     getProfile (userId: string = '2') {
         return instance.get(`profile/${userId}`)
             .then(response => response.data)

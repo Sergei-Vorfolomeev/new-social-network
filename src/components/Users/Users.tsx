@@ -3,7 +3,7 @@ import styles from './Users.module.css'
 import {ItemsResponseType} from "../../store/UsersPageReducer";
 import {NavLink} from "react-router-dom";
 import Pagination from '@mui/material/Pagination';
-import {followAPI} from "../../api/api";
+import {usersAPI} from "../../api/api";
 import CircularProgress from "@mui/material/CircularProgress";
 
 type PropsType = {
@@ -11,9 +11,9 @@ type PropsType = {
     pageSize: number
     currentPage: number
     totalCount: number
-    follow: (userID: number) => void,
-    unfollow: (userID: number) => void,
-    setCurrentPageHandler: (pageNumber: number) => void
+    follow: (userId: number) => void,
+    unfollow: (userId: number) => void,
+    setSelectedPageHandler: (pageNumber: number) => void
     isFetching: boolean
     toggleFollowingProgress: (isFetching: boolean, id: number) => void
     followingProgress: number[]
@@ -24,7 +24,7 @@ export const Users = (props: PropsType) => {
     const [page, setPage] = React.useState(1);
     const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
         setPage(value);
-        props.setCurrentPageHandler(value)
+        props.setSelectedPageHandler(value)
     };
 
 
@@ -58,40 +58,14 @@ export const Users = (props: PropsType) => {
                             </NavLink>
                             <div>
                                 {el.followed
-                                    ? <button disabled={props.followingProgress.some(id => id === el.id)} onClick={() => {
-                                        props.toggleFollowingProgress(true, el.id)
-                                        followAPI.unfollow(el.id)
-                                            .then(data => {
-                                                if (data.resultCode === 0) {
-                                                    props.unfollow(el.id)
-                                                } else {
-                                                    alert(data.messages[0])
-                                                }
-                                            })
-                                            .catch((e) => {
-                                                alert(e.message)
-                                            })
-                                            .finally(() => {
-                                                props.toggleFollowingProgress(false, el.id)
-                                            })
-                                    }}>Unfollow</button>
-                                    : <button disabled={props.followingProgress.some(id => id === el.id)} onClick={() => {
-                                        props.toggleFollowingProgress(true, el.id)
-                                        followAPI.follow(el.id)
-                                            .then(data => {
-                                                if (data.resultCode === 0) {
-                                                    props.follow(el.id)
-                                                } else {
-                                                    alert(data.messages[0])
-                                                }
-                                            })
-                                            .catch((e) => {
-                                                alert(e.message)
-                                            })
-                                            .finally(() => {
-                                            props.toggleFollowingProgress(false, el.id)
-                                        })
-                                    }}>Follow</button>}
+                                    ? <button
+                                        disabled={props.followingProgress.some(id => id === el.id)}
+                                        onClick={() => {props.unfollow(el.id)}}>
+                                        Unfollow</button>
+                                    : <button
+                                        disabled={props.followingProgress.some(id => id === el.id)}
+                                        onClick={() => {props.follow(el.id)}}>
+                                        Follow</button>}
                             </div>
                         </div>
                         <div className={styles.infoUserContainer}>

@@ -1,5 +1,8 @@
 import {ProfilePageType, ProfileResponseType} from "./store";
 import {v1} from "uuid";
+import {Dispatch} from "redux";
+import {usersAPI} from "../api/api";
+import {toggleIsFetching} from "./UsersPageReducer";
 
 const initialState = {
     posts: [
@@ -35,6 +38,8 @@ export type GeneralACType = addPostACType | setProfileUserACType
 type addPostACType = ReturnType<typeof addPostAC>
 type setProfileUserACType = ReturnType<typeof setProfileUser>
 
+
+// ACTION CREATORS
 export const addPostAC = (text: string) => {
     return {
         type: 'ADD-POST',
@@ -50,4 +55,14 @@ export const setProfileUser = (profile: ProfileResponseType) => {
             profile
         }
     } as const
+}
+
+// THUNK CREATORS
+export const getProfile = (userId: string) => (dispatch: Dispatch) => {
+    dispatch(toggleIsFetching(true))
+    usersAPI.getProfile(userId)
+        .then(data => {
+            dispatch(setProfileUser(data))
+            dispatch(toggleIsFetching(false))
+        })
 }
