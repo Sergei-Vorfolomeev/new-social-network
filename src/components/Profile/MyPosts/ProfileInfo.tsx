@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './ProfileInfo.module.css'
 import {ProfileResponseType} from "../../../store/store";
+import {ProfileStatus} from "../ProfileStatus";
 
 type ProfileInfoPropsType = {
     profile: ProfileResponseType | null
@@ -21,7 +22,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
                 </div>
                 <div className="description">
                     <h3>{props.profile?.fullName}</h3>
-                    <span>{props.profile?.aboutMe}</span>
+                    <ProfileStatus status={props.profile?.aboutMe}/>
                     <p>{props.profile?.contacts.facebook}</p>
                     <p>{props.profile?.contacts.github}</p>
                     <p>{props.profile?.contacts.instagram}</p>
