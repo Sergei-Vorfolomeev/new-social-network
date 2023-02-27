@@ -4,12 +4,13 @@ import {connect} from "react-redux";
 import {AppRootStateType, MessagePageType} from "../../store/store";
 import {Dispatch} from "redux";
 import {Messages} from "./Messages";
+import {ToAuthRedirect} from "../../HOC/ToAuthRedirect";
 
 
 // TYPES
 type mapStateToPropsType = {
     messagePage: MessagePageType
-    isAuth: boolean
+    // isAuth: boolean
 }
 type mapDispatchToPropsType = {
     sendMessage: (newMessage: string) => void
@@ -20,7 +21,7 @@ export type MessagesPagePropsType = mapStateToPropsType & mapDispatchToPropsType
 const mapStateToProps = (state: AppRootStateType): mapStateToPropsType => {
     return {
         messagePage: state.messagePage,
-        isAuth: state.auth.isAuth
+        // isAuth: state.auth.isAuth
     }
 }
 
@@ -32,7 +33,7 @@ const mapDispatchToProps = (dispatch: Dispatch): mapDispatchToPropsType => {
         }
     }
 
-export const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages)
+export const MessagesContainer = ToAuthRedirect(connect(mapStateToProps, mapDispatchToProps)(Messages))
 
 
 

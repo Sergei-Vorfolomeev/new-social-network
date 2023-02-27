@@ -6,6 +6,7 @@ import {getProfile, setProfileUser} from "../../store/profilePageReducer";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {compose} from "redux";
 import {toggleIsFetching} from "../../store/UsersPageReducer";
+import {ToAuthRedirect} from "../../HOC/ToAuthRedirect";
 
 class ProfileAPIContainerClass extends React.Component<ProfilePropsType, ProfileResponseType> {
 
@@ -18,8 +19,7 @@ class ProfileAPIContainerClass extends React.Component<ProfilePropsType, Profile
     render() {
         return <Profile {...this.props}
                         profile={this.props.profile}
-                        isFetching={this.props.isFetching}
-                        isAuth={this.props.isAuth}/>
+                        isFetching={this.props.isFetching}/>
     }
 }
 
@@ -28,7 +28,6 @@ type ProfilePropsType = MapStateToPropsType & MapDispatchToPropsType & WithRoute
 type MapStateToPropsType = {
     profile: null | ProfileResponseType
     isFetching: boolean
-    isAuth: boolean
 }
 type MapDispatchToPropsType = {
     setProfileUser: (profile: ProfileResponseType) => void
@@ -46,7 +45,6 @@ const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
     return {
         profile: state.profilePage.profile,
         isFetching: state.usersPage.isFetching,
-        isAuth: state.auth.isAuth
     }
 }
 const mapDispatchToProps: MapDispatchToPropsType = {
@@ -77,6 +75,7 @@ export const withRouter = <Props extends WithRouterProps>(
 
 // WRAPPING
 export const ProfileContainer = compose<React.FC>(
+    ToAuthRedirect,
     connect(mapStateToProps, mapDispatchToProps),
     withRouter
 )(ProfileAPIContainerClass)

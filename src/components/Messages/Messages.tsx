@@ -17,7 +17,7 @@ export const Messages: React.FC<MessagesPagePropsType> = (props) => {
             newMessage.current.value = ''
         }
     }
-    if (!props.isAuth) return <Navigate to={'/login'}/>
+    // if (!props.isAuth) return <Navigate to={'/login'}/>
 
     return (
         <div className={styles.messages}>
