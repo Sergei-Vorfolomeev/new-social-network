@@ -74,7 +74,7 @@ export const withRouter = <Props extends WithRouterProps>(
 };
 
 // WRAPPING
-export const ProfileContainer = compose<React.FC>(
+export const ProfileContainer = compose<React.ComponentType>(
     ToAuthRedirect,
     connect(mapStateToProps, mapDispatchToProps),
     withRouter

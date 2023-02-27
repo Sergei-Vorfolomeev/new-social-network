@@ -2,7 +2,7 @@ import React from 'react';
 import {sendMessageAC} from "../../store/messagePageReducer";
 import {connect} from "react-redux";
 import {AppRootStateType, MessagePageType} from "../../store/store";
-import {Dispatch} from "redux";
+import {compose, Dispatch} from "redux";
 import {Messages} from "./Messages";
 import {ToAuthRedirect} from "../../HOC/ToAuthRedirect";
 
@@ -33,7 +33,10 @@ const mapDispatchToProps = (dispatch: Dispatch): mapDispatchToPropsType => {
         }
     }
 
-export const MessagesContainer = ToAuthRedirect(connect(mapStateToProps, mapDispatchToProps)(Messages))
+export const MessagesContainer = compose<React.ComponentType>(
+    connect(mapStateToProps, mapDispatchToProps),
+    ToAuthRedirect
+)(Messages)
 
 
 

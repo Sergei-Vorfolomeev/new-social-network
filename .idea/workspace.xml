@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="Redirect from 'Messages Page' and 'Profile Page' to 'Login'">
-      <change afterPath="$PROJECT_DIR$/src/HOC/ToAuthRedirect.tsx" afterDir="false" />
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="Creating HOC(ToAuthRedirect)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/Messages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HOC/ToAuthRedirect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/HOC/ToAuthRedirect.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messages/MessagesContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/MessagesContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +95,7 @@
       <workItem from="1677081474358" duration="7113000" />
       <workItem from="1677152918464" duration="21265000" />
       <workItem from="1677337035261" duration="2935000" />
-      <workItem from="1677426530499" duration="9139000" />
+      <workItem from="1677426530499" duration="9806000" />
     </task>
     <task id="LOCAL-00001" summary="routes">
       <created>1669397545256</created>
@@ -365,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677519586697</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Creating HOC(ToAuthRedirect)">
+      <created>1677526095374</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1677526095374</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +388,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create NavBarContainer" />
     <MESSAGE value="create usersReducer" />
     <MESSAGE value="create UsersContainer and Users" />
     <MESSAGE value="get Users from server" />
@@ -408,6 +412,7 @@
     <MESSAGE value="step 66 --&gt; thunks (get request in the ProfileContainer + follow/unfollow)" />
     <MESSAGE value="step 67 --&gt; thunks (get request in the HeaderContainer(me))" />
     <MESSAGE value="Redirect from 'Messages Page' and 'Profile Page' to 'Login'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redirect from 'Messages Page' and 'Profile Page' to 'Login'" />
+    <MESSAGE value="Creating HOC(ToAuthRedirect)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating HOC(ToAuthRedirect)" />
   </component>
 </project>

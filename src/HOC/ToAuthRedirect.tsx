@@ -4,7 +4,6 @@ import {AppRootStateType} from "../store/store";
 import {Navigate} from "react-router-dom";
 
 export function ToAuthRedirect<T>(Component: React.ComponentType<T>) {
-    // const isAuth = useSelector<AppRootStateType, boolean>(state => state.auth.isAuth)
     type MapStateToPropsType = {
         isAuth: boolean
     }
