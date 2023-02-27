@@ -1,17 +1,18 @@
 import {Dispatch} from "redux";
-import {authAPI, usersAPI} from "../api/api";
-import {toggleFollowingProgress, unfollow} from "./UsersPageReducer";
+import {authAPI} from "../api/api";
 
 type initialStateType = {
     id: number | null,
     email: string | null,
     login: string | null,
+    isAuth: boolean
 }
 
 const initialState: initialStateType = {
     id: null,
     email: null,
     login: null,
+    isAuth: false
 }
 
 export const authReducer = (state: initialStateType = initialState, action: ActionsType) => {
@@ -19,7 +20,8 @@ export const authReducer = (state: initialStateType = initialState, action: Acti
         case 'SET-USER-DATA':
             return {
                 ...state,
-                ...action.payload.data
+                ...action.payload.data,
+                isAuth: true
             }
         default:
             return state

@@ -2,7 +2,12 @@ import React from 'react';
 import styles from './Header.module.css'
 import {NavLink} from "react-router-dom";
 
-export const Header = () => {
+type HeaderPropsType = {
+    isAuth: boolean
+    login: string | null
+}
+
+export const Header = ({isAuth, login}: HeaderPropsType) => {
     return (
         <header className={styles.header}>
             {/*<img*/}
@@ -11,7 +16,10 @@ export const Header = () => {
             <img
                 src="https://pngimg.com/uploads/alien/alien_PNG21.png"
                 alt='logo'/>
-            <NavLink to={'/login'} className={styles.login}>Login</NavLink>
+            {isAuth
+                ? <div className={styles.name}>{login}</div>
+                : <NavLink to={'/login'} className={styles.login}>Login</NavLink>
+            }
         </header>
     );
 };

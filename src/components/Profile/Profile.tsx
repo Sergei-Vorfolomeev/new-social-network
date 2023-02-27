@@ -4,20 +4,22 @@ import {ProfileInfo} from "./MyPosts/ProfileInfo";
 import {MyPostsContainer} from "./MyPosts/MyPostsContainer";
 import {ProfileResponseType} from "../../store/store";
 import CircularProgress from "@mui/material/CircularProgress";
+import {Navigate} from "react-router-dom";
 
 type ProfilePagePropsType = {
     profile: ProfileResponseType | null
     isFetching: boolean
+    isAuth: boolean
 }
 
-export const Profile: React.FC<ProfilePagePropsType> = (props) => {
-
+export const Profile: React.FC<ProfilePagePropsType> = ({profile, isAuth, isFetching}: ProfilePagePropsType) => {
+        if (!isAuth) return <Navigate to='/login'/>
         return (
             <>
-                {props.isFetching
+                {isFetching
                     ? <CircularProgress />
                     : <div className={styles.content}>
-                        <ProfileInfo profile={props.profile}/>
+                        <ProfileInfo profile={profile}/>
                         <MyPostsContainer/>
                     </div>}
             </>

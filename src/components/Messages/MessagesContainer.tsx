@@ -5,17 +5,22 @@ import {AppRootStateType, MessagePageType} from "../../store/store";
 import {Dispatch} from "redux";
 import {Messages} from "./Messages";
 
+
+// TYPES
 type mapStateToPropsType = {
     messagePage: MessagePageType
+    isAuth: boolean
 }
 type mapDispatchToPropsType = {
     sendMessage: (newMessage: string) => void
 }
 export type MessagesPagePropsType = mapStateToPropsType & mapDispatchToPropsType
 
+// MSTP / MDTP
 const mapStateToProps = (state: AppRootStateType): mapStateToPropsType => {
     return {
         messagePage: state.messagePage,
+        isAuth: state.auth.isAuth
     }
 }
 

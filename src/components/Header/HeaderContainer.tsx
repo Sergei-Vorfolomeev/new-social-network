@@ -12,7 +12,7 @@ class HeaderAPIContainerClass extends React.Component<HeaderPropsType, AuthMeRes
 
     render() {
         return (
-            <Header/>
+            <Header isAuth={this.props.isAuth} login={this.props.login}/>
         );
     }
 };
@@ -20,7 +20,10 @@ class HeaderAPIContainerClass extends React.Component<HeaderPropsType, AuthMeRes
 //TYPES
 
 type HeaderPropsType = MapStateToPropsType & MapDispatchToPropsType
-type MapStateToPropsType = {}
+type MapStateToPropsType = {
+    isAuth: boolean
+    login: string | null
+}
 type MapDispatchToPropsType = {
     setUserData: (data: DataAuthMeResponseType) => void
     me: () => void
@@ -28,7 +31,10 @@ type MapDispatchToPropsType = {
 
 // MSTP / MDTP
 const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
-    return {}
+    return {
+        isAuth: state.auth.isAuth,
+        login: state.auth.login
+    }
 }
 
 const mapDispatchToProps: MapDispatchToPropsType = {

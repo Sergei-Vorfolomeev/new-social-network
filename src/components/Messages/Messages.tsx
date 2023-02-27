@@ -3,6 +3,7 @@ import styles from './Messages.module.css'
 import {FriendsInMessages} from "./FriendsInMessages";
 import {Dialogs} from "./Dialogs";
 import {MessagesPagePropsType} from "./MessagesContainer";
+import {Navigate} from "react-router-dom";
 
 export const Messages: React.FC<MessagesPagePropsType> = (props) => {
 
@@ -16,6 +17,7 @@ export const Messages: React.FC<MessagesPagePropsType> = (props) => {
             newMessage.current.value = ''
         }
     }
+    if (!props.isAuth) return <Navigate to={'/login'}/>
 
     return (
         <div className={styles.messages}>

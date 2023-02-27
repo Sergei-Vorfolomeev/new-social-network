@@ -10,11 +10,16 @@ import {toggleIsFetching} from "../../store/UsersPageReducer";
 class ProfileAPIContainerClass extends React.Component<ProfilePropsType, ProfileResponseType> {
 
     componentDidMount() {
-        this.props.getProfile(this.props.params.userId)
+        let userId = this.props.params.userId
+        if (!userId) userId = '2'
+        this.props.getProfile(userId)
     }
 
     render() {
-        return <Profile {...this.props} profile={this.props.profile} isFetching={this.props.isFetching}/>
+        return <Profile {...this.props}
+                        profile={this.props.profile}
+                        isFetching={this.props.isFetching}
+                        isAuth={this.props.isAuth}/>
     }
 }
 
@@ -23,13 +28,14 @@ type ProfilePropsType = MapStateToPropsType & MapDispatchToPropsType & WithRoute
 type MapStateToPropsType = {
     profile: null | ProfileResponseType
     isFetching: boolean
+    isAuth: boolean
 }
 type MapDispatchToPropsType = {
     setProfileUser: (profile: ProfileResponseType) => void
     toggleIsFetching: (value: boolean) => void
     getProfile: (userId: string) => void
 }
-export type WithRouterProps = {
+type WithRouterProps = {
     location: ReturnType<typeof useLocation>;
     params: Record<string, string>;
     navigate: ReturnType<typeof useNavigate>;
@@ -39,7 +45,8 @@ export type WithRouterProps = {
 const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
     return {
         profile: state.profilePage.profile,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
+        isAuth: state.auth.isAuth
     }
 }
 const mapDispatchToProps: MapDispatchToPropsType = {
