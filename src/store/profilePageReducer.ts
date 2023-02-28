@@ -1,8 +1,9 @@
 import {ProfilePageType, ProfileResponseType} from "./store";
 import {v1} from "uuid";
 import {Dispatch} from "redux";
-import {usersAPI} from "../api/api";
+import {profileAPI, usersAPI} from "../api/api";
 import {toggleIsFetching} from "./UsersPageReducer";
+import {AxiosError} from "axios";
 
 const initialState = {
     posts: [
@@ -10,7 +11,8 @@ const initialState = {
         {id: v1(), text: 'It\'s my first post!', likesCount: 8,},
         {id: v1(), text: 'Hello!', likesCount: 15,},
     ],
-    profile: null
+    profile: null,
+    status: ''
 }
 
 export const profilePageReducer = (state: ProfilePageType = initialState, action: GeneralACType): ProfilePageType => {
@@ -23,20 +25,25 @@ export const profilePageReducer = (state: ProfilePageType = initialState, action
                 posts: [newPost, ...state.posts]
             }
         }
-        case "SET-PROFILE-USER": {
+        case "SET-PROFILE-USER":
             return {
                 ...state,
                 profile: action.payload.profile
             }
-        }
+        case "SET-STATUS":
+            return {
+                ...state,
+                status: action.payload.status
+            }
         default:
             return state
     }
 }
 
-export type GeneralACType = addPostACType | setProfileUserACType
+export type GeneralACType = addPostACType | setProfileUserACType | SetStatusACType
 type addPostACType = ReturnType<typeof addPostAC>
 type setProfileUserACType = ReturnType<typeof setProfileUser>
+type SetStatusACType = ReturnType<typeof setStatus>
 
 
 // ACTION CREATORS
@@ -56,13 +63,31 @@ export const setProfileUser = (profile: ProfileResponseType) => {
         }
     } as const
 }
+export const setStatus = (status: string) => {
+    return {
+        type: 'SET-STATUS',
+        payload: {
+            status
+        }
+    } as const
+}
 
 // THUNK CREATORS
 export const getProfile = (userId: string) => (dispatch: Dispatch) => {
     dispatch(toggleIsFetching(true))
-    usersAPI.getProfile(userId)
+    profileAPI.getProfile(userId)
         .then(data => {
             dispatch(setProfileUser(data))
             dispatch(toggleIsFetching(false))
+        })
+}
+export const getStatus = (userId: string) => (dispatch: Dispatch) => {
+    profileAPI.getStatus(userId)
+        .then(data => {
+                dispatch(setStatus(data))
+            console.log(data)
+        })
+        .catch((e: AxiosError) => {
+           alert(e.message)
         })
 }

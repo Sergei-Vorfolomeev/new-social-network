@@ -8,16 +8,17 @@ import CircularProgress from "@mui/material/CircularProgress";
 type ProfilePagePropsType = {
     profile: ProfileResponseType | null
     isFetching: boolean
+    status: string
 }
 
-export const Profile: React.FC<ProfilePagePropsType> = ({profile, isFetching}: ProfilePagePropsType) => {
-
+export const Profile: React.FC<ProfilePagePropsType> = ({profile, isFetching ,status}: ProfilePagePropsType) => {
+    debugger
         return (
             <>
                 {isFetching
                     ? <CircularProgress />
                     : <div className={styles.content}>
-                        <ProfileInfo profile={profile}/>
+                        <ProfileInfo profile={profile} status={status}/>
                         <MyPostsContainer/>
                     </div>}
             </>

@@ -5,9 +5,11 @@ import {ProfileStatus} from "../ProfileStatus";
 
 type ProfileInfoPropsType = {
     profile: ProfileResponseType | null
+    status: string
 }
 
 export const ProfileInfo = (props: ProfileInfoPropsType) => {
+   // debugger
     // if (!props.profile) {
     //     <Preloader/>
     // } else {
@@ -22,7 +24,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
                 </div>
                 <div className="description">
                     <h3>{props.profile?.fullName}</h3>
-                    <ProfileStatus status={props.profile?.aboutMe}/>
+                    <ProfileStatus status={props.status}/>
                     <p>{props.profile?.contacts.facebook}</p>
                     <p>{props.profile?.contacts.github}</p>
                     <p>{props.profile?.contacts.instagram}</p>

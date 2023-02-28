@@ -2,7 +2,7 @@ import {Profile} from "./Profile";
 import React from "react";
 import {connect} from "react-redux";
 import {AppRootStateType, ProfileResponseType} from "../../store/store";
-import {getProfile, setProfileUser} from "../../store/profilePageReducer";
+import {getProfile, getStatus, setProfileUser} from "../../store/profilePageReducer";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {compose} from "redux";
 import {toggleIsFetching} from "../../store/UsersPageReducer";
@@ -14,12 +14,14 @@ class ProfileAPIContainerClass extends React.Component<ProfilePropsType, Profile
         let userId = this.props.params.userId
         if (!userId) userId = '2'
         this.props.getProfile(userId)
+        this.props.getStatus(userId)
     }
 
     render() {
         return <Profile {...this.props}
                         profile={this.props.profile}
-                        isFetching={this.props.isFetching}/>
+                        isFetching={this.props.isFetching}
+                        status={this.props.status}/>
     }
 }
 
@@ -28,11 +30,13 @@ type ProfilePropsType = MapStateToPropsType & MapDispatchToPropsType & WithRoute
 type MapStateToPropsType = {
     profile: null | ProfileResponseType
     isFetching: boolean
+    status: string
 }
 type MapDispatchToPropsType = {
     setProfileUser: (profile: ProfileResponseType) => void
     toggleIsFetching: (value: boolean) => void
     getProfile: (userId: string) => void
+    getStatus: (userId: string) => void
 }
 type WithRouterProps = {
     location: ReturnType<typeof useLocation>;
@@ -45,12 +49,14 @@ const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
     return {
         profile: state.profilePage.profile,
         isFetching: state.usersPage.isFetching,
+        status: state.profilePage.status
     }
 }
 const mapDispatchToProps: MapDispatchToPropsType = {
     setProfileUser,
     toggleIsFetching,
-    getProfile
+    getProfile,
+    getStatus
 }
 
 // WITH ROUTER

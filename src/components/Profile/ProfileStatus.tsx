@@ -1,13 +1,13 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 
 type ProfileStatusPropsType = {
-    status?: string
+    status: string
 }
 
 export const ProfileStatus = ({status}: ProfileStatusPropsType) => {
 
     const [editMode, setEditMode] = useState<boolean>(false)
-    const [newStatus, setNewStatus] = useState<string | undefined>(status)
+    const [newStatus, setNewStatus] = useState<string>(status)
 
     const switchEditMode = () => {
         setEditMode(!editMode)
@@ -23,6 +23,7 @@ export const ProfileStatus = ({status}: ProfileStatusPropsType) => {
 
     return (
         <div>
+            STATUS:
             {editMode
                 ? <div><input type="text"
                               value={newStatus}

@@ -33,6 +33,7 @@ export type StateType = {
 export type ProfilePageType = {
     posts: PostsType[]
     profile: null | ProfileResponseType
+    status: string
 }
 export type MessagePageType = {
     friendsInMessages: FriendsInMessagesType[]
