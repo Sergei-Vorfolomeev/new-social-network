@@ -14,7 +14,13 @@ export const ProfileStatus = ({status, updateStatus}: ProfileStatusPropsType) =>
     const [newStatus, setNewStatus] = useState<string>(status)
 
     const switchEditMode = () => {
-        setEditMode(!editMode)
+        if (editMode) {
+            setEditMode(!editMode)
+            updateStatus(newStatus)
+        } else {
+            setEditMode(!editMode)
+        }
+
     }
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setNewStatus(e.currentTarget.value.trim())
@@ -22,7 +28,6 @@ export const ProfileStatus = ({status, updateStatus}: ProfileStatusPropsType) =>
     const onEnterHandler = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             switchEditMode()
-            updateStatus(newStatus)
         }
     }
     console.log(status)
