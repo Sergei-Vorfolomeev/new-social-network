@@ -91,3 +91,13 @@ export const getStatus = (userId: string) => (dispatch: Dispatch) => {
            alert(e.message)
         })
 }
+export const updateStatus = (newStatus: string) => (dispatch: Dispatch) => {
+    profileAPI.updateStatus(newStatus)
+        .then(data => {
+            dispatch(setStatus(newStatus))
+            console.log(data)
+        })
+        .catch((e: AxiosError) => {
+            alert(e.message)
+        })
+}

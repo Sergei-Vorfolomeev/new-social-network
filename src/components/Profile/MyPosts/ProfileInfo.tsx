@@ -6,6 +6,7 @@ import {ProfileStatus} from "../ProfileStatus";
 type ProfileInfoPropsType = {
     profile: ProfileResponseType | null
     status: string
+    updateStatus: (newStatus: string) => void
 }
 
 export const ProfileInfo = (props: ProfileInfoPropsType) => {
@@ -13,6 +14,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
     // if (!props.profile) {
     //     <Preloader/>
     // } else {
+    console.log(props.status)
     return (
         <div className={styles.profileInfo}>
             <img
@@ -24,7 +26,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
                 </div>
                 <div className="description">
                     <h3>{props.profile?.fullName}</h3>
-                    <ProfileStatus status={props.status}/>
+                    <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                     <p>{props.profile?.contacts.facebook}</p>
                     <p>{props.profile?.contacts.github}</p>
                     <p>{props.profile?.contacts.instagram}</p>

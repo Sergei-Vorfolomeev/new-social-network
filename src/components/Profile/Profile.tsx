@@ -9,16 +9,18 @@ type ProfilePagePropsType = {
     profile: ProfileResponseType | null
     isFetching: boolean
     status: string
+    updateStatus: (newStatus: string) => void
 }
 
-export const Profile: React.FC<ProfilePagePropsType> = ({profile, isFetching ,status}: ProfilePagePropsType) => {
-    debugger
+export const Profile: React.FC<ProfilePagePropsType> = ({profile, isFetching, status, updateStatus}: ProfilePagePropsType) => {
         return (
             <>
                 {isFetching
                     ? <CircularProgress />
                     : <div className={styles.content}>
-                        <ProfileInfo profile={profile} status={status}/>
+                        <ProfileInfo profile={profile}
+                                     status={status}
+                                     updateStatus={updateStatus}/>
                         <MyPostsContainer/>
                     </div>}
             </>

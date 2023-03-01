@@ -2,9 +2,13 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 
 type ProfileStatusPropsType = {
     status: string
+    updateStatus: (newStatus: string) => void
+
 }
 
-export const ProfileStatus = ({status}: ProfileStatusPropsType) => {
+export const ProfileStatus = ({status, updateStatus}: ProfileStatusPropsType) => {
+
+    console.log(status)
 
     const [editMode, setEditMode] = useState<boolean>(false)
     const [newStatus, setNewStatus] = useState<string>(status)
@@ -18,8 +22,10 @@ export const ProfileStatus = ({status}: ProfileStatusPropsType) => {
     const onEnterHandler = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             switchEditMode()
+            updateStatus(newStatus)
         }
     }
+    console.log(status)
 
     return (
         <div>
@@ -32,7 +38,7 @@ export const ProfileStatus = ({status}: ProfileStatusPropsType) => {
                               onChange={onChangeHandler}
                               onKeyDown={onEnterHandler}/>
                 </div>
-                : <div><span onDoubleClick={switchEditMode}>{newStatus}</span></div>
+                : <div><span onDoubleClick={switchEditMode}>{status || 'No status'}</span></div>
             }
         </div>
     );
