@@ -5,9 +5,15 @@ import {NavLink} from "react-router-dom";
 type HeaderPropsType = {
     isAuth: boolean
     login: string | null
+    logout: () => void
 }
 
-export const Header = ({isAuth, login}: HeaderPropsType) => {
+export const Header = ({isAuth, login, logout}: HeaderPropsType) => {
+
+    const logOutHandler = () => {
+        logout()
+    }
+
     return (
         <header className={styles.header}>
             {/*<img*/}
@@ -17,7 +23,7 @@ export const Header = ({isAuth, login}: HeaderPropsType) => {
                 src="https://pngimg.com/uploads/alien/alien_PNG21.png"
                 alt='logo'/>
             {isAuth
-                ? <div className={styles.name}>{login}</div>
+                ? <div className={styles.name}>{login}<button onClick={logOutHandler}>Logout</button></div>
                 : <NavLink to={'/login'} className={styles.login}>Login</NavLink>
             }
         </header>

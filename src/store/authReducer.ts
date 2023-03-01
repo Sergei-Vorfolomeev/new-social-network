@@ -89,6 +89,16 @@ export const logInTC = (data: LoginType) => (dispatch: Dispatch) => {
             }
         })
 }
+export const logOutTC = () => (dispatch: Dispatch) => {
+    authAPI.logOut()
+        .then(res => {
+            if (res.resultCode === 0) {
+                dispatch(logInAC(false))
+            } else {
+                alert(res.messages[0])
+            }
+        })
+}
 
 
 
