@@ -1,5 +1,5 @@
 import {Dispatch} from "redux";
-import {authAPI} from "../api/api";
+import {authAPI, LoginType} from "../api/api";
 
 type initialStateType = {
     id: number | null,
@@ -23,14 +23,20 @@ export const authReducer = (state: initialStateType = initialState, action: Acti
                 ...action.payload.data,
                 isAuth: true
             }
+        case "LOGIN":
+            return {
+                ...state,
+                isAuth: action.payload.value
+            }
         default:
             return state
     }
 }
 
 // TYPES
-type ActionsType = SetUserDataACType
+type ActionsType = SetUserDataACType | LogInACType
 type SetUserDataACType = ReturnType<typeof setUserData>
+type LogInACType = ReturnType<typeof logInAC>
 
 export type AuthMeResponseType = {
     data: DataAuthMeResponseType,
@@ -53,6 +59,14 @@ export const setUserData = (data: DataAuthMeResponseType) => {
         }
     } as const
 }
+export const logInAC = (value: boolean) => {
+    return {
+        type: 'LOGIN',
+        payload: {
+            value
+        }
+    } as const
+}
 
 // THUNK CREATORS
 export const meTC = () => (dispatch: Dispatch) => {
@@ -62,6 +76,16 @@ export const meTC = () => (dispatch: Dispatch) => {
                 dispatch(setUserData(data.data))
             } else {
                 alert(data.messages[0])
+            }
+        })
+}
+export const logInTC = (data: LoginType) => (dispatch: Dispatch) => {
+    authAPI.loginIn(data)
+        .then(res => {
+            if (res.resultCode === 0) {
+                dispatch(logInAC(true))
+            } else {
+                alert(res.messages[0])
             }
         })
 }

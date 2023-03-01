@@ -2,6 +2,15 @@ import axios from "axios";
 import {ResponseType} from "../store/store";
 import {AuthMeResponseType} from "../store/authReducer";
 
+// TYPES
+export type LoginType = {
+    email: string
+    password: string
+    rememberMe?: boolean
+    captcha?: string
+}
+
+
 const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     withCredentials: true,
@@ -55,4 +64,8 @@ export const authAPI = {
         return instance.get<AuthMeResponseType>(`auth/me`)
             .then(response => response.data)
     },
+    loginIn (data: LoginType) {
+        return instance.post<ResponseType<{userId: number}>>('/auth/login', data)
+            .then(response => response.data)
+    }
 }

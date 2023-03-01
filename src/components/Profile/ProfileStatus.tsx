@@ -34,7 +34,6 @@ export const ProfileStatus = ({status, updateStatus}: ProfileStatusPropsType) =>
 
     return (
         <div>
-            STATUS:
             {editMode
                 ? <div><input type="text"
                               value={newStatus}

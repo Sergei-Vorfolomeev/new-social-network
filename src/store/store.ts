@@ -1,10 +1,11 @@
-import {applyMiddleware, combineReducers, legacy_createStore} from "redux";
+import {AnyAction, applyMiddleware, combineReducers, legacy_createStore} from "redux";
 import {profilePageReducer} from "./profilePageReducer";
 import {messagePageReducer} from "./messagePageReducer";
 import {navBarReducer} from "./navBarReducer";
 import {UsersPageReducer} from "./UsersPageReducer";
 import {authReducer} from "./authReducer";
-import thunkMiddleWare from 'redux-thunk'
+import thunkMiddleWare, {ThunkDispatch} from 'redux-thunk'
+import {useDispatch} from "react-redux";
 
 export const rootReducer = combineReducers({
     profilePage: profilePageReducer,
@@ -17,6 +18,9 @@ export const rootReducer = combineReducers({
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunkMiddleWare))
 
 export type AppRootStateType = ReturnType<typeof rootReducer>
+
+export type AppThunkDispatchType = ThunkDispatch<AppRootStateType, any, AnyAction>
+export const useAppDispatch = () => useDispatch<AppThunkDispatchType>()
 
 // export type StoreType = {
 //     _state: StateType

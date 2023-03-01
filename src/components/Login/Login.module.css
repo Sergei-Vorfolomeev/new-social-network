@@ -1,0 +1,28 @@
+.login {
+display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.email {
+    margin: 10px;
+}
+
+.password {
+    margin: 10px;
+}
+
+.rememberMe {
+    margin: 10px;
+}
+.btn {
+    margin: 10px;
+
+}
