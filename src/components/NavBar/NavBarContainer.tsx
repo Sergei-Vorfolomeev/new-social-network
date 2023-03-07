@@ -2,7 +2,7 @@ import React from 'react';
 
 import {connect} from "react-redux";
 import {NavBar} from "./NavBar";
-import {AppRootStateType, NavBarType} from "../../store/store";
+import {AppRootStateType, NavBarType} from "../../app/store";
 import {Dispatch} from "redux";
 
 

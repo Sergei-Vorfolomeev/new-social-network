@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ProfileInfo.module.css'
-import {ProfileResponseType} from "../../../store/store";
+import {ProfileResponseType} from "../../../app/store";
 import {ProfileStatus} from "../ProfileStatus";
 
 type ProfileInfoPropsType = {
@@ -14,7 +14,6 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
     // if (!props.profile) {
     //     <Preloader/>
     // } else {
-    console.log(props.status)
     return (
         <div className={styles.profileInfo}>
             <img

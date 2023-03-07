@@ -3,12 +3,9 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 type ProfileStatusPropsType = {
     status: string
     updateStatus: (newStatus: string) => void
-
 }
 
 export const ProfileStatus = ({status, updateStatus}: ProfileStatusPropsType) => {
-
-    console.log(status)
 
     const [editMode, setEditMode] = useState<boolean>(false)
     const [newStatus, setNewStatus] = useState<string>(status)
@@ -30,7 +27,6 @@ export const ProfileStatus = ({status, updateStatus}: ProfileStatusPropsType) =>
             switchEditMode()
         }
     }
-    console.log(status)
 
     return (
         <div>

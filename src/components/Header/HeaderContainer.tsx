@@ -1,14 +1,10 @@
 import React from 'react';
 import {Header} from "./Header";
 import {connect} from "react-redux";
-import {AppRootStateType} from "../../store/store";
+import {AppRootStateType} from "../../app/store";
 import {AuthMeResponseType, DataAuthMeResponseType, logOutTC, meTC, setUserData} from "../../store/authReducer";
 
 class HeaderAPIContainerClass extends React.Component<HeaderPropsType, AuthMeResponseType> {
-
-    componentDidMount() {
-        this.props.me()
-    }
 
     render() {
         return (

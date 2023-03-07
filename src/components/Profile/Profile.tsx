@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Profile.module.css'
 import {ProfileInfo} from "./MyPosts/ProfileInfo";
 import {MyPostsContainer} from "./MyPosts/MyPostsContainer";
-import {ProfileResponseType} from "../../store/store";
+import {ProfileResponseType} from "../../app/store";
 import CircularProgress from "@mui/material/CircularProgress";
 
 type ProfilePagePropsType = {

@@ -1,13 +1,15 @@
 import {AnyAction, applyMiddleware, combineReducers, legacy_createStore} from "redux";
-import {profilePageReducer} from "./profilePageReducer";
-import {messagePageReducer} from "./messagePageReducer";
-import {navBarReducer} from "./navBarReducer";
-import {UsersPageReducer} from "./UsersPageReducer";
-import {authReducer} from "./authReducer";
+import {profilePageReducer} from "../store/profilePageReducer";
+import {messagePageReducer} from "../store/messagePageReducer";
+import {navBarReducer} from "../store/navBarReducer";
+import {UsersPageReducer} from "../store/UsersPageReducer";
+import {authReducer} from "../store/authReducer";
 import thunkMiddleWare, {ThunkDispatch} from 'redux-thunk'
 import {useDispatch} from "react-redux";
+import {appReducer} from "./appReducer";
 
 export const rootReducer = combineReducers({
+    app: appReducer,
     profilePage: profilePageReducer,
     messagePage: messagePageReducer,
     navBar: navBarReducer,

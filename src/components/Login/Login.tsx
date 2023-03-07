@@ -3,7 +3,9 @@ import {ErrorMessage, Field, Form, Formik} from 'formik';
 import * as Yup from 'yup';
 import styles from './Login.module.css'
 import {logInTC} from "../../store/authReducer";
-import {useAppDispatch} from "../../store/store";
+import {AppRootStateType, useAppDispatch} from "../../app/store";
+import {useSelector} from "react-redux";
+import {ProfileContainer} from "../Profile/ProfileContainer";
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -14,9 +16,11 @@ const SignupSchema = Yup.object().shape({
 });
 
 export const Login = () => {
+    const isAuth = useSelector<AppRootStateType, boolean>(state => state.auth.isAuth)
     const dispatch = useAppDispatch()
     // Pass the useFormik() hook initial form values and a submit function that will
     // be called when the form is submitted
+    if (isAuth) return <ProfileContainer/>
     return (
         <div className={styles.login}>
             <Formik

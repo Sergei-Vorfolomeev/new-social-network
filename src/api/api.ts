@@ -1,5 +1,5 @@
 import axios from "axios";
-import {ResponseType} from "../store/store";
+import {ResponseType} from "../app/store";
 import {AuthMeResponseType} from "../store/authReducer";
 
 // TYPES

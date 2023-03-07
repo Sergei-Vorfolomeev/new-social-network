@@ -1,7 +1,7 @@
 import {Profile} from "./Profile";
 import React from "react";
 import {connect} from "react-redux";
-import {AppRootStateType, ProfileResponseType} from "../../store/store";
+import {AppRootStateType, ProfileResponseType} from "../../app/store";
 import {getProfile, getStatus, setProfileUser, updateStatus} from "../../store/profilePageReducer";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {compose} from "redux";

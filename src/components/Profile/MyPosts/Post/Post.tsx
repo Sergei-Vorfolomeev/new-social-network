@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Post.module.css'
 import {useSelector} from "react-redux";
-import {AppRootStateType, PostsType} from "../../../../store/store";
+import {AppRootStateType, PostsType} from "../../../../app/store";
 
 type PostType = {
     id: string

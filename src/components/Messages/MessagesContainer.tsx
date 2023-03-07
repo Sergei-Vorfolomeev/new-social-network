@@ -1,7 +1,7 @@
 import React from 'react';
 import {sendMessageAC} from "../../store/messagePageReducer";
 import {connect} from "react-redux";
-import {AppRootStateType, MessagePageType} from "../../store/store";
+import {AppRootStateType, MessagePageType} from "../../app/store";
 import {compose, Dispatch} from "redux";
 import {Messages} from "./Messages";
 import {ToAuthRedirect} from "../../HOC/ToAuthRedirect";

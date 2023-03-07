@@ -1,4 +1,4 @@
-import {ProfilePageType, ProfileResponseType} from "./store";
+import {ProfilePageType, ProfileResponseType} from "../app/store";
 import {v1} from "uuid";
 import {Dispatch} from "redux";
 import {profileAPI, usersAPI} from "../api/api";
@@ -85,7 +85,6 @@ export const getStatus = (userId: string) => (dispatch: Dispatch) => {
     profileAPI.getStatus(userId)
         .then(data => {
                 dispatch(setStatus(data))
-            console.log(data)
         })
         .catch((e: AxiosError) => {
            alert(e.message)

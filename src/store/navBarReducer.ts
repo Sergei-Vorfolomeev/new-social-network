@@ -1,4 +1,4 @@
-import {NavBarType} from "./store";
+import {NavBarType} from "../app/store";
 import {v1} from "uuid";
 
 const initialState = {

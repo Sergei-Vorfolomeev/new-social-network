@@ -70,7 +70,7 @@ export const logInAC = (value: boolean) => {
 
 // THUNK CREATORS
 export const meTC = () => (dispatch: Dispatch) => {
-    authAPI.me()
+   return authAPI.me()
         .then(data => {
             if (data.resultCode === 0) {
                 dispatch(setUserData(data.data))

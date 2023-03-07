@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {AppRootStateType} from "../../store/store";
+import {AppRootStateType} from "../../app/store";
 import {
     follow, followTC,
     getUsersTC,
