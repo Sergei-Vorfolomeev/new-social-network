@@ -14,6 +14,14 @@ import {
     UsersResponseType,
 } from "../../store/UsersPageReducer";
 import {Users} from "./Users";
+import {
+    getCurrentPage,
+    getFollowingProgress,
+    getIsFetching,
+    getPageSize,
+    getTotalCount,
+    getUsers
+} from "../../store/users-selectors";
 
 // TYPES
 type MapStateToPropsType = {
@@ -25,12 +33,7 @@ type MapStateToPropsType = {
     followingProgress: number[]
 }
 type MapDispatchToPropsType = {
-    // follow: (userID: number) => void,
-    // unfollow: (userID: number) => void,
     setUsers: (pageNumber: number, pageSize: number) => void,
-    // setTotalCount: (totalCount: number) => void
-    // setCurrentPage: (pageNumber: number) => void
-    // toggleIsFetching: (value: boolean) => void
     toggleFollowingProgress: (isFetching: boolean, id: number) => void
     getUsers: (currentPage: number, pageSize: number) => void
     follow: (id: number) => void
@@ -41,20 +44,15 @@ export type UsersPropsType = MapStateToPropsType & MapDispatchToPropsType
 // MSTP / MDTP
 const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
     return {
-        users: state.usersPage.items,
-        pageSize: state.usersPage.pageSize,
-        currentPage: state.usersPage.currentPage,
-        totalCount: state.usersPage.totalCount,
-        isFetching: state.usersPage.isFetching,
-        followingProgress: state.usersPage.followingProgress
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        currentPage: getCurrentPage(state),
+        totalCount: getTotalCount(state),
+        isFetching: getIsFetching(state),
+        followingProgress: getFollowingProgress(state)
     }
 }
 const mapDispatchToProps = {
-    // follow,
-    // unfollow,
-    // setTotalCount,
-    // setCurrentPage,
-    // toggleIsFetching,
     toggleFollowingProgress,
     getUsers: getUsersTC,
     setUsers: setUsersTC,
