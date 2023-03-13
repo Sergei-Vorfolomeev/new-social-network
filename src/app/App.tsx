@@ -31,6 +31,7 @@ export class App extends React.Component <AppPropsType> {
                 <div className="appWrapperContent">
                     <Routes>
                         <Route path={'/login'} element={<Login/>}/>
+                        <Route path={'/'} element={<Login/>}/>
                         <Route path={'/profile'} element={<ProfileContainer/>}/>
                         <Route path={'/profile/:userId'} element={<ProfileContainer/>}/>
                         <Route path={'/users/*'} element={<UsersContainer/>}/>

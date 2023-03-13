@@ -1,9 +1,9 @@
-import React, {useRef} from 'react';
+import React, {memo, useRef} from 'react';
 import styles from './MyPosts.module.css'
 import {Post} from "./Post/Post";
 import {MyPostsPropsType} from "./MyPostsContainer";
 
-export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
+export const MyPosts: React.FC<MyPostsPropsType> = memo((props) => {
 
     const newPostElement = useRef<HTMLTextAreaElement>(null)
 
@@ -14,7 +14,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
             newPostElement.current.value = ''
         }
     }
-
+    console.log('render')
     return (
         <div className={styles.myPosts}>
             My posts
@@ -35,4 +35,4 @@ export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
             })}
         </div>
     );
-};
+});
