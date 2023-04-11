@@ -1,0 +1,23 @@
+@import 'common/scss/variables.scss';
+
+.header {
+  grid-area: h;
+  background-color: $purple;
+}
+
+.header img {
+  position: relative;
+  left: 50px;
+  max-height: 100px;
+}
+
+.login {
+  float: right;
+  color: white;
+  text-decoration: none;
+}
+
+.name {
+  float: right;
+  color: white;
+}

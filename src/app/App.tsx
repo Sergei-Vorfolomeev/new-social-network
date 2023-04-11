@@ -1,18 +1,20 @@
 import React from 'react';
-import './App.css';
+import 'app/App.module.scss';
 import {Route, Routes} from "react-router-dom";
-import {News} from "../components/News/News";
-import {MessagesContainer} from "../components/Messages/MessagesContainer";
-import {NavBarContainer} from "../components/NavBar/NavBarContainer";
-import {UsersContainer} from "../components/Users/UsersContainer";
-import {ProfileContainer, withRouter} from "../components/Profile/ProfileContainer";
-import {HeaderContainer} from "../components/Header/HeaderContainer";
-import {Login} from "../components/Login/Login";
+import {News} from "features/components/News/News";
+import {MessagesContainer} from "features/components/Messages/MessagesContainer";
+import {NavBarContainer} from "features/components/NavBar/NavBarContainer";
+import {UsersContainer} from "features/components/Users/UsersContainer";
+import {ProfileContainer, withRouter} from "features/components/Profile/ProfileContainer";
+import {HeaderContainer} from "features/components/Header/HeaderContainer";
+import {Login} from "features/components/Login/Login";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {AppRootStateType} from "./store";
-import {Preloader} from "../components/common/Preloader/Preloader";
+import {Preloader} from "features/components/common/Preloader/Preloader";
 import {initializeAppTC} from "./appReducer";
+import styles from './App.module.scss'
+import {Recommends} from "features/components/recommends/Recommends";
 
 
 export class App extends React.Component <AppPropsType> {
@@ -25,10 +27,10 @@ export class App extends React.Component <AppPropsType> {
         if (!this.props.isInitialized) return <Preloader/>
 
         return (
-            <div className="appWrapper">
-                <HeaderContainer/>
+            <div className={styles.appWrapper}>
+                {/*<HeaderContainer/>*/}
                 <NavBarContainer/>
-                <div className="appWrapperContent">
+                <div className={styles.appWrapperContent}>
                     <Routes>
                         <Route path={'/login'} element={<Login/>}/>
                         <Route path={'/'} element={<Login/>}/>
@@ -39,6 +41,7 @@ export class App extends React.Component <AppPropsType> {
                         <Route path={'/news'} element={<News/>}/>
                     </Routes>
                 </div>
+                <Recommends/>
             </div>
         );
     }

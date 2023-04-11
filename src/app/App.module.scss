@@ -1,0 +1,30 @@
+@import 'common/scss/variables.scss';
+
+* {
+  font-size: 15px;
+  font-family: 'dm sans', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  //color: $secondary;
+}
+
+
+.appWrapper {
+  display: grid;
+  //grid-template-rows: 100px 1fr;
+  grid-template-areas: 'nav cont rec';
+  grid-template-columns: 2fr 7fr 3fr;
+  padding: 0 100px;
+  background: #edf2f6;
+}
+
+.appWrapperContent {
+  grid-area: cont;
+  background-color: #FCE2DB;
+}
+
+
+
+
+
