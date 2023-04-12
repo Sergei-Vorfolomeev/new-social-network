@@ -5,6 +5,7 @@
     box-shadow: $box-shadow-sm;
     border-radius: $border-radius-xl;
     padding: 2rem;
+    margin-bottom: 2rem;
 
     .mainInfoContainer {
         display: flex;
@@ -31,6 +32,7 @@
                     font-size: 2rem;
                     font-weight: 700;
                     margin-bottom: 5px;
+                    letter-spacing: .5px;
                 }
             }
         }
@@ -53,6 +55,15 @@
         .contactsInfoBlock {
             width: 50%;
             padding-right: 50px;
+
+            .link {
+                text-decoration: none;
+                color: $secondary
+            }
+            .link:hover {
+                text-decoration: none;
+                color: $primary-text
+            }
         }
     }
 

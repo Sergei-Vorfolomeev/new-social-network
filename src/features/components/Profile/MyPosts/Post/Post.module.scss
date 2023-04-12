@@ -1,0 +1,66 @@
+@import 'common/scss/variables.scss';
+
+.myPostContainer {
+  background: #fff;
+  box-shadow: $box-shadow-sm;
+  border-radius: $border-radius-xl;
+  padding: 2rem;
+  display: flex;
+  max-width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .avatar img {
+    width: 55px;
+    border-radius: 50%;
+    box-shadow: $box-shadow-lg;
+    margin-right: 1rem;
+  }
+
+  .postContent {
+    position: relative;
+    width: 90%;
+
+    .name {
+      color: $black;
+      font-weight: 500;
+      margin-bottom: .5rem;
+    }
+
+    .postText {
+      max-width: 90%;
+    }
+
+    .like {
+      display: flex;
+      align-items: end;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      cursor: pointer;
+
+      &:hover {
+        color: $danger-text;
+      }
+    }
+  }
+
+  .textPost {
+
+  }
+}
+
+//
+//
+//
+//.nonActive img {
+//    border-radius: 100%;
+//    max-height: 50px;
+//    background-color: #80489C;
+//    box-shadow: 3px -3px 10px grey;
+//}
+//.nonActive {
+//    padding: 10px 0;
+//}

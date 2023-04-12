@@ -1,9 +1,9 @@
 import {AnyAction, applyMiddleware, combineReducers, legacy_createStore} from "redux";
-import {profilePageReducer} from "../store/profilePageReducer";
-import {messagePageReducer} from "../store/messagePageReducer";
-import {navBarReducer} from "../store/navBarReducer";
-import {UsersPageReducer} from "../store/UsersPageReducer";
-import {authReducer} from "../store/authReducer";
+import {profilePageReducer, ProfilePageType} from "store/profilePageReducer";
+import {messagePageReducer} from "store/messagePageReducer";
+import {navBarReducer} from "store/navBarReducer";
+import {UsersPageReducer} from "store/UsersPageReducer";
+import {authReducer} from "store/authReducer";
 import thunkMiddleWare, {ThunkDispatch} from 'redux-thunk'
 import {useDispatch} from "react-redux";
 import {appReducer} from "./appReducer";
@@ -23,23 +23,10 @@ export type AppRootStateType = ReturnType<typeof rootReducer>
 
 export type AppThunkDispatchType = ThunkDispatch<AppRootStateType, any, AnyAction>
 export const useAppDispatch = () => useDispatch<AppThunkDispatchType>()
-
-// export type StoreType = {
-//     _state: StateType
-//     getState: () => StateType
-//     _callSubscriber: (state: StateType) => void
-//     subscribe: (observer: (state: StateType) => void) => void
-//     dispatch: (action: GeneralACType) => void
-// }
 export type StateType = {
     profilePage: ProfilePageType
     messagePage: MessagePageType
     navBar: NavBarType
-}
-export type ProfilePageType = {
-    posts: PostsType[]
-    profile: null | ProfileResponseType
-    status: string
 }
 export type MessagePageType = {
     friendsInMessages: FriendsInMessagesType[]
@@ -64,8 +51,7 @@ type LocationType = {
 export type NavBarType = {
     friendsInNavBar: FriendsInNavBar[]
 }
-
-export type PostsType = {
+export type PostType = {
     id: string
     text: string
     likesCount: number
@@ -89,7 +75,6 @@ export type ResponseType<T = {}> = {
     messages: string[]
     data: T
 }
-
 export type ProfileResponseType = {
     aboutMe: string,
     contacts: ContactType,
@@ -113,6 +98,13 @@ type PhotosType = {
     small: string | undefined
     large: string | undefined
 }
+// export type StoreType = {
+//     _state: StateType
+//     getState: () => StateType
+//     _callSubscriber: (state: StateType) => void
+//     subscribe: (observer: (state: StateType) => void) => void
+//     dispatch: (action: GeneralACType) => void
+// }
 
 //@ts-ignore
 window.store = store

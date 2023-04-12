@@ -1,11 +1,17 @@
-import {ProfilePageType, ProfileResponseType} from "../app/store";
+import {PostType, ProfileResponseType} from "app/store";
 import {v1} from "uuid";
 import {Dispatch} from "redux";
-import {profileAPI, usersAPI} from "../api/api";
+import {profileAPI} from "api/api";
 import {toggleIsFetching} from "./UsersPageReducer";
 import {AxiosError} from "axios";
 
-const initialState = {
+export type ProfilePageType = {
+    posts: PostType[]
+    profile: null | ProfileResponseType
+    status: string
+}
+
+const initialState: ProfilePageType = {
     posts: [
         {id: v1(), text: 'Life is here?', likesCount: 0,},
         {id: v1(), text: 'It\'s my first post!', likesCount: 8,},

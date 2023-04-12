@@ -3,6 +3,7 @@ import s from 'features/components/Profile/MyPosts/ProfileInfo.module.scss'
 import {ProfileResponseType} from "app/store";
 import {ProfileStatus} from "features/components/Profile/ProfileStatus";
 import Button from "@mui/material/Button";
+import defaultAvatar from 'common/assets/img/default-avatar.png'
 
 type ProfileInfoPropsType = {
     profile: ProfileResponseType | null
@@ -11,43 +12,56 @@ type ProfileInfoPropsType = {
 }
 
 export const ProfileInfo = (props: ProfileInfoPropsType) => {
-   // debugger
+    // debugger
     // if (!props.profile) {
     //     <Preloader/>
     // } else {
     return (
-        <>
             <div className={s.profileInfoContainer}>
-                <div className={s.profileInfo}>
-                   <div className={s.mainInfoContainer}>
-                       <div className={s.mainInfo}>
-                           <div className={s.avaBox}>
-                               <img src={props.profile?.photos.large} alt="" className={s.avatar}/>
-                           </div>
-                           <div className={s.nameAndStatus}>
-                               <h1 className={s.fullName}>{props.profile?.fullName}</h1>
-                               <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
-                           </div>
-                       </div>
-                       <Button variant="outlined" style={{borderRadius: '50rem', fontWeight: '500'}}>Folow</Button>                   </div>
-
-                    <div className={s.otherInfo}>
-                        <div className={s.aboutMeBlock}>
-                            <h2 className={s.aboutMeBlock_title}>About me</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cum facere minima quos repellendus. Blanditiis expedita nesciunt nisi sapiente tempora.</p>
+                <div className={s.mainInfoContainer}>
+                    <div className={s.mainInfo}>
+                        <div className={s.avaBox}>
+                            {props.profile?.photos.large
+                                ? <img src={props.profile?.photos.large} alt="avatar" className={s.avatar}/>
+                                : <img src={defaultAvatar} alt="defaultAvatar" className={s.avatar}/>}
                         </div>
-
-                        <div className={s.contactsInfoBlock}>
-                            <h2 className={s.aboutMeBlock_title}>Contacts</h2>
-                            <p>{props.profile?.contacts.facebook}</p>
-                            <p>{props.profile?.contacts.github}</p>
-                            <p>{props.profile?.contacts.instagram}</p>
+                        <div className={s.nameAndStatus}>
+                            <h1 className={s.fullName}>{props.profile?.fullName}</h1>
+                            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                         </div>
                     </div>
+                    <Button variant="outlined" style={{borderRadius: '50rem', fontWeight: '500'}}>Folow</Button>
+                </div>
 
+                <div className={s.otherInfo}>
+                    <div className={s.aboutMeBlock}>
+                        <h2 className={s.aboutMeBlock_title}>About me</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cum facere minima quos
+                            repellendus. Blanditiis expedita nesciunt nisi sapiente tempora.</p>
+                    </div>
+
+                    <div className={s.contactsInfoBlock}>
+                        <h2 className={s.aboutMeBlock_title}>Contacts</h2>
+
+                        {props.profile?.contacts.facebook || props.profile?.contacts.github || props.profile?.contacts.instagram
+                        ? <div>
+                                <a href={props.profile?.contacts.facebook ? props.profile?.contacts.facebook : '#'}
+                                   className={s.link}>
+                                    {props.profile?.contacts.facebook}
+                                </a> <br/>
+                                <a href={props.profile?.contacts.github ? props.profile?.contacts.github : '#'}
+                                   className={s.link}>
+                                    {props.profile?.contacts.github}
+                                </a> <br/>
+                                <a href={props.profile?.contacts.instagram ? props.profile?.contacts.instagram : '#'}
+                                   className={s.link}>
+                                    {props.profile?.contacts.instagram}
+                                </a> <br/>
+                            </div>
+                        : <span>No provided contacts</span>}
+                    </div>
                 </div>
             </div>
-        </>
     );
 
 };

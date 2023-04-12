@@ -14,7 +14,7 @@
   display: grid;
   //grid-template-rows: 100px 1fr;
   grid-template-areas: 'nav cont rec';
-  grid-template-columns: 2fr 7fr 3fr;
+  grid-template-columns: 16% 59% 25%;
   padding: 0 100px;
   background: #edf2f6;
 }
