@@ -40,9 +40,24 @@
       bottom: 0;
       right: 0;
       cursor: pointer;
+      color: $danger-text;
+      transition: .2s;
 
       &:hover {
-        color: $danger-text;
+        transform: scale(1.1);
+      }
+    }
+    .unlike {
+      display: flex;
+      align-items: end;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      cursor: pointer;
+      transition: .2s;
+
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }

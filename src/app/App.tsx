@@ -4,7 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import {News} from "features/components/News/News";
 import {MessagesContainer} from "features/components/Messages/MessagesContainer";
 import {NavBarContainer} from "features/components/NavBar/NavBarContainer";
-import {UsersContainer} from "features/components/Users/UsersContainer";
+import {_UsersContainer} from "features/components/_Users/_UsersContainer";
 import {ProfileContainer, withRouter} from "features/components/Profile/ProfileContainer";
 import {HeaderContainer} from "features/components/Header/HeaderContainer";
 import {Login} from "features/components/Login/Login";
@@ -14,7 +14,7 @@ import {AppRootStateType} from "./store";
 import {Preloader} from "features/components/common/Preloader/Preloader";
 import {initializeAppTC} from "./appReducer";
 import styles from './App.module.scss'
-import {Recommends} from "features/components/recommends/Recommends";
+import {UsersRecommends} from "features/components/UsersRecommends/UsersRecommends";
 
 
 export class App extends React.Component <AppPropsType> {
@@ -36,12 +36,12 @@ export class App extends React.Component <AppPropsType> {
                         <Route path={'/'} element={<Login/>}/>
                         <Route path={'/profile'} element={<ProfileContainer/>}/>
                         <Route path={'/profile/:userId'} element={<ProfileContainer/>}/>
-                        <Route path={'/users/*'} element={<UsersContainer/>}/>
+                        <Route path={'/users/*'} element={<_UsersContainer/>}/>
                         <Route path={'/messages/*'} element={<MessagesContainer/>}/>
                         <Route path={'/news'} element={<News/>}/>
                     </Routes>
                 </div>
-                <Recommends/>
+                <UsersRecommends/>
             </div>
         );
     }

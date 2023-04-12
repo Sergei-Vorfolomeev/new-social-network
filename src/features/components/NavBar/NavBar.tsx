@@ -6,12 +6,12 @@ import logo from 'common/assets/img/logo.png'
 import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
-import ExploreIcon from '@mui/icons-material/Explore';
+import EmailIcon from '@mui/icons-material/Email';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-export const NavBar = (props: NavBarPropsType) => {
+export const NavBar = ({}: NavBarPropsType) => {
     return (
         <nav className={s.navBar}>
             <div className={s.logoBox}>
@@ -40,10 +40,10 @@ export const NavBar = (props: NavBarPropsType) => {
                     </NavLink>
                 </li>
                 <li className={s.item}>
-                    <NavLink to={'/explore'}
+                    <NavLink to={'/messages'}
                              className={navData => navData.isActive ? s.active : s.nonActive}>
-                        <span className={s.iconItem}><ExploreIcon fontSize={"large"}/></span>
-                        Explore
+                        <span className={s.iconItem}><EmailIcon fontSize={"large"}/></span>
+                        Messages
                     </NavLink>
                 </li>
                 <li className={s.item}>

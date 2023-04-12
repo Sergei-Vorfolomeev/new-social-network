@@ -1,32 +1,40 @@
-import React, {memo, useRef} from 'react';
-import s from 'features/components/Profile/MyPosts/MyPosts.module.scss'
+import React, {ChangeEvent, memo, useState} from 'react';
+import s from './MyPosts.module.scss'
 import {Post} from "features/components/Profile/MyPosts/Post/Post";
 import {MyPostsPropsType} from "features/components/Profile/MyPosts/MyPostsContainer";
 import {AppRootStateType, PostType} from "app/store";
 import {useSelector} from "react-redux";
+import SendIcon from '@mui/icons-material/Send';
 
 export const MyPosts: React.FC<MyPostsPropsType> = memo((props) => {
 
         const posts: PostType[] = useSelector((state: AppRootStateType) => state.profilePage.posts)
-        const newPostElement = useRef<HTMLTextAreaElement>(null)
+
+        const [textPost, setTextPost] = useState('')
+
+        const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+            setTextPost(e.currentTarget.value)
+        }
 
         const addPostHandler = () => {
-            if (newPostElement && newPostElement.current) {
-                let text = newPostElement.current.value
-                props.addPost(text)
-                newPostElement.current.value = ''
-            }
+            props.addPost(textPost)
+            setTextPost('')
         }
-        console.log('render')
+
         return (
             <>
-                <div className={s.myPosts}>
-                    My posts
-                    <div>
-                        <textarea
-                            ref={newPostElement}
-                            placeholder={'Write new post'}/>
-                        <button onClick={addPostHandler}>Add Post</button>
+                <div className={s.myPostsContainer}>
+                    <div className={s.textareaBlock}>
+                        <textarea onChange={onChangeHandler}
+                                  value={textPost}
+                                  className={s.textarea}
+                                  placeholder={'What\'s on your mind'}
+                        />
+                        <button onClick={addPostHandler}
+                                className={s.button}
+                        >
+                            <SendIcon/>
+                        </button>
                     </div>
                     {posts.map((el, index) => {
                         return (

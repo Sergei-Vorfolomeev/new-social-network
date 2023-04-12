@@ -3,7 +3,7 @@ import s from 'features/components/Profile/MyPosts/ProfileInfo.module.scss'
 import {ProfileResponseType} from "app/store";
 import {ProfileStatus} from "features/components/Profile/ProfileStatus";
 import Button from "@mui/material/Button";
-import defaultAvatar from 'common/assets/img/default-avatar.png'
+import defaultAvatar from 'common/assets/img/defaultAva.png'
 
 type ProfileInfoPropsType = {
     profile: ProfileResponseType | null

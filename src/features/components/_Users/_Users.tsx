@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Users.module.css'
+import styles from 'features/components/_Users/_Users.module.css'
 import {ItemsResponseType} from "store/UsersPageReducer";
 import {NavLink} from "react-router-dom";
 import Pagination from '@mui/material/Pagination';
@@ -18,7 +18,7 @@ type PropsType = {
     followingProgress: number[]
 }
 
-export const Users = (props: PropsType) => {
+export const _Users = (props: PropsType) => {
 
     const [page, setPage] = React.useState(1);
     const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
