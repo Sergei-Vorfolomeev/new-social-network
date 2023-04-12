@@ -1,0 +1,12 @@
+@import 'common/scss/variables.scss';
+
+.button {
+    background: #fff;
+    border: $border-width solid $blue;
+    border-radius: $border-radius-pill;
+    padding: .5rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    color: $blue;
+    font-weight: 600;
+}

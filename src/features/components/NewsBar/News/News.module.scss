@@ -1,0 +1,37 @@
+@import 'common/scss/variables.scss';
+
+.newsBlock {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+  .newsInfo {
+
+    .topic {
+      font-size: .8rem;
+    }
+
+    .title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: $black;
+      margin: .3rem 0;
+    }
+
+    .hashtag {
+      font-size: .9rem;
+      color: $blue;
+      cursor: pointer;
+    }
+  }
+
+  .imgContainer img {
+    border-radius: 25%;
+    width: 65px;
+    margin-right: 1rem;
+  }
+}
+
+.newsBlock:not(:last-child) {
+  border-bottom: 1px solid rgba(108, 117, 125, 0.3);
+}

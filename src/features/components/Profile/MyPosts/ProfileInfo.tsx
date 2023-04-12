@@ -2,8 +2,9 @@ import React from 'react';
 import s from 'features/components/Profile/MyPosts/ProfileInfo.module.scss'
 import {ProfileResponseType} from "app/store";
 import {ProfileStatus} from "features/components/Profile/ProfileStatus";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import defaultAvatar from 'common/assets/img/defaultAva.png'
+import {Button} from "common/components/Button/Button";
 
 type ProfileInfoPropsType = {
     profile: ProfileResponseType | null
@@ -16,6 +17,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
     // if (!props.profile) {
     //     <Preloader/>
     // } else {
+
     return (
             <div className={s.profileInfoContainer}>
                 <div className={s.mainInfoContainer}>
@@ -30,7 +32,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
                             <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                         </div>
                     </div>
-                    <Button variant="outlined" style={{borderRadius: '50rem', fontWeight: '500'}}>Folow</Button>
+                    <Button name={'+ Follow'} callback={() => {}}/>
                 </div>
 
                 <div className={s.otherInfo}>

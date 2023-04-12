@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Recommendation.module.scss'
 import {ItemsResponseType} from "store/UsersPageReducer";
 import defaultAvatar from 'common/assets/img/defaultAva.png'
+import {Button} from "common/components/Button/Button";
 
 type PropsType = {
     user: ItemsResponseType
@@ -21,8 +22,9 @@ const Recommendation = ({user}: PropsType) => {
                 </div>
                 <div className={s.buttonBox}>
                     {user.followed
-                        ? <button className={s.button}>Unfollow</button>
-                        : <button className={s.button}>+ Follow</button>}
+                        // ? <button className={s.button}>Unfollow</button>
+                        ? <Button name={'Unfollow'} callback={() => {}}/>
+                        : <Button name={'+ Follow'} callback={() => {}}/>}
                 </div>
             </div>
         </div>

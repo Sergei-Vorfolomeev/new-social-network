@@ -1,5 +1,5 @@
 import {Dispatch} from "redux";
-import {usersAPI} from "../api/api";
+import {usersAPI} from "api/api";
 
 export type UsersResponseType = {
     items: ItemsResponseType[]
@@ -22,28 +22,7 @@ export type ItemsResponseType = {
 }
 
 const initialState = {
-    items: [
-        // {
-        //     "name": "Shubert",
-        //     "id": 1,
-        //     "photos": {
-        //         "small": undefined,
-        //         "large": undefined
-        //     },
-        //     "status": null,
-        //     "followed": false
-        // },
-        // {
-        //     "name": "Hacker",
-        //     "id": 2,
-        //     "photos": {
-        //         "small": undefined,
-        //         "large": undefined
-        //     },
-        //     "status": null,
-        //     "followed": false
-        // }
-    ],
+    items: [],
     totalCount: 0,
     error: null,
     pageSize: 10,
@@ -108,8 +87,8 @@ type GeneralACType =
     SetCurrentPageACType |
     ToggleIsFetchingACType |
     ToggleFollowingProgressACType
-type FollowACType = ReturnType<typeof follow>
-type UnfollowACType = ReturnType<typeof unfollow>
+export type FollowACType = ReturnType<typeof follow>
+export type UnfollowACType = ReturnType<typeof unfollow>
 type SetUsersACType = ReturnType<typeof setUsers>
 type SetTotalCountACType = ReturnType<typeof setTotalCount>
 type SetCurrentPageACType = ReturnType<typeof setCurrentPage>

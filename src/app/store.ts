@@ -7,7 +7,6 @@ import {authReducer} from "store/authReducer";
 import thunkMiddleWare, {ThunkDispatch} from 'redux-thunk'
 import {useDispatch} from "react-redux";
 import {appReducer} from "./appReducer";
-import {usersRecommendationReducer} from "store/usersRecommendationReducer";
 
 export const rootReducer = combineReducers({
     app: appReducer,
@@ -16,7 +15,6 @@ export const rootReducer = combineReducers({
     navBar: navBarReducer,
     usersPage: UsersPageReducer,
     auth: authReducer,
-    usersRecommends: usersRecommendationReducer,
 })
 
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunkMiddleWare))

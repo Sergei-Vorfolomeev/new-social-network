@@ -1,38 +1,68 @@
 import React from 'react';
-import styles from "src/features/components/Users/Users.module.css";
+import s from "./User.module.scss";
+import {ItemsResponseType} from "store/UsersPageReducer";
+import defaultAva from 'common/assets/img/defaultAva.png'
+import {Button} from "common/components/Button/Button";
 
-type UserPropsType = {
-    key: number
-    id: number
-    name: string
-    avatar: string | undefined
-    status: string | null
-    followed: boolean
-    follow: (userID: number) => void
-    unfollow: (userID: number) => void
+type PropsType = {
+    user: ItemsResponseType
+    follow: (userId: number) => void,
+    unfollow: (userId: number) => void,
+    followingProgress: number[]
 }
 
-export const User = (props: UserPropsType) => {
+const buttonStyle = {
+    background: '#0D6EFDFF',
+    color: '#fff'
+}
+
+export const User = ({user, follow, unfollow, followingProgress}: PropsType) => {
     return (
-        <div className={styles.rootContainer}>
-            <div className={styles.avatarAndButtonContainer}>
-                <img src={props.avatar} alt="" className={styles.avatar}/>
-                <div>
-                    {props.followed
-                        ? <button onClick={() => props.unfollow(props.id)}>Unfollow</button>
-                        : <button onClick={() => props.follow(props.id)}>Follow</button>}
-                </div>
+        <div className={s.mainContainer}>
+            <div className={s.avatarContainer}>
+                {user.photos.small
+                  ? <img src={user.photos.small} alt="avatar" className={s.avatar}/>
+                  : <img src={defaultAva} alt="defaultAvatar"
+                   className={s.avatar}/>}
             </div>
-            <div className={styles.infoUserContainer}>
-                <div>
-                    <h4>{props.name}</h4>
-                    {props.status}
+            <div className={s.userInfoBlock}>
+                <div className={s.userInfo}>
+                    <h2 className={s.userName}>{user.name}</h2>
+                    <p className={s.userStatus}>{user.status}</p>
                 </div>
-                {/*<div>*/}
-                {/*    <div>{el.location.country}</div>*/}
-                {/*    {el.location.city}*/}
-                {/*</div>*/}
+                <div className={s.buttonBox}>
+                    {user.followed
+                        ? <Button
+                            name={'Following'}
+                            callback={() => unfollow(user.id)}
+                            disabled={followingProgress.some(id => id === user.id)}
+                            style={buttonStyle}/>
+                        : <Button name={'+ Follow'} callback={() => follow(user.id)}/>}
+                </div>
             </div>
         </div>
+
+
+
+        // <div className={styles.rootContainer}>
+        //     <div className={styles.avatarAndButtonContainer}>
+        //         <img src={props.avatar} alt="" className={styles.avatar}/>
+        //         <div>
+        //             {props.followed
+        //                 ? <button onClick={() => props.unfollow(props.id)}>Unfollow</button>
+        //                 : <button onClick={() => props.follow(props.id)}>Follow</button>}
+        //         </div>
+        //     </div>
+        //     <div className={styles.infoUserContainer}>
+        //         <div>
+        //             <h4>{props.name}</h4>
+        //             {props.status}
+        //         </div>
+        //         {/*<div>*/}
+        //         {/*    <div>{el.location.country}</div>*/}
+        //         {/*    {el.location.city}*/}
+        //         {/*</div>*/}
+        //     </div>
+        // </div>
     );
 };

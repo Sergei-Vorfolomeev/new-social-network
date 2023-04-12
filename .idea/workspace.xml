@@ -4,29 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="design profileInfo">
-      <change afterPath="$PROJECT_DIR$/src/common/assets/img/defaultAva.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/usersRecommendationReducer.ts" afterDir="false" />
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="design usersRecommendation block">
+      <change afterPath="$PROJECT_DIR$/src/common/assets/img/rainbow-flag.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/assets/img/rmate4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/components/Button/Button.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/components/Button/Button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/components/NewsBar/News/News.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/components/NewsBar/News/News.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/components/NewsBar/NewsBar.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/components/NewsBar/NewsBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/components/_Users/_User/User.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/assets/img/default-avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/NavBar/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/NavBar/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/User/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/_Users/_User/User.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/_Users/_Users.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/_Users/_Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/_Users/_UsersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/recommends/Recommends.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/recommends/Recommends.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/profilePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/profilePageReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/_Users/_User/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/_Users/_User/User.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/_Users/_Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/_Users/_Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/usersRecommendationReducer.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/sergey/Documents/Programming/react/new-social-network/src/features/components/UsersRecommends/Recommendation",
+    "last_opened_file_path": "/Users/sergey/Documents/Programming/react/new-social-network/src/features/components/_Users/_User",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -78,18 +78,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/components/_Users/_User" />
+      <recent name="$PROJECT_DIR$/src/features/components/NewsBar/News" />
+      <recent name="$PROJECT_DIR$/src/features/components/NewBar" />
+      <recent name="$PROJECT_DIR$/src/common/components/Button" />
       <recent name="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation" />
-      <recent name="$PROJECT_DIR$/src/features/components/recommends" />
-      <recent name="$PROJECT_DIR$/src/assets/img" />
-      <recent name="$PROJECT_DIR$/src/components/Login" />
-      <recent name="$PROJECT_DIR$/src/components/Header" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/common/assets/img" />
+      <recent name="$PROJECT_DIR$/src/common/assets" />
       <recent name="$PROJECT_DIR$/src/common" />
       <recent name="$PROJECT_DIR$/src/features" />
       <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$/src/app" />
     </key>
   </component>
   <component name="RunManager">
@@ -153,14 +153,7 @@
       <workItem from="1678736856652" duration="1809000" />
       <workItem from="1681162011328" duration="44000" />
       <workItem from="1681169339613" duration="18311000" />
-      <workItem from="1681291047086" duration="12136000" />
-    </task>
-    <task id="LOCAL-00001" summary="routes">
-      <created>1669397545256</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1669397545256</updated>
+      <workItem from="1681291047086" duration="24811000" />
     </task>
     <task id="LOCAL-00002" summary="commit">
       <created>1669406501078</created>
@@ -498,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681302008176</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="design usersRecommendation block">
+      <created>1681317477955</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1681317477956</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +516,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create user profile" />
     <MESSAGE value="with router" />
     <MESSAGE value="step 60. Create own HOCK (withRouter)" />
     <MESSAGE value="step 60. Create own HOC (withRouter)" />
@@ -541,14 +540,15 @@
     <MESSAGE value="Step 81. initializing" />
     <MESSAGE value="Step 83. reselect" />
     <MESSAGE value="design profileInfo" />
-    <option name="LAST_COMMIT_MESSAGE" value="design profileInfo" />
+    <MESSAGE value="design usersRecommendation block" />
+    <option name="LAST_COMMIT_MESSAGE" value="design usersRecommendation block" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx</url>
-          <line>55</line>
+          <line>57</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>

@@ -14,14 +14,13 @@
   display: grid;
   //grid-template-rows: 100px 1fr;
   grid-template-areas: 'nav cont users';
-  grid-template-columns: 16% 59% 25%;
+  grid-template-columns: 16% 58% 26%;
   padding: 0 100px;
   background: #edf2f6;
 }
 
 .appWrapperContent {
   grid-area: cont;
-  background-color: #FCE2DB;
 }
 
 

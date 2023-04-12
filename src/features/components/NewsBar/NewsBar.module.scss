@@ -5,11 +5,8 @@
   padding: 1rem;
   background: #edf2f6;
   color: $secondary;
-  //display: flex;
-  //flex-direction: column;
-  //justify-content: start;
 
-  .recommendationsBlock {
+  .newsBlock {
     background: #fff;
     box-shadow: $box-shadow-sm;
     border-radius: $border-radius-xl;
@@ -19,12 +16,8 @@
       font-size: 1.5rem;
       font-weight: 500;
       color: $black;
-      padding: 1rem 1.2rem;
+      padding: 1rem;
       border-bottom: 1px solid rgba(108, 117, 125, 0.3);
     }
-  }
-  .buttonBlock {
-    display: flex;
-    justify-content: center;
   }
 }

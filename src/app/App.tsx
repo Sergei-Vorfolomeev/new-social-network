@@ -15,6 +15,7 @@ import {Preloader} from "features/components/common/Preloader/Preloader";
 import {initializeAppTC} from "./appReducer";
 import styles from './App.module.scss'
 import {UsersRecommends} from "features/components/UsersRecommends/UsersRecommends";
+import {NewsBar} from "features/components/NewsBar/NewsBar";
 
 
 export class App extends React.Component <AppPropsType> {
@@ -41,7 +42,13 @@ export class App extends React.Component <AppPropsType> {
                         <Route path={'/news'} element={<News/>}/>
                     </Routes>
                 </div>
-                <UsersRecommends/>
+                <div>
+                    <Routes>
+                        <Route path={'/*'} element={<UsersRecommends/>}/>
+                        <Route path={'/users'} element={<NewsBar/>}/>
+                    </Routes>
+                </div>
+
             </div>
         );
     }
