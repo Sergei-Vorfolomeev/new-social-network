@@ -15,6 +15,7 @@ import styles from './App.module.scss'
 import {UsersRecommends} from "features/components/UsersRecommends/UsersRecommends";
 import {NewsBar} from "features/components/NewsBar/NewsBar";
 import {NavBar} from "features/components/NavBar/NavBar";
+import {SnackBar} from "common/components/SnackBar/SnackBar";
 
 
 export class App extends React.Component <AppPropsType> {
@@ -25,6 +26,7 @@ export class App extends React.Component <AppPropsType> {
     render() {
 
         if (!this.props.isInitialized) return <Preloader/>
+        console.log(this.props.error)
 
         return (
             <div className={styles.appWrapper}>
@@ -47,7 +49,9 @@ export class App extends React.Component <AppPropsType> {
                         <Route path={'/users'} element={<NewsBar/>}/>
                     </Routes>
                 </div>
-
+                {/*{this.props.error && */}
+                    <SnackBar />
+                {/*}*/}
             </div>
         );
     }
@@ -57,6 +61,7 @@ type AppPropsType = MapStateToPropsType & MapDispatchToPropsType
 
 type MapStateToPropsType = {
     isInitialized: boolean
+    error: string | null
 }
 type MapDispatchToPropsType = {
     initializeApp: () => void
@@ -64,7 +69,8 @@ type MapDispatchToPropsType = {
 
 const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
     return {
-        isInitialized: state.app.isInitialized
+        isInitialized: state.app.isInitialized,
+        error: state.app.error
     }
 }
 const mapDispatchToProps: MapDispatchToPropsType = {

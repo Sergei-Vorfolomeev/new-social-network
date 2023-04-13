@@ -64,11 +64,11 @@ export const authAPI = {
         return instance.get<AuthMeResponseType>(`auth/me`)
             .then(response => response.data)
     },
-    loginIn (data: LoginType) {
+    login (data: LoginType) {
         return instance.post<ResponseType<{userId: number}>>('/auth/login', data)
             .then(response => response.data)
     },
-    logOut () {
+    logout () {
         return instance.delete<ResponseType>('/auth/login')
             .then(response => response.data)
     }

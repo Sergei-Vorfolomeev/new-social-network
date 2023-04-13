@@ -1,5 +1,6 @@
 import {Dispatch} from "redux";
 import {authAPI, LoginType} from "../api/api";
+import {appServerErrorUtil} from "common/utils/app-server-error-util";
 
 type initialStateType = {
     id: number | null,
@@ -69,35 +70,29 @@ export const logInAC = (value: boolean) => {
 }
 
 // THUNK CREATORS
-export const meTC = () => (dispatch: Dispatch) => {
-   return authAPI.me()
-        .then(data => {
-            if (data.resultCode === 0) {
-                dispatch(setUserData(data.data))
-            } else {
-                alert(data.messages[0])
-            }
-        })
+export const meTC = () => async (dispatch: Dispatch) => {
+    const res = await authAPI.me()
+    if (res.resultCode === 0) {
+        dispatch(setUserData(res.data))
+    } else {
+        appServerErrorUtil(res, dispatch)
+    }
 }
-export const loginTC = (data: LoginType) => (dispatch: Dispatch) => {
-    authAPI.loginIn(data)
-        .then(res => {
-            if (res.resultCode === 0) {
-                dispatch(logInAC(true))
-            } else {
-                alert(res.messages[0])
-            }
-        })
+export const loginTC = (data: LoginType) => async (dispatch: Dispatch) => {
+    const res = await authAPI.login(data)
+    if (res.resultCode === 0) {
+        dispatch(logInAC(true))
+    } else {
+        appServerErrorUtil(res, dispatch)
+    }
 }
-export const logoutTC = () => (dispatch: Dispatch) => {
-    authAPI.logOut()
-        .then(res => {
-            if (res.resultCode === 0) {
-                dispatch(logInAC(false))
-            } else {
-                alert(res.messages[0])
-            }
-        })
+export const logoutTC = () => async (dispatch: Dispatch) => {
+    const res = await authAPI.logout()
+    if (res.resultCode === 0) {
+        dispatch(logInAC(false))
+    } else {
+        appServerErrorUtil(res, dispatch)
+    }
 }
 
 

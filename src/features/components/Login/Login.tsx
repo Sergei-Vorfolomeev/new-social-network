@@ -58,6 +58,7 @@ export const Login = () => {
                         <a href={'https://social-network.samuraijs.com/'}
                            target={'_blank'}> here
                         </a> or use common test account credentials:</p>
+                    <br/>
                     <p>Email: free@samuraijs.com</p>
                     <p>Password: free</p>
                 </div>
