@@ -41,6 +41,7 @@ export const _Users = (props: PropsType) => {
                           follow={props.follow}
                           unfollow={props.unfollow}
                           followingProgress={props.followingProgress}
+                          toggleFollowingProgress={props.toggleFollowingProgress}
                     />
                     // <div className={styles.rootContainer} key={el.id}>
                     //     <div className={styles.avatarAndButtonContainer}>

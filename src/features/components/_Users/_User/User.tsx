@@ -9,6 +9,7 @@ type PropsType = {
     follow: (userId: number) => void,
     unfollow: (userId: number) => void,
     followingProgress: number[]
+    toggleFollowingProgress: (isFetching: boolean, id: number) => void
 }
 
 const buttonStyle = {
@@ -21,9 +22,9 @@ export const User = ({user, follow, unfollow, followingProgress}: PropsType) => 
         <div className={s.mainContainer}>
             <div className={s.avatarContainer}>
                 {user.photos.small
-                  ? <img src={user.photos.small} alt="avatar" className={s.avatar}/>
-                  : <img src={defaultAva} alt="defaultAvatar"
-                   className={s.avatar}/>}
+                    ? <img src={user.photos.small} alt="avatar" className={s.avatar}/>
+                    : <img src={defaultAva} alt="defaultAvatar"
+                           className={s.avatar}/>}
             </div>
             <div className={s.userInfoBlock}>
                 <div className={s.userInfo}>
@@ -37,7 +38,10 @@ export const User = ({user, follow, unfollow, followingProgress}: PropsType) => 
                             callback={() => unfollow(user.id)}
                             disabled={followingProgress.some(id => id === user.id)}
                             style={buttonStyle}/>
-                        : <Button name={'+ Follow'} callback={() => follow(user.id)}/>}
+                        : <Button name={'+ Follow'}
+                                  callback={() => follow(user.id)}
+                                  disabled={followingProgress.some(id => id === user.id)}/>
+                    }
                 </div>
             </div>
         </div>

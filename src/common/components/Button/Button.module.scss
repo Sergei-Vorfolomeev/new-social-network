@@ -10,3 +10,6 @@
     color: $blue;
     font-weight: 600;
 }
+.button:disabled {
+    opacity: 0.5;
+}

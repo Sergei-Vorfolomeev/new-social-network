@@ -176,7 +176,6 @@ export const setUsersTC = (pageNumber: number, pageSize: number) => (dispatch: D
 }
 export const followTC = (id: number) => (dispatch: Dispatch) => {
     dispatch(toggleFollowingProgress(true, id))
-
     usersAPI.follow(id)
         .then(data => {
             if (data.resultCode === 0) {

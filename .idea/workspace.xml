@@ -4,29 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="design usersRecommendation block">
-      <change afterPath="$PROJECT_DIR$/src/common/assets/img/rainbow-flag.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/assets/img/rmate4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/components/Button/Button.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/components/Button/Button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/NewsBar/News/News.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/NewsBar/News/News.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/NewsBar/NewsBar.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/NewsBar/NewsBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/_Users/_User/User.module.scss" afterDir="false" />
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="design userPage and newsBlock">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/_Users/_User/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/_Users/_User/User.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/_Users/_Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/_Users/_Users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/usersRecommendationReducer.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,14 +135,7 @@
       <workItem from="1678736856652" duration="1809000" />
       <workItem from="1681162011328" duration="44000" />
       <workItem from="1681169339613" duration="18311000" />
-      <workItem from="1681291047086" duration="24811000" />
-    </task>
-    <task id="LOCAL-00002" summary="commit">
-      <created>1669406501078</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1669406501078</updated>
+      <workItem from="1681291047086" duration="25952000" />
     </task>
     <task id="LOCAL-00003" summary="lesson 31">
       <created>1669466247527</created>
@@ -498,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681317477956</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="design userPage and newsBlock">
+      <created>1681343164070</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1681343164070</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="with router" />
     <MESSAGE value="step 60. Create own HOCK (withRouter)" />
     <MESSAGE value="step 60. Create own HOC (withRouter)" />
     <MESSAGE value="step 61. Create authReducer, auth/me request, set data to store" />
@@ -541,7 +522,8 @@
     <MESSAGE value="Step 83. reselect" />
     <MESSAGE value="design profileInfo" />
     <MESSAGE value="design usersRecommendation block" />
-    <option name="LAST_COMMIT_MESSAGE" value="design usersRecommendation block" />
+    <MESSAGE value="design userPage and newsBlock" />
+    <option name="LAST_COMMIT_MESSAGE" value="design userPage and newsBlock" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
