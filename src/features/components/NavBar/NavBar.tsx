@@ -1,7 +1,6 @@
 import React from 'react';
 import s from 'features/components/NavBar/NavBar.module.scss'
 import {NavLink} from "react-router-dom";
-import {NavBarPropsType} from "features/components/NavBar/NavBarContainer";
 import logo from 'common/assets/img/logo.png'
 import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -10,8 +9,13 @@ import EmailIcon from '@mui/icons-material/Email';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
+import {logoutTC} from "store/authReducer";
+import {useAppDispatch} from "app/store";
 
-export const NavBar = ({}: NavBarPropsType) => {
+export const NavBar = () => {
+
+    const dispatch = useAppDispatch()
+
     return (
         <nav className={s.navBar}>
             <div className={s.logoBox}>
@@ -61,8 +65,9 @@ export const NavBar = ({}: NavBarPropsType) => {
                     </NavLink>
                 </li>
                 <li className={s.item}>
-                    <NavLink to={'/logout'}
-                             className={navData => navData.isActive ? s.active : s.nonActive}>
+                    <NavLink to={'/login'}
+                             className={navData => navData.isActive ? s.active : s.nonActive}
+                    onClick={() => dispatch(logoutTC())}>
                         <span className={s.iconItem}><LogoutIcon fontSize={"large"}/></span>
                         Logout
                     </NavLink>

@@ -3,6 +3,7 @@ import s from "./User.module.scss";
 import {ItemsResponseType} from "store/UsersPageReducer";
 import defaultAva from 'common/assets/img/defaultAva.png'
 import {Button} from "common/components/Button/Button";
+import {NavLink} from "react-router-dom";
 
 type PropsType = {
     user: ItemsResponseType
@@ -21,14 +22,18 @@ export const User = ({user, follow, unfollow, followingProgress}: PropsType) => 
     return (
         <div className={s.mainContainer}>
             <div className={s.avatarContainer}>
-                {user.photos.small
-                    ? <img src={user.photos.small} alt="avatar" className={s.avatar}/>
-                    : <img src={defaultAva} alt="defaultAvatar"
-                           className={s.avatar}/>}
+                <NavLink to={'/profile/' + user.id}>
+                    {user.photos.small
+                        ? <img src={user.photos.small} alt="avatar" className={s.avatar}/>
+                        : <img src={defaultAva} alt="defaultAvatar"
+                               className={s.avatar}/>}
+                </NavLink>
             </div>
             <div className={s.userInfoBlock}>
                 <div className={s.userInfo}>
-                    <h2 className={s.userName}>{user.name}</h2>
+                    <NavLink to={'/profile/' + user.id}>
+                        <h2 className={s.userName}>{user.name}</h2>
+                    </NavLink>
                     <p className={s.userStatus}>{user.status}</p>
                 </div>
                 <div className={s.buttonBox}>
@@ -45,28 +50,5 @@ export const User = ({user, follow, unfollow, followingProgress}: PropsType) => 
                 </div>
             </div>
         </div>
-
-
-
-        // <div className={styles.rootContainer}>
-        //     <div className={styles.avatarAndButtonContainer}>
-        //         <img src={props.avatar} alt="" className={styles.avatar}/>
-        //         <div>
-        //             {props.followed
-        //                 ? <button onClick={() => props.unfollow(props.id)}>Unfollow</button>
-        //                 : <button onClick={() => props.follow(props.id)}>Follow</button>}
-        //         </div>
-        //     </div>
-        //     <div className={styles.infoUserContainer}>
-        //         <div>
-        //             <h4>{props.name}</h4>
-        //             {props.status}
-        //         </div>
-        //         {/*<div>*/}
-        //         {/*    <div>{el.location.country}</div>*/}
-        //         {/*    {el.location.city}*/}
-        //         {/*</div>*/}
-        //     </div>
-        // </div>
     );
 };

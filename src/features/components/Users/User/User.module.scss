@@ -17,7 +17,7 @@
         margin-right: 2rem;
 
         .avatar {
-            width: 150px;
+            width: 130px;
             border-radius: 50%;
         }
     }
@@ -26,10 +26,14 @@
 
         .userInfo {
 
+            a {
+                text-decoration: none;
+            }
             .userName {
                 font-size: 1.5rem;
                 font-weight: 500;
                 margin-bottom: 1rem;
+                color: $black;
             }
             .userStatus {
                 color: $secondary;

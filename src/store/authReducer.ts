@@ -79,7 +79,7 @@ export const meTC = () => (dispatch: Dispatch) => {
             }
         })
 }
-export const logInTC = (data: LoginType) => (dispatch: Dispatch) => {
+export const loginTC = (data: LoginType) => (dispatch: Dispatch) => {
     authAPI.loginIn(data)
         .then(res => {
             if (res.resultCode === 0) {
@@ -89,7 +89,7 @@ export const logInTC = (data: LoginType) => (dispatch: Dispatch) => {
             }
         })
 }
-export const logOutTC = () => (dispatch: Dispatch) => {
+export const logoutTC = () => (dispatch: Dispatch) => {
     authAPI.logOut()
         .then(res => {
             if (res.resultCode === 0) {

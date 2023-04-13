@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from 'features/components/_Users/_Users.module.css'
+import styles from 'features/components/Users/Users.module.css'
 import {ItemsResponseType} from "store/UsersPageReducer";
 import {NavLink} from "react-router-dom";
 import Pagination from '@mui/material/Pagination';
 import CircularProgress from "@mui/material/CircularProgress";
 import {Button} from "common/components/Button/Button";
-import {User} from "features/components/_Users/_User/User";
+import {User} from "features/components/Users/User/User";
 
 type PropsType = {
     users: ItemsResponseType[]
@@ -20,7 +20,7 @@ type PropsType = {
     followingProgress: number[]
 }
 
-export const _Users = (props: PropsType) => {
+export const Users = (props: PropsType) => {
 
     const [page, setPage] = React.useState(1);
     const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {

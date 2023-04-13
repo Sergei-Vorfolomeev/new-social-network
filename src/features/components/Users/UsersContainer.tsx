@@ -10,7 +10,7 @@ import {
     unfollowTC,
     UsersResponseType,
 } from "store/UsersPageReducer";
-import {_Users} from "features/components/_Users/_Users";
+import {Users} from "features/components/Users/Users";
 import {
     getCurrentPage,
     getFollowingProgress,
@@ -69,7 +69,7 @@ class UsersAPIContainerClass extends React.Component<UsersPropsType, UsersRespon
     }
 
     render() {
-        return <_Users
+        return <Users
             users={this.props.users}
             pageSize={this.props.pageSize}
             currentPage={this.props.currentPage}
@@ -84,4 +84,4 @@ class UsersAPIContainerClass extends React.Component<UsersPropsType, UsersRespon
     }
 }
 
-export const _UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPIContainerClass)
+export const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPIContainerClass)

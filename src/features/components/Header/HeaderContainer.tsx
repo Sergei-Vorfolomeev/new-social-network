@@ -2,7 +2,7 @@ import React from 'react';
 import {Header} from "features/components/Header/Header";
 import {connect} from "react-redux";
 import {AppRootStateType} from "app/store";
-import {AuthMeResponseType, DataAuthMeResponseType, logOutTC, meTC, setUserData} from "store/authReducer";
+import {AuthMeResponseType, DataAuthMeResponseType, logoutTC, meTC, setUserData} from "store/authReducer";
 
 
 //TYPES
@@ -40,7 +40,7 @@ const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
 const mapDispatchToProps: MapDispatchToPropsType = {
     setUserData,
     me: meTC,
-    logout: logOutTC
+    logout: logoutTC
 }
 
 export const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(HeaderAPIContainerClass)
