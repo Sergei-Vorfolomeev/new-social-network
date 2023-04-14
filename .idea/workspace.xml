@@ -4,15 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="design loginPage">
-      <change afterPath="$PROJECT_DIR$/src/common/components/SnackBar/SnackBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/utils/app-server-error-util.ts" afterDir="false" />
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="handle server errors">
+      <change afterPath="$PROJECT_DIR$/src/common/utils/app-network-error-util.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/components/Messages/Message/Message.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/appReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/appReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/SnackBar/SnackBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/SnackBar/SnackBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/app-server-error-util.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/app-server-error-util.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/Message/Message.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/FriendsInMessages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/FriendsInMessages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/Messages.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/Messages.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/Messages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/MessagesContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/MessagesContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/authReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/authReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/messagePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/messagePageReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/navBarReducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/profilePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/profilePageReducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +61,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/sergey/Documents/Programming/react/new-social-network/src/features/components/Login",
+    "last_opened_file_path": "/Users/sergey/Documents/Programming/react/new-social-network/src/features/components/Messages/Message",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -64,18 +75,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/components/Messages/Message" />
       <recent name="$PROJECT_DIR$/src/features/components/Login" />
       <recent name="$PROJECT_DIR$/src/features/components/_Users/_User" />
       <recent name="$PROJECT_DIR$/src/features/components/NewsBar/News" />
       <recent name="$PROJECT_DIR$/src/features/components/NewBar" />
-      <recent name="$PROJECT_DIR$/src/common/components/Button" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/components/Messages" />
+      <recent name="$PROJECT_DIR$/src/features/components/Messages/Message" />
       <recent name="$PROJECT_DIR$/src/common/assets/img" />
       <recent name="$PROJECT_DIR$/src/common/assets" />
       <recent name="$PROJECT_DIR$/src/common" />
-      <recent name="$PROJECT_DIR$/src/features" />
-      <recent name="$PROJECT_DIR$/src/assets" />
     </key>
   </component>
   <component name="RunManager">
@@ -139,14 +150,7 @@
       <workItem from="1678736856652" duration="1809000" />
       <workItem from="1681162011328" duration="44000" />
       <workItem from="1681169339613" duration="18311000" />
-      <workItem from="1681291047086" duration="37145000" />
-    </task>
-    <task id="LOCAL-00005" summary="lesson 32">
-      <created>1669478313405</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1669478313405</updated>
+      <workItem from="1681291047086" duration="48679000" />
     </task>
     <task id="LOCAL-00006" summary="lesson 35">
       <created>1669546772535</created>
@@ -484,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681385532837</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="handle server errors">
+      <created>1681400067128</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1681400067128</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="step 61. Create authReducer, auth/me request, set data to store" />
     <MESSAGE value="Add preloader in the userComponent" />
     <MESSAGE value="step 62 --&gt; follow/unfollow - request to server&#10;+ refactor pagination (mui)" />
     <MESSAGE value="step 63 --&gt; adding DAL. Creating usersAPI" />
@@ -527,18 +537,7 @@
     <MESSAGE value="design userPage and newsBlock" />
     <MESSAGE value="disable follow/unfollow button" />
     <MESSAGE value="design loginPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="design loginPage" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx</url>
-          <line>57</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="handle server errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle server errors" />
   </component>
 </project>

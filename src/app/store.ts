@@ -1,7 +1,6 @@
 import {AnyAction, applyMiddleware, combineReducers, legacy_createStore} from "redux";
 import {profilePageReducer, ProfilePageType} from "store/profilePageReducer";
-import {messagePageReducer} from "store/messagePageReducer";
-import {navBarReducer} from "store/navBarReducer";
+import {messagePageReducer} from "features/components/Messages/messagePageReducer";
 import {UsersPageReducer} from "store/UsersPageReducer";
 import {authReducer} from "store/authReducer";
 import thunkMiddleWare, {ThunkDispatch} from 'redux-thunk'
@@ -12,7 +11,6 @@ export const rootReducer = combineReducers({
     app: appReducer,
     profilePage: profilePageReducer,
     messagePage: messagePageReducer,
-    navBar: navBarReducer,
     usersPage: UsersPageReducer,
     auth: authReducer,
 })
@@ -26,10 +24,8 @@ export const useAppDispatch = () => useDispatch<AppThunkDispatchType>()
 export type StateType = {
     profilePage: ProfilePageType
     messagePage: MessagePageType
-    navBar: NavBarType
 }
 export type MessagePageType = {
-    friendsInMessages: FriendsInMessagesType[]
     messages: MessagesType[]
 }
 export type UsersPageType = {
@@ -48,27 +44,14 @@ type LocationType = {
     country: string
     city: string
 }
-export type NavBarType = {
-    friendsInNavBar: FriendsInNavBar[]
-}
 export type PostType = {
     id: string
     text: string
     likesCount: number
 }
-export type FriendsInMessagesType = {
-    id: string
-    name: string
-    avatar: string
-}
 export type MessagesType = {
     id: string
     message: string
-}
-export type FriendsInNavBar = {
-    id: string
-    name: string
-    avatar: string
 }
 export type ResponseType<T = {}> = {
     resultCode: number
@@ -97,6 +80,9 @@ type ContactType = {
 type PhotosType = {
     small: string | undefined
     large: string | undefined
+}
+export type ErrorType = {
+    message: string
 }
 // export type StoreType = {
 //     _state: StateType

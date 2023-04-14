@@ -50,7 +50,7 @@ export const setErrorAC = (error: string | null) => {
     } as const
 }
 
-export const initializeAppTC = () => (dispatch: Dispatch<Action<any>> & ThunkDispatch<any, undefined, AnyAction>) => {
+export const initializeAppTC = () => (dispatch: Dispatch & ThunkDispatch<any, undefined, AnyAction>) => {
     const promise = dispatch(meTC())
     Promise.all([promise])
         .then(

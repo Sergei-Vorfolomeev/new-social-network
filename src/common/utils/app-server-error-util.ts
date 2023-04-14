@@ -1,7 +1,7 @@
 import {Dispatch} from "redux";
 import {setErrorAC} from "app/appReducer";
-import axios, {AxiosError} from "axios";
 import {ResponseType} from "app/store";
+import {toggleIsFetching} from "store/UsersPageReducer";
 
 export const appServerErrorUtil = (data: ResponseType, dispatch: Dispatch) => {
     if (data.messages.length) {
@@ -9,4 +9,6 @@ export const appServerErrorUtil = (data: ResponseType, dispatch: Dispatch) => {
     } else {
         dispatch(setErrorAC('Some error occurred'))
     }
+    dispatch(toggleIsFetching(false))
+
 }

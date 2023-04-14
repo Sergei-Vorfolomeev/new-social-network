@@ -47,13 +47,14 @@ export class App extends React.Component <AppPropsType> {
                     <Routes>
                         <Route path={'/*'} element={<UsersRecommends/>}/>
                         <Route path={'/users'} element={<NewsBar/>}/>
+                        <Route path={'/login'} element={<div></div>}/>
                     </Routes>
                 </div>
                 {/*{this.props.error && */}
                     <SnackBar />
                 {/*}*/}
             </div>
-        );
+        )
     }
 }
 

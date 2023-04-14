@@ -4,7 +4,7 @@ import {compose, Dispatch} from "redux";
 import {Messages} from "features/components/Messages/Messages";
 import {ToAuthRedirect} from "HOC/ToAuthRedirect";
 import {AppRootStateType, MessagePageType} from "app/store";
-import {sendMessageAC} from "store/messagePageReducer";
+import {sendMessageAC} from "features/components/Messages/messagePageReducer";
 
 // TYPES
 type mapStateToPropsType = {

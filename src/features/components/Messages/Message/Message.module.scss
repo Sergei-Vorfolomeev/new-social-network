@@ -1,0 +1,9 @@
+@import 'common/scss/variables.scss';
+
+.messageContainer {
+    background: #edf2f6;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    box-shadow: $box-shadow-sm;
+    border-radius: $border-radius-xl;
+}

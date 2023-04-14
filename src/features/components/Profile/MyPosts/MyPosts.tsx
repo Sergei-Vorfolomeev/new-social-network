@@ -1,4 +1,4 @@
-import React, {ChangeEvent, memo, useState} from 'react';
+import React, {ChangeEvent, memo, useState, KeyboardEvent} from 'react';
 import s from './MyPosts.module.scss'
 import {Post} from "features/components/Profile/MyPosts/Post/Post";
 import {MyPostsPropsType} from "features/components/Profile/MyPosts/MyPostsContainer";

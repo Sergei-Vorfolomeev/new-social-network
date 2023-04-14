@@ -21,9 +21,6 @@ export const SnackBar = () => {
     const errorMessage = useSelector<AppRootStateType, string | null>(state => state.app.error)
     const dispatch = useAppDispatch()
 
-    const [open, setOpen] = React.useState(false);
-
-
     const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
             return;

@@ -4,6 +4,7 @@ import {Dispatch} from "redux";
 import {profileAPI} from "api/api";
 import {toggleIsFetching} from "./UsersPageReducer";
 import {AxiosError} from "axios";
+import {appNetworkErrorUtil} from "common/utils/app-network-error-util";
 
 export type ProfilePageType = {
     posts: PostType[]
@@ -25,7 +26,7 @@ export const profilePageReducer = (state: ProfilePageType = initialState, action
     switch (action.type) {
         case "ADD-POST": {
             const newPost = {id: v1(), text: action.payload.textPost, likesCount: 0}
-           // state.posts.unshift(newPost)
+            // state.posts.unshift(newPost)
             return {
                 ...state,
                 posts: [newPost, ...state.posts]
@@ -79,30 +80,29 @@ export const setStatus = (status: string) => {
 }
 
 // THUNK CREATORS
-export const getProfile = (userId: string) => (dispatch: Dispatch) => {
+export const getProfile = (userId: string) => async (dispatch: Dispatch) => {
     dispatch(toggleIsFetching(true))
-    profileAPI.getProfile(userId)
-        .then(data => {
-            dispatch(setProfileUser(data))
-            dispatch(toggleIsFetching(false))
-        })
+    try {
+        const res = await profileAPI.getProfile(userId)
+        dispatch(setProfileUser(res))
+        dispatch(toggleIsFetching(false))
+    } catch (e) {
+        appNetworkErrorUtil(e, dispatch)
+    }
 }
-export const getStatus = (userId: string) => (dispatch: Dispatch) => {
-    profileAPI.getStatus(userId)
-        .then(data => {
-                dispatch(setStatus(data))
-        })
-        .catch((e: AxiosError) => {
-           alert(e.message)
-        })
+export const getStatus = (userId: string) => async (dispatch: Dispatch) => {
+    try {
+        const res = await profileAPI.getStatus(userId)
+        dispatch(setStatus(res))
+    } catch (e) {
+        appNetworkErrorUtil(e, dispatch)
+    }
 }
-export const updateStatus = (newStatus: string) => (dispatch: Dispatch) => {
-    profileAPI.updateStatus(newStatus)
-        .then(data => {
-            dispatch(setStatus(newStatus))
-            console.log(data)
-        })
-        .catch((e: AxiosError) => {
-            alert(e.message)
-        })
+export const updateStatus = (newStatus: string) => async (dispatch: Dispatch) => {
+    try {
+        await profileAPI.updateStatus(newStatus)
+        dispatch(setStatus(newStatus))
+    } catch (e) {
+        appNetworkErrorUtil(e, dispatch)
+    }
 }

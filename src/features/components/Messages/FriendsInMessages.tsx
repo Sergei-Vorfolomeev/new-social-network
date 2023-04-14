@@ -1,4 +1,4 @@
-import styles from "features/components/Messages/Messages.module.css";
+import styles from "features/components/Messages/Messages.module.scss";
 import {NavLink} from "react-router-dom";
 import React from "react";
 
