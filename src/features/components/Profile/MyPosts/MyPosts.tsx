@@ -17,8 +17,17 @@ export const MyPosts: React.FC<MyPostsPropsType> = memo((props) => {
         }
 
         const addPostHandler = () => {
-            props.addPost(textPost)
-            setTextPost('')
+            if (textPost !== '') {
+                const text = textPost.trim()
+                props.addPost(text)
+                setTextPost('')
+            }
+        }
+
+        const onEnterHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+            if (e.key === 'Enter') {
+                addPostHandler()
+            }
         }
 
         return (
@@ -28,7 +37,8 @@ export const MyPosts: React.FC<MyPostsPropsType> = memo((props) => {
                         <textarea onChange={onChangeHandler}
                                   value={textPost}
                                   className={s.textarea}
-                                  placeholder={'What\'s on your mind'}
+                                  placeholder={'Try to create a post'}
+                                  onKeyDown={onEnterHandler}
                         />
                         <button onClick={addPostHandler}
                                 className={s.button}

@@ -1,10 +1,11 @@
 import React from 'react';
 import s from 'features/components/Profile/MyPosts/ProfileInfo.module.scss'
 import {AppRootStateType, ProfileResponseType} from "app/store";
-import {ProfileStatus} from "features/components/Profile/ProfileStatus";
+import {ProfileStatus} from "features/components/Profile/MyProfile/Status/ProfileStatus";
 import defaultAvatar from 'common/assets/img/defaultAva.png'
 import {Button} from "common/components/Button/Button";
 import {useSelector} from "react-redux";
+import {followTC, unfollowTC} from "store/UsersPageReducer";
 
 type ProfileInfoPropsType = {
     profile: ProfileResponseType | null
@@ -35,7 +36,6 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
                         <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                     </div>
                 </div>
-                {userLogin !== props.profile?.fullName && <Button name={'+ Follow'} callback={() => {}}/>}
             </div>
 
             <div className={s.otherInfo}>

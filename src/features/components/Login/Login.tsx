@@ -14,7 +14,7 @@ import { PasswordInput } from './loginInputs/PasswordInput'
 import {AppRootStateType, useAppDispatch} from 'app/store'
 import FormLabel from "@mui/material/FormLabel";
 // import { Error } from 'common/components/error/Error'
-// import { Loader } from 'common/components/loader/Loader'
+// import { Loader } from 'common/components/Loader/Loader'
 // import { PATH } from 'common/components/routes/RoutesComponent'
 // import { getIsAuthSelector } from 'features/login/selectors/loginSelectors'
 

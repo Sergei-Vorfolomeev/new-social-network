@@ -1,6 +1,6 @@
 import axios from "axios";
-import {ResponseType} from "../app/store";
-import {AuthMeResponseType} from "../store/authReducer";
+import {ResponseType} from "app/store";
+import {AuthMeResponseType} from "store/authReducer";
 
 // TYPES
 export type LoginType = {

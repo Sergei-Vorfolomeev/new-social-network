@@ -4,7 +4,7 @@
   background: #fff;
   box-shadow: $box-shadow-sm;
   border-radius: $border-radius-xl;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   max-width: 100%;
 
@@ -30,7 +30,26 @@
     }
 
     .postText {
-      max-width: 90%;
+      display: block;
+      max-width: 96%;
+      word-wrap: break-word
+    }
+
+    .postMenu {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+
+      &:hover {
+        display: flex;
+        align-items: end;
+        background: rgba(213, 212, 212, 0.83);
+        border-radius: 50%;
+        //height: 2rem;
+        //width: 2rem;
+      }
     }
 
     .like {

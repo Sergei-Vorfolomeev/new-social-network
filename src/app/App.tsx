@@ -1,21 +1,22 @@
 import React from 'react';
 import 'app/App.module.scss';
 import {Route, Routes} from "react-router-dom";
-import {News} from "features/components/News/News";
 import {MessagesContainer} from "features/components/Messages/MessagesContainer";
 import {UsersContainer} from "features/components/Users/UsersContainer";
-import {ProfileContainer, withRouter} from "features/components/Profile/ProfileContainer";
+import {ProfileContainer, withRouter} from "features/components/Profile/MyProfile/ProfileContainer";
 import {Login} from "features/components/Login/Login";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {AppRootStateType} from "./store";
-import {Preloader} from "features/components/common/Preloader/Preloader";
 import {initializeAppTC} from "./appReducer";
 import styles from './App.module.scss'
 import {UsersRecommends} from "features/components/UsersRecommends/UsersRecommends";
 import {NewsBar} from "features/components/NewsBar/NewsBar";
 import {NavBar} from "features/components/NavBar/NavBar";
 import {SnackBar} from "common/components/SnackBar/SnackBar";
+import {UserProfile} from "features/components/Profile/UserProfile/userProfile";
+import Feed from "features/components/Feed/Feed";
+import {Loader} from "features/components/common/Loader/Loader";
 
 
 export class App extends React.Component <AppPropsType> {
@@ -25,22 +26,21 @@ export class App extends React.Component <AppPropsType> {
 
     render() {
 
-        if (!this.props.isInitialized) return <Preloader/>
+        if (!this.props.isInitialized) return <Loader/>
         console.log(this.props.error)
 
         return (
             <div className={styles.appWrapper}>
-                {/*<HeaderContainer/>*/}
                 <NavBar/>
                 <div className={styles.appWrapperContent}>
                     <Routes>
+                        <Route path={'/feed'} element={<Feed/>}/>
                         <Route path={'/login'} element={<Login/>}/>
                         <Route path={'/'} element={<Login/>}/>
                         <Route path={'/profile'} element={<ProfileContainer/>}/>
-                        <Route path={'/profile/:userId'} element={<ProfileContainer/>}/>
+                        <Route path={'/userProfile/:userId'} element={<UserProfile/>}/>
                         <Route path={'/users/*'} element={<UsersContainer/>}/>
                         <Route path={'/messages/*'} element={<MessagesContainer/>}/>
-                        <Route path={'/news'} element={<News/>}/>
                     </Routes>
                 </div>
                 <div>

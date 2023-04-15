@@ -3,8 +3,13 @@ import s from 'features/components/Messages/Messages.module.scss'
 import {Message} from "features/components/Messages/Message/Message";
 import {MessagesPagePropsType} from "features/components/Messages/MessagesContainer";
 import SendIcon from "@mui/icons-material/Send";
+import defaultAva from 'common/assets/img/defaultAva.png'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import {useNavigate} from "react-router-dom";
 
 export const Messages: React.FC<MessagesPagePropsType> = (props) => {
+
+    const navigate = useNavigate()
 
     const [newMessage, setNewMessage] = useState('')
 
@@ -25,17 +30,12 @@ export const Messages: React.FC<MessagesPagePropsType> = (props) => {
     // if (!props.isAuth) return <Navigate to={'/login'}/>
 
     return (
-        <div className={s.messages}>
-
-            {/*<div className={styles.friendList}>*/}
-            {/*    {props.messagePage.friendsInMessages.map(el => {*/}
-            {/*        return (*/}
-            {/*            <FriendsInMessages key={el.id} id={el.id} name={el.name} avatar={el.avatar}/>*/}
-            {/*        )*/}
-            {/*    })}*/}
-            {/*</div>*/}
-
             <div className={s.mainContainer}>
+
+                <div className={s.headerMessage}>
+                    <ArrowBackIosIcon className={s.arrowBack} onClick={() => {navigate(-1)}}/>
+                    <img src={defaultAva} alt="avatar" className={s.avatar} />
+                </div>
 
                 <div className={s.dialog}>
                     {props.messagePage.messages.map(el => {
@@ -56,12 +56,11 @@ export const Messages: React.FC<MessagesPagePropsType> = (props) => {
                         <button onClick={sendMessageHandler}
                                 className={s.button}
                         >
-                            <SendIcon/>
+                            <SendIcon />
                         </button>
 
                     </div>
                 </div>
-            </div>
 
             {/*<div className={s.dialogs}>*/}
             {/*    {props.messagePage.messages.map(el => {*/}

@@ -4,6 +4,8 @@ import {useSelector} from "react-redux";
 import {AppRootStateType, PostType} from "app/store";
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import defaultAvatar from 'common/assets/img/defaultAva.png'
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import {Popup} from "features/components/Profile/MyPosts/Popup/Popup";
 
 
 type PropsType = {
@@ -15,6 +17,7 @@ export const Post = ({post}: PropsType) => {
     const name = useSelector((state: AppRootStateType) => state.profilePage.profile?.fullName)
     const avatar = useSelector((state: AppRootStateType) => state.profilePage.profile?.photos.small)
 
+    const [popupMenu, setPopupMenu] = useState(false)
     const [like, setLike] = useState(false)
 
     return (
@@ -23,14 +26,18 @@ export const Post = ({post}: PropsType) => {
 
             <div className={s.avatar}>
                 {avatar
-                ? <img src={avatar} alt="avatar"/>
-                : <img src={defaultAvatar} alt="defaultAvatar"/>}
+                    ? <img src={avatar} alt="avatar"/>
+                    : <img src={defaultAvatar} alt="defaultAvatar"/>}
 
             </div>
 
             <div className={s.postContent}>
                 <h2 className={s.name}>{name}</h2>
-                <p className={s.postText}>{post.text}</p>
+                <span className={s.postText}>{post.text}</span>
+                {popupMenu && <Popup postId={post.id}/>}
+                <span className={s.postMenu} onClick={() => {
+                    setPopupMenu(!popupMenu)
+                }}><MoreHorizIcon/></span>
                 <span className={like ? s.like : s.unlike} onClick={() => setLike(!like)}><ThumbUpIcon/></span>
             </div>
 

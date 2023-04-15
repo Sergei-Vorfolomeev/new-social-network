@@ -6,7 +6,8 @@ type InitialStateType = typeof initialState
 
 const initialState = {
     isInitialized: false,
-    error: '' as string | null
+    error: '' as string | null,
+    loading: false
 }
 
 export const appReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
@@ -28,8 +29,9 @@ export const appReducer = (state: InitialStateType = initialState, action: Actio
     }
 }
 
-export type ActionsType = InitializeAppACType | SetErrorACType
+export type ActionsType = InitializeAppACType | SetErrorACType | SetLoadingACType
 type InitializeAppACType = ReturnType<typeof initializeAppAC>
+type SetLoadingACType = ReturnType<typeof setLoadingAC>
 type SetErrorACType = ReturnType<typeof setErrorAC>
 
 // ACTION CREATORS
@@ -46,6 +48,14 @@ export const setErrorAC = (error: string | null) => {
         type: 'SET_ERROR',
         payload: {
             error
+        }
+    } as const
+}
+export const setLoadingAC = (value: boolean) => {
+    return {
+        type: 'SET_LOADING',
+        payload: {
+            value
         }
     } as const
 }

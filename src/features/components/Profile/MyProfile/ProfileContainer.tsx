@@ -1,4 +1,4 @@
-import {Profile} from "features/components/Profile/Profile";
+import {Profile} from "features/components/Profile/MyProfile/Profile";
 import React from "react";
 import {connect} from "react-redux";
 import {AppRootStateType, ProfileResponseType} from "app/store";

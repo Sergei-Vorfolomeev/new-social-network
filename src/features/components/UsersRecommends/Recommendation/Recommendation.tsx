@@ -23,7 +23,7 @@ const Recommendation = ({user}: PropsType) => {
     return (
         <div className={s.recommendationBlock}>
             <div className={s.avatar}>
-                <NavLink to={'/profile/' + user.id}>
+                <NavLink to={'/userProfile/' + user.id}>
                 {user.photos.small
                 ? <img src={user.photos.small} alt="avatar"/>
                 : <img src={defaultAvatar} alt="defaultAvatar"/>}

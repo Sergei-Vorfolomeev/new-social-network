@@ -6,6 +6,7 @@ import {authReducer} from "store/authReducer";
 import thunkMiddleWare, {ThunkDispatch} from 'redux-thunk'
 import {useDispatch} from "react-redux";
 import {appReducer} from "./appReducer";
+import {feedReducer} from "features/components/Feed/feedReducer";
 
 export const rootReducer = combineReducers({
     app: appReducer,
@@ -13,14 +14,15 @@ export const rootReducer = combineReducers({
     messagePage: messagePageReducer,
     usersPage: UsersPageReducer,
     auth: authReducer,
+    feed: feedReducer,
 })
 
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunkMiddleWare))
 
 export type AppRootStateType = ReturnType<typeof rootReducer>
-
 export type AppThunkDispatchType = ThunkDispatch<AppRootStateType, any, AnyAction>
 export const useAppDispatch = () => useDispatch<AppThunkDispatchType>()
+
 export type StateType = {
     profilePage: ProfilePageType
     messagePage: MessagePageType

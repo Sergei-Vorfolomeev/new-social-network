@@ -22,7 +22,7 @@ export const User = ({user, follow, unfollow, followingProgress}: PropsType) => 
     return (
         <div className={s.mainContainer}>
             <div className={s.avatarContainer}>
-                <NavLink to={'/profile/' + user.id}>
+                <NavLink to={'/userProfile/' + user.id}>
                     {user.photos.small
                         ? <img src={user.photos.small} alt="avatar" className={s.avatar}/>
                         : <img src={defaultAva} alt="defaultAvatar"

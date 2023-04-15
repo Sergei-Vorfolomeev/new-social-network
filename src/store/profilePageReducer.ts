@@ -14,9 +14,9 @@ export type ProfilePageType = {
 
 const initialState: ProfilePageType = {
     posts: [
-        // {id: v1(), text: 'Life is here?', likesCount: 0,},
-        // {id: v1(), text: 'It\'s my first post!', likesCount: 8,},
-        // {id: v1(), text: 'Hello!', likesCount: 15,},
+        {id: v1(), text: 'Life is here?', likesCount: 0,},
+        {id: v1(), text: 'It\'s my first post!', likesCount: 0,},
+        {id: v1(), text: 'Hello!', likesCount: 0,},
     ],
     profile: null,
     status: ''
@@ -30,6 +30,12 @@ export const profilePageReducer = (state: ProfilePageType = initialState, action
             return {
                 ...state,
                 posts: [newPost, ...state.posts]
+            }
+        }
+        case "DELETE-POST": {
+            return {
+                ...state,
+                posts: state.posts.filter(el => el.id !== action.payload.postId)
             }
         }
         case "SET-PROFILE-USER":
@@ -47,9 +53,10 @@ export const profilePageReducer = (state: ProfilePageType = initialState, action
     }
 }
 
-export type GeneralACType = addPostACType | setProfileUserACType | SetStatusACType
-type addPostACType = ReturnType<typeof addPostAC>
-type setProfileUserACType = ReturnType<typeof setProfileUser>
+export type GeneralACType = AddPostACType | SetProfileUserACType | SetStatusACType | DeletePostACType
+type AddPostACType = ReturnType<typeof addPostAC>
+type DeletePostACType = ReturnType<typeof deletePostAC>
+type SetProfileUserACType = ReturnType<typeof setProfileUser>
 type SetStatusACType = ReturnType<typeof setStatus>
 
 
@@ -59,6 +66,14 @@ export const addPostAC = (text: string) => {
         type: 'ADD-POST',
         payload: {
             textPost: text
+        }
+    } as const
+}
+export const deletePostAC = (postId: string) => {
+    return {
+        type: 'DELETE-POST',
+        payload: {
+            postId
         }
     } as const
 }

@@ -5,7 +5,7 @@ const initialState = {
     messages: [
         {id: v1(), message: 'Hello everyone!',},
         {id: v1(), message: 'Current API does not support sending messages',},
-        {id: v1(), message: 'After reloading page the sent messages will not be saved',},
+        {id: v1(), message: 'After reloading page the sent messages will be deleted',},
     ],
 }
 

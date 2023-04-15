@@ -9,6 +9,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
+import GroupIcon from '@mui/icons-material/Group';
 import {logoutTC} from "store/authReducer";
 import {useAppDispatch} from "app/store";
 
@@ -30,17 +31,17 @@ export const NavBar = () => {
                     </NavLink>
                 </li>
                 <li className={s.item}>
-                    <NavLink to={'/trending'}
-                             className={navData => navData.isActive ? s.active : s.nonActive}>
-                        <span className={s.iconItem}><WhatshotIcon fontSize={"large"}/></span>
-                        Trending
-                    </NavLink>
-                </li>
-                <li className={s.item}>
                     <NavLink to={'/profile'}
                              className={navData => navData.isActive ? s.active : s.nonActive}>
                         <span className={s.iconItem}><AccountCircleIcon fontSize={"large"}/></span>
                         Profile
+                    </NavLink>
+                </li>
+                <li className={s.item}>
+                    <NavLink to={'/users'}
+                             className={navData => navData.isActive ? s.active : s.nonActive}>
+                        <span className={s.iconItem}><GroupIcon fontSize={"large"}/></span>
+                        Users
                     </NavLink>
                 </li>
                 <li className={s.item}>
