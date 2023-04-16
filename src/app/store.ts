@@ -1,5 +1,5 @@
 import {AnyAction, applyMiddleware, combineReducers, legacy_createStore} from "redux";
-import {profilePageReducer, ProfilePageType} from "store/profilePageReducer";
+import {profilePageReducer, ProfilePageType} from "features/components/Profile/profilePageReducer";
 import {messagePageReducer} from "features/components/Messages/messagePageReducer";
 import {UsersPageReducer} from "store/UsersPageReducer";
 import {authReducer} from "store/authReducer";
@@ -7,6 +7,7 @@ import thunkMiddleWare, {ThunkDispatch} from 'redux-thunk'
 import {useDispatch} from "react-redux";
 import {appReducer} from "./appReducer";
 import {feedReducer} from "features/components/Feed/feedReducer";
+import {weatherReducer} from "features/components/Weather/weatherReducer";
 
 export const rootReducer = combineReducers({
     app: appReducer,
@@ -15,6 +16,7 @@ export const rootReducer = combineReducers({
     usersPage: UsersPageReducer,
     auth: authReducer,
     feed: feedReducer,
+    weather: weatherReducer,
 })
 
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunkMiddleWare))

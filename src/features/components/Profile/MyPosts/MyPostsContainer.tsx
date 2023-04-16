@@ -2,7 +2,7 @@ import {connect} from "react-redux";
 import {MyPosts} from "features/components/Profile/MyPosts/MyPosts";
 import {AppRootStateType} from "app/store";
 import {Dispatch} from "redux";
-import {addPostAC, ProfilePageType} from "store/profilePageReducer";
+import {addPostAC, ProfilePageType} from "features/components/Profile/profilePageReducer";
 
 export type MyPostsPropsType = mapStateToPropsType & mapDispatchToPropsType
 

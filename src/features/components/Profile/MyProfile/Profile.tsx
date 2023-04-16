@@ -22,7 +22,7 @@ export const Profile: React.FC<ProfilePagePropsType> = ({
                                                         }: ProfilePagePropsType) => {
         const loading = useSelector<AppRootStateType, boolean>(state => state.app.loading)
 
-        if (loading) return <Loader/>
+        if (loading) return <div className={s.loading}><CircularProgress/></div>
         return (
             <>
                 <div className={s.mainContainer}>

@@ -4,10 +4,8 @@ import {NavLink} from "react-router-dom";
 import logo from 'common/assets/img/logo.png'
 import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import WhatshotIcon from '@mui/icons-material/Whatshot';
 import EmailIcon from '@mui/icons-material/Email';
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import SettingsIcon from '@mui/icons-material/Settings';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import GroupIcon from '@mui/icons-material/Group';
 import {logoutTC} from "store/authReducer";
@@ -52,10 +50,10 @@ export const NavBar = () => {
                     </NavLink>
                 </li>
                 <li className={s.item}>
-                    <NavLink to={'/music'}
+                    <NavLink to={'/weather'}
                              className={navData => navData.isActive ? s.active : s.nonActive}>
-                        <span className={s.iconItem}><MusicNoteIcon fontSize={"large"}/></span>
-                        Music
+                        <span className={s.iconItem}><WbSunnyIcon fontSize={"large"}/></span>
+                        Weather
                     </NavLink>
                 </li>
                 <li className={s.item}>

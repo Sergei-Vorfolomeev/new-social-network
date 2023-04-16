@@ -29,6 +29,17 @@
       margin-bottom: .5rem;
     }
 
+    .input {
+      width: 90%;
+      border-radius: 11px;
+      border: none;
+      box-shadow: $box-shadow-sm;
+      resize: none;
+      padding: 1rem;
+      outline: none;
+      background: #edf2f6;
+    }
+
     .postText {
       display: block;
       max-width: 96%;
@@ -75,8 +86,8 @@
       cursor: pointer;
       transition: .2s;
 
-      &:hover {
-        transform: scale(1.1);
+      &:active {
+        transform: scale(1.2);
       }
     }
   }

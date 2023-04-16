@@ -2,8 +2,7 @@ import {PostType, ProfileResponseType} from "app/store";
 import {v1} from "uuid";
 import {Dispatch} from "redux";
 import {profileAPI} from "api/api";
-import {toggleIsFetching} from "./UsersPageReducer";
-import {AxiosError} from "axios";
+import {toggleIsFetching} from "store/UsersPageReducer";
 import {appNetworkErrorUtil} from "common/utils/app-network-error-util";
 
 export type ProfilePageType = {
@@ -11,26 +10,30 @@ export type ProfilePageType = {
     profile: null | ProfileResponseType
     status: string
 }
+type InitialStateType = ProfilePageType & { loading: boolean }
 
-const initialState: ProfilePageType = {
+const initialState: InitialStateType = {
     posts: [
-        {id: v1(), text: 'Life is here?', likesCount: 0,},
+        {id: v1(), text: 'Try to type something!', likesCount: 0,},
         {id: v1(), text: 'It\'s my first post!', likesCount: 0,},
         {id: v1(), text: 'Hello!', likesCount: 0,},
     ],
     profile: null,
-    status: ''
+    status: '',
+    loading: false,
 }
 
-export const profilePageReducer = (state: ProfilePageType = initialState, action: GeneralACType): ProfilePageType => {
+export const profilePageReducer = (state: InitialStateType = initialState, action: GeneralACType): InitialStateType => {
     switch (action.type) {
         case "ADD-POST": {
-            const newPost = {id: v1(), text: action.payload.textPost, likesCount: 0}
-            // state.posts.unshift(newPost)
-            return {
-                ...state,
-                posts: [newPost, ...state.posts]
-            }
+            if (action.payload.textPost) {
+                const newPost = {id: v1(), text: action.payload.textPost, likesCount: 0}
+                // state.posts.unshift(newPost)
+                return {
+                    ...state,
+                    posts: [newPost, ...state.posts]
+                }
+            } else return state
         }
         case "DELETE-POST": {
             return {
@@ -55,6 +58,8 @@ export const profilePageReducer = (state: ProfilePageType = initialState, action
                 ...state,
                 status: action.payload.status
             }
+        case "SET_LOADING":
+            return {...state, loading: action.payload.value}
         default:
             return state
     }
@@ -66,11 +71,13 @@ export type GeneralACType =
     | SetStatusACType
     | DeletePostACType
     | UpdatePostACType
+    | SetLoadingACType
 type AddPostACType = ReturnType<typeof addPostAC>
 type DeletePostACType = ReturnType<typeof deletePostAC>
 type SetProfileUserACType = ReturnType<typeof setProfileUser>
 type SetStatusACType = ReturnType<typeof setStatus>
 type UpdatePostACType = ReturnType<typeof updatePostAC>
+type SetLoadingACType = ReturnType<typeof setLoadingAC>
 
 
 // ACTION CREATORS
@@ -114,16 +121,23 @@ export const setStatus = (status: string) => {
         }
     } as const
 }
+const setLoadingAC = (value: boolean) => {
+    return {
+        type: 'SET_LOADING',
+        payload: {value}
+    } as const
+}
 
 // THUNK CREATORS
 export const getProfile = (userId: string) => async (dispatch: Dispatch) => {
-    dispatch(toggleIsFetching(true))
+    dispatch(setLoadingAC(true))
     try {
         const res = await profileAPI.getProfile(userId)
         dispatch(setProfileUser(res))
-        dispatch(toggleIsFetching(false))
     } catch (e) {
         appNetworkErrorUtil(e, dispatch)
+    } finally {
+        dispatch(setLoadingAC(false))
     }
 }
 export const getStatus = (userId: string) => async (dispatch: Dispatch) => {

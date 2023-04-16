@@ -5,7 +5,7 @@ import {MyPostsContainer} from "features/components/Profile/MyPosts/MyPostsConta
 import {AppRootStateType, ProfileResponseType, useAppDispatch} from "app/store";
 import CircularProgress from "@mui/material/CircularProgress";
 import {useSelector} from "react-redux";
-import {getProfile, updateStatus} from "store/profilePageReducer";
+import {getProfile, updateStatus} from "features/components/Profile/profilePageReducer";
 import {useParams} from "react-router-dom";
 import {ItemsResponseType} from "store/UsersPageReducer";
 

@@ -1,4 +1,5 @@
 import React, {ChangeEvent, KeyboardEvent, useEffect, useState} from 'react';
+import s from './ProfileStatus.module.scss'
 
 type ProfileStatusPropsType = {
     status: string
@@ -33,17 +34,18 @@ export const ProfileStatus = ({status, updateStatus}: ProfileStatusPropsType) =>
     }
 
     return (
-        <div>
+        <>
             {editMode
-                ? <div><input type="text"
-                              value={newStatus}
-                              onBlur={switchEditMode}
-                              autoFocus
-                              onChange={onChangeHandler}
-                              onKeyDown={onEnterHandler}/>
-                </div>
-                : <div><span onDoubleClick={switchEditMode}>{status || 'No status'}</span></div>
+                ? <input type="text"
+                         value={newStatus}
+                         onBlur={switchEditMode}
+                         autoFocus
+                         onChange={onChangeHandler}
+                         onKeyDown={onEnterHandler}
+                         className={s.input}
+                         placeholder={'Type your status'}/>
+                : <span onDoubleClick={switchEditMode}>{status || 'No status'}</span>
             }
-        </div>
+        </>
     );
 };

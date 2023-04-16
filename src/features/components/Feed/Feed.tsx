@@ -4,19 +4,19 @@ import {AppRootStateType, useAppDispatch} from "app/store";
 import {useSelector} from "react-redux";
 import s from './Feed.module.scss'
 import {FeedItem} from "features/components/Feed/FeedItem/FeedItem";
-import {Loader} from "features/components/common/Loader/Loader";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Feed = () => {
 
     const articles = useSelector<AppRootStateType, ArticleType[]>(state => state.feed.articles)
-    const loading = useSelector<AppRootStateType, boolean>(state => state.app.loading)
+    const loading = useSelector<AppRootStateType, boolean>(state => state.feed.loading)
     const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(getNewsTC())
     },[])
 
-    if (loading) return <Loader/>
+    if (loading) return <div className={s.loading}><CircularProgress/></div>
 
     return (
         <div className={s.mainContainer}>

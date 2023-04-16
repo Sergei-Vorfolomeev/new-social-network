@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Popup.module.scss'
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {deletePostAC, updatePostAC} from "store/profilePageReducer";
+import {deletePostAC, updatePostAC} from "features/components/Profile/profilePageReducer";
 import {useAppDispatch} from "app/store";
 
 type PropsType = {

@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {feedAPI} from "api/feed-api";
-import {setErrorAC, setLoadingAC} from "app/appReducer";
+import {setErrorAC} from "app/appReducer";
 import {appNetworkErrorUtil} from "common/utils/app-network-error-util";
 
 type InitialStateType = typeof initialState
@@ -19,7 +19,8 @@ export type ArticleType = {
     content: string
 }
 const initialState = {
-    articles: [] as ArticleType[]
+    articles: [] as ArticleType[],
+    loading: false
 }
 
 export const feedReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
@@ -29,6 +30,11 @@ export const feedReducer = (state: InitialStateType = initialState, action: Acti
                 ...state,
                 articles: [...action.payload.news]
             }
+        case "SET_LOADING":
+            return {
+                ...state,
+                loading: action.payload.value
+        }
         default:
             return state
     }
@@ -40,6 +46,14 @@ const setNewsAC = (news: ArticleType[]) => {
         type: 'SET_NEWS',
         payload: {
             news
+        }
+    } as const
+}
+export const setLoadingAC = (value: boolean) => {
+    return {
+        type: 'SET_LOADING',
+        payload: {
+            value
         }
     } as const
 }
@@ -63,5 +77,6 @@ export const getNewsTC = () => async (dispatch: Dispatch) => {
 
 
 // actions types
-type ActionsType = SetNewsACType
+type ActionsType = SetNewsACType | SetLoadingACType
 type SetNewsACType = ReturnType<typeof setNewsAC>
+type SetLoadingACType = ReturnType<typeof setLoadingAC>

@@ -1,7 +1,7 @@
 import React from 'react';
 import s from 'features/components/Profile/MyPosts/ProfileInfo.module.scss'
 import {AppRootStateType, ProfileResponseType} from "app/store";
-import {ProfileStatus} from "features/components/Profile/MyProfile/Status/ProfileStatus";
+import {ProfileStatus} from "common/components/ProfileStatus/ProfileStatus";
 import defaultAvatar from 'common/assets/img/defaultAva.png'
 import {Button} from "common/components/Button/Button";
 import {useSelector} from "react-redux";

@@ -2,7 +2,7 @@ import {Profile} from "features/components/Profile/MyProfile/Profile";
 import React from "react";
 import {connect} from "react-redux";
 import {AppRootStateType, ProfileResponseType} from "app/store";
-import {getProfile, getStatus, setProfileUser, updateStatus} from "store/profilePageReducer";
+import {getProfile, getStatus, setProfileUser, updateStatus} from "features/components/Profile/profilePageReducer";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {compose} from "redux";
 import {toggleIsFetching} from "store/UsersPageReducer";

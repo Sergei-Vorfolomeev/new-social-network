@@ -18,16 +18,13 @@ export const MyPosts: React.FC<MyPostsPropsType> = memo((props) => {
 
         const addPostHandler = () => {
             if (textPost !== '') {
-                const text = textPost.trim()
-                props.addPost(text)
+                props.addPost(textPost.trim())
                 setTextPost('')
             }
         }
 
         const onEnterHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
-            if (e.key === 'Enter') {
-                addPostHandler()
-            }
+            if (e.key === 'Enter') addPostHandler()
         }
 
         return (

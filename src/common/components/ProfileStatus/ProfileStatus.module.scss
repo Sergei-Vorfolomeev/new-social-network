@@ -1,0 +1,13 @@
+@import 'common/scss/variables.scss';
+
+.input {
+  display: block;
+  width: 90%;
+  border-radius: 11px;
+  border: none;
+  box-shadow: $box-shadow-sm;
+  resize: none;
+  padding: 1rem;
+  outline: none;
+  background: #edf2f6;
+}

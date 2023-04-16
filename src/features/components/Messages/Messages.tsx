@@ -18,7 +18,7 @@ export const Messages: React.FC<MessagesPagePropsType> = (props) => {
     }
 
     const sendMessageHandler = () => {
-        if (newMessage) {
+        if (newMessage !== '') {
             props.sendMessage(newMessage.trim())
             setNewMessage('')
         }

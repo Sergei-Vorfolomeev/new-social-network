@@ -6,7 +6,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import defaultAvatar from 'common/assets/img/defaultAva.png'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import {Popup} from "features/components/Profile/MyPosts/Popup/Popup";
-import {updatePostAC} from "store/profilePageReducer";
+import {updatePostAC} from "features/components/Profile/profilePageReducer";
 
 
 type PropsType = {
@@ -42,14 +42,12 @@ export const Post = ({post}: PropsType) => {
     }
 
     return (
-
         <div className={s.myPostContainer}>
 
             <div className={s.avatar}>
                 {avatar
                     ? <img src={avatar} alt="avatar"/>
                     : <img src={defaultAvatar} alt="defaultAvatar"/>}
-
             </div>
 
             <div className={s.postContent}>
@@ -59,7 +57,8 @@ export const Post = ({post}: PropsType) => {
                              onChange={onChangeHandler}
                              onBlur={onBlurHandler}
                              onKeyDown={onEnterHandler}
-                             autoFocus/>
+                             autoFocus
+                             className={s.input}/>
                     : <span className={s.postText}>{post.text}</span>}
                 {openPopup && <Popup postId={post.id}
                                      editPost={editPost}
@@ -71,14 +70,6 @@ export const Post = ({post}: PropsType) => {
             </div>
 
         </div>
-
-        // <div className={styles.item}>
-        //     <img src="https://pngimg.com/uploads/alien/alien_PNG27.png" alt="alien"></img>
-        //     {props.text}
-        //     <div>
-        //         like: {props.likesCount}
-        //     </div>
-        // </div>
     );
 };
 
