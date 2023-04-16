@@ -4,41 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="handle network errors, design messages">
-      <change afterPath="$PROJECT_DIR$/src/api/feed-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Feed/Feed.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Feed/Feed.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Feed/FeedItem/FeedItem.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Feed/FeedItem/FeedItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Feed/feedReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Popup/Popup.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Popup/Popup.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Profile/UserProfile/userProfile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/common/Loader/Loader.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/common/Loader/Loader.tsx" afterDir="false" />
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="connect bbc api and create feed page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/appReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/FriendsInMessages.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/Messages.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/Messages.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/Messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/messagePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/messagePageReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/NavBar/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/NavBar/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/UserProfile/userProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Popup/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Popup/Popup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/Profile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/Profile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/ProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/Status/ProfileStatus.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/User/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Users/User/User.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/common/Preloader/Preloader.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/profilePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/profilePageReducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,14 +135,7 @@
       <workItem from="1678736856652" duration="1809000" />
       <workItem from="1681162011328" duration="44000" />
       <workItem from="1681169339613" duration="18311000" />
-      <workItem from="1681291047086" duration="75565000" />
-    </task>
-    <task id="LOCAL-00008" summary="lesson 39">
-      <created>1669665579921</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1669665579921</updated>
+      <workItem from="1681291047086" duration="79734000" />
     </task>
     <task id="LOCAL-00009" summary="create fn sendMessage">
       <created>1669667064926</created>
@@ -511,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681478910502</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="connect bbc api and create feed page">
+      <created>1681572191530</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1681572191531</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="step 62 --&gt; follow/unfollow - request to server&#10;+ refactor pagination (mui)" />
     <MESSAGE value="step 63 --&gt; adding DAL. Creating usersAPI" />
     <MESSAGE value="step 63 --&gt; Creating followAPI, profileAPI, authAPI" />
     <MESSAGE value="step 64 --&gt; disable buttons follow/unfollow during request to server" />
@@ -554,6 +522,7 @@
     <MESSAGE value="design loginPage" />
     <MESSAGE value="handle server errors" />
     <MESSAGE value="handle network errors, design messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="handle network errors, design messages" />
+    <MESSAGE value="connect bbc api and create feed page" />
+    <option name="LAST_COMMIT_MESSAGE" value="connect bbc api and create feed page" />
   </component>
 </project>

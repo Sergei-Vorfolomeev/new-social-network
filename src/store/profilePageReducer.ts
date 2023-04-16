@@ -38,6 +38,13 @@ export const profilePageReducer = (state: ProfilePageType = initialState, action
                 posts: state.posts.filter(el => el.id !== action.payload.postId)
             }
         }
+        case "UPDATE_POST":
+            return {
+                ...state,
+                posts: state.posts.map(el => el.id === action.payload.postId
+                    ? {...el, text: action.payload.newText}
+                    : el)
+            }
         case "SET-PROFILE-USER":
             return {
                 ...state,
@@ -53,11 +60,17 @@ export const profilePageReducer = (state: ProfilePageType = initialState, action
     }
 }
 
-export type GeneralACType = AddPostACType | SetProfileUserACType | SetStatusACType | DeletePostACType
+export type GeneralACType =
+    | AddPostACType
+    | SetProfileUserACType
+    | SetStatusACType
+    | DeletePostACType
+    | UpdatePostACType
 type AddPostACType = ReturnType<typeof addPostAC>
 type DeletePostACType = ReturnType<typeof deletePostAC>
 type SetProfileUserACType = ReturnType<typeof setProfileUser>
 type SetStatusACType = ReturnType<typeof setStatus>
+type UpdatePostACType = ReturnType<typeof updatePostAC>
 
 
 // ACTION CREATORS
@@ -74,6 +87,14 @@ export const deletePostAC = (postId: string) => {
         type: 'DELETE-POST',
         payload: {
             postId
+        }
+    } as const
+}
+export const updatePostAC = (postId: string, newText: string) => {
+    return {
+        type: 'UPDATE_POST',
+        payload: {
+            postId, newText
         }
     } as const
 }
