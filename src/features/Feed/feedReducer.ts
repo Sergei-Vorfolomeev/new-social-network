@@ -1,5 +1,5 @@
 import {Dispatch} from "redux";
-import {feedAPI} from "api/feed-api";
+import {ArticleType2, feedAPI} from "api/feed-api";
 import {setErrorAC} from "app/appReducer";
 import {appNetworkErrorUtil} from "common/utils/app-network-error-util";
 
@@ -19,7 +19,7 @@ export type ArticleType = {
     content: string
 }
 const initialState = {
-    articles: [] as ArticleType[],
+    articles: [] as ArticleType2[],
     loading: false
 }
 
@@ -34,7 +34,7 @@ export const feedReducer = (state: InitialStateType = initialState, action: Acti
 }
 
 // actions
-const setNewsAC = (news: ArticleType[]) => {
+const setNewsAC = (news: ArticleType2[]) => {
     return {
         type: 'SET_NEWS',
         payload: {
@@ -55,7 +55,7 @@ export const setLoadingAC = (value: boolean) => {
 export const getNewsTC = () => async (dispatch: Dispatch) => {
     dispatch(setLoadingAC(true))
     try {
-        const res = await feedAPI.getNews('bbc-news', '009b7c176c6d43e08f19076d737cb427')
+        const res = await feedAPI.getNews()
         if (res.status === 'ok') {
             dispatch(setNewsAC(res.articles))
         } else {
@@ -73,3 +73,5 @@ export const getNewsTC = () => async (dispatch: Dispatch) => {
 type ActionsType = SetNewsACType | SetLoadingACType
 type SetNewsACType = ReturnType<typeof setNewsAC>
 type SetLoadingACType = ReturnType<typeof setLoadingAC>
+
+//'bbc-news', '009b7c176c6d43e08f19076d737cb427'
