@@ -1,0 +1,48 @@
+@import '../../../common/scss/variables';
+
+.mainContainer {
+    display: flex;
+    background: #fff;
+    box-shadow: $box-shadow-sm;
+    border-radius: $border-radius-xl;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    position: relative;
+
+    &:first-child {
+    margin-top: 1rem;
+}
+
+    .avatarContainer {
+        margin-right: 2rem;
+
+        .avatar {
+            width: 130px;
+            border-radius: 50%;
+        }
+    }
+
+    .userInfoBlock {
+
+        .userInfo {
+
+            a {
+                text-decoration: none;
+            }
+            .userName {
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-bottom: 1rem;
+                color: $black;
+            }
+            .userStatus {
+                color: $secondary;
+            }
+        }
+        .buttonBox {
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+        }
+    }
+}

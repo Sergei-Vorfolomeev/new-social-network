@@ -1,7 +1,7 @@
 import {Dispatch} from "redux";
 import {setErrorAC} from "app/appReducer";
 import {ResponseType} from "app/store";
-import {toggleIsFetching} from "store/UsersPageReducer";
+import {toggleIsFetching} from "features/Users/UsersPageReducer";
 
 export const appServerErrorUtil = (data: ResponseType, dispatch: Dispatch) => {
     if (data.messages.length) {

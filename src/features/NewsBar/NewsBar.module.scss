@@ -1,0 +1,23 @@
+@import '../../common/scss/variables';
+
+.mainContainer {
+  grid-area: users;
+  padding: 1rem;
+  background: #edf2f6;
+  color: $secondary;
+
+  .newsBlock {
+    background: #fff;
+    box-shadow: $box-shadow-sm;
+    border-radius: $border-radius-xl;
+    margin-bottom: 2rem;
+
+    & h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $black;
+      padding: 1rem;
+      border-bottom: 1px solid rgba(108, 117, 125, 0.3);
+    }
+  }
+}

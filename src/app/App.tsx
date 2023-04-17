@@ -1,24 +1,23 @@
 import React from 'react';
 import 'app/App.module.scss';
 import {Route, Routes} from "react-router-dom";
-import {MessagesContainer} from "features/components/Messages/MessagesContainer";
-import {UsersContainer} from "features/components/Users/UsersContainer";
-import {ProfileContainer, withRouter} from "features/components/Profile/MyProfile/ProfileContainer";
-import {Login} from "features/components/Login/Login";
+import {MessagesContainer} from "features/Messages/MessagesContainer";
+import {UsersContainer} from "features/Users/UsersContainer";
+import {ProfileContainer, withRouter} from "features/Profile/MyProfile/ProfileContainer";
+import {Login} from "features/Login/Login";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {AppRootStateType} from "./store";
 import {initializeAppTC} from "./appReducer";
 import styles from './App.module.scss'
-import {UsersRecommends} from "features/components/UsersRecommends/UsersRecommends";
-import {NewsBar} from "features/components/NewsBar/NewsBar";
-import {NavBar} from "features/components/NavBar/NavBar";
+import {UsersRecommends} from "features/UsersRecommends/UsersRecommends";
+import {NewsBar} from "features/NewsBar/NewsBar";
+import {NavBar} from "features/NavBar/NavBar";
 import {SnackBar} from "common/components/SnackBar/SnackBar";
-import {UserProfile} from "features/components/Profile/UserProfile/userProfile";
-import Feed from "features/components/Feed/Feed";
+import {UserProfile} from "features/Profile/UserProfile/userProfile";
+import {Feed} from "features/Feed/Feed";
 import {Loader} from "common/components/Loader/Loader";
-import {Weather} from "features/components/Weather/Weather";
-
+import {Weather} from "features/Weather/Weather";
 
 export class App extends React.Component <AppPropsType> {
     componentDidMount() {

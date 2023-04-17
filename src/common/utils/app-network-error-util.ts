@@ -2,7 +2,7 @@ import {ErrorType} from "app/store";
 import {Dispatch} from "redux";
 import {setErrorAC} from "app/appReducer";
 import axios, {AxiosError} from "axios";
-import {toggleIsFetching} from "store/UsersPageReducer";
+import {toggleIsFetching} from "features/Users/UsersPageReducer";
 
 export const appNetworkErrorUtil = (e: unknown, dispatch: Dispatch) => {
     const err = e as Error | AxiosError<ErrorType>

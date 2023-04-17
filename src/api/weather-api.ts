@@ -1,9 +1,5 @@
 import axios from "axios";
 
-type FeedResponseType = {
-
-}
-
 const instance = axios.create({
     baseURL: 'https://api.openweathermap.org/data/3.0/',
 })

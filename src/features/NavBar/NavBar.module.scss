@@ -1,0 +1,86 @@
+@import '../../common/scss/variables';
+
+.navBar {
+  grid-area: nav;
+  background: #edf2f6;
+  padding: 15px;
+}
+
+.logoBox {
+  margin-bottom: 30px;
+
+  .logoImg {
+    height: 51px;
+  }
+}
+
+.navItemsList {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  //margin-bottom: 0;
+  list-style: none;
+  font-weight: 500;
+
+  .item {
+    display: block;
+
+    .nonActive {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: $gray-600;
+      padding: 10px 16px;
+      border-radius: 11px;
+      background: #edf2f6;
+      margin-bottom: 9px;
+    }
+
+    .nonActive:hover {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 11px;
+      background: #fff;
+      margin-bottom: 9px;
+      box-shadow: $box-shadow-sm;
+    }
+
+    .active {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 10px 16px !important;
+      border-radius: 11px;
+      margin-bottom: 9px;
+      color: $black;
+      background: #fff;
+      box-shadow: $box-shadow-sm;
+      text-decoration: none;
+    }
+
+    .iconItem {
+      font-family: 'Material Icons';
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+      margin-right: 1rem;
+      background: none;
+    }
+  }
+}
+
+
+
+
+

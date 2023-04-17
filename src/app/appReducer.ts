@@ -1,5 +1,5 @@
-import {Action, AnyAction, Dispatch} from "redux";
-import {meTC} from "store/authReducer";
+import {AnyAction, Dispatch} from "redux";
+import {meTC} from "features/Login/authReducer";
 import {ThunkDispatch} from "redux-thunk";
 
 type InitialStateType = typeof initialState
@@ -13,19 +13,12 @@ const initialState = {
 export const appReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case "SET_IS_INITIALIZED": {
-            return {
-                ...state,
-                isInitialized: action.payload.value
-            }
+            return {...state, isInitialized: action.payload.value}
         }
         case "SET_ERROR": {
-            return {
-                ...state,
-                error: action.payload.error
-            }
+            return {...state, error: action.payload.error}
         }
-        default:
-            return state
+        default: return state
     }
 }
 
@@ -33,7 +26,7 @@ export type ActionsType = InitializeAppACType | SetErrorACType
 type InitializeAppACType = ReturnType<typeof initializeAppAC>
 type SetErrorACType = ReturnType<typeof setErrorAC>
 
-// ACTION CREATORS
+// actions
 export const initializeAppAC = (value: boolean) => {
     return {
         type: 'SET_IS_INITIALIZED',
@@ -51,6 +44,7 @@ export const setErrorAC = (error: string | null) => {
     } as const
 }
 
+// thunks
 export const initializeAppTC = () => (dispatch: Dispatch & ThunkDispatch<any, undefined, AnyAction>) => {
     const promise = dispatch(meTC())
     Promise.all([promise])

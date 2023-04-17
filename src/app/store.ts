@@ -1,13 +1,13 @@
 import {AnyAction, applyMiddleware, combineReducers, legacy_createStore} from "redux";
-import {profilePageReducer, ProfilePageType} from "features/components/Profile/profilePageReducer";
-import {messagePageReducer} from "features/components/Messages/messagePageReducer";
-import {UsersPageReducer} from "store/UsersPageReducer";
-import {authReducer} from "store/authReducer";
+import {profilePageReducer, ProfilePageType} from "features/Profile/profilePageReducer";
+import {messagePageReducer} from "features/Messages/messagePageReducer";
+import {UsersPageReducer} from "features/Users/UsersPageReducer";
+import {authReducer} from "features/Login/authReducer";
 import thunkMiddleWare, {ThunkDispatch} from 'redux-thunk'
 import {useDispatch} from "react-redux";
 import {appReducer} from "./appReducer";
-import {feedReducer} from "features/components/Feed/feedReducer";
-import {weatherReducer} from "features/components/Weather/weatherReducer";
+import {feedReducer} from "features/Feed/feedReducer";
+import {weatherReducer} from "features/Weather/weatherReducer";
 
 export const rootReducer = combineReducers({
     app: appReducer,

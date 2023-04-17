@@ -1,0 +1,30 @@
+@import '../../../common/scss/variables';
+
+.myPostsContainer {
+
+  .textareaBlock {
+    position: relative;
+    margin-bottom: 2rem;
+
+    .textarea {
+      width: 100%;
+      border-radius: 11px;
+      border: none;
+      box-shadow: $box-shadow-sm;
+      resize: none;
+      padding: 1rem;
+      outline: none;
+    }
+
+    .button {
+      position: absolute;
+      bottom: 50%;
+      right: 1rem;
+      transform: translateY(50%);
+      background: #fff;
+      border: none;
+      color: $purple;
+      cursor: pointer;
+    }
+  }
+}

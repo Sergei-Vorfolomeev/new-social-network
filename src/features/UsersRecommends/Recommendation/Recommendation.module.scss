@@ -1,0 +1,50 @@
+@import '../../../common/scss/variables';
+
+.recommendationBlock {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.2rem;
+
+
+  .avatar img {
+    border-radius: 50%;
+    width: 70px;
+    margin-right: 1rem;
+  }
+
+  .userInfoBlock {
+    width: 100%;
+
+    .userInfo {
+      margin-bottom: .5rem;
+
+      a {
+        text-decoration: none;
+      }
+
+      & h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $black;
+      }
+    }
+
+    .buttonBox {
+
+      .button {
+        background: transparent;
+        border: $border-width solid $blue;
+        border-radius: $border-radius-pill;
+        padding: .5rem 1rem;
+        text-align: center;
+        cursor: pointer;
+        color: $blue;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.recommendationBlock:not(:last-child) {
+  border-bottom: 1px solid rgba(108, 117, 125, 0.3);
+}

@@ -1,0 +1,11 @@
+@import '../../common/scss/variables';
+
+.mainContainer {
+    margin-top: 1rem;
+}
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
