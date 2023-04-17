@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from "react-router-dom";
-import {store} from "./app/store";
+import {HashRouter} from "react-router-dom";
+import {store} from "app/store";
 import {Provider} from "react-redux";
-import {StateType} from "./app/store";
+import {StateType} from "app/store";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -15,13 +15,11 @@ const root = ReactDOM.createRoot(
 const rerenderEntireTree = (state: StateType) => {
     root.render(
         <Provider store={store}>
-            <BrowserRouter>
+            <HashRouter>
                 <React.StrictMode>
-                    <App
-                        // state={state} dispatch={store.dispatch.bind(store)}
-                    />
+                    <App/>
                 </React.StrictMode>
-            </BrowserRouter>
+            </HashRouter>
         </Provider>
     );
 }

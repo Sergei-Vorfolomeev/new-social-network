@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="refactor, add login redirect">
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HOC/ToAuthRedirect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/ToAuthRedirect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/MessagesContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/MessagesContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/ProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,23 +41,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/sergey/Documents/Programming/react/new-social-network/src/common/assets/img",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.TypeScript",
-    "ts.external.directory.path": "/Users/sergey/Documents/Programming/react/new-social-network/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sergey/Documents/Programming/react/new-social-network/src/common/assets/img&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.TypeScript&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/sergey/Documents/Programming/react/new-social-network/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/common/assets/img" />
@@ -138,14 +136,8 @@
       <workItem from="1681162011328" duration="44000" />
       <workItem from="1681169339613" duration="18311000" />
       <workItem from="1681291047086" duration="96535000" />
-      <workItem from="1681731143737" duration="4636000" />
-    </task>
-    <task id="LOCAL-00013" summary="create MyPostsContainer">
-      <created>1672840554185</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1672840554185</updated>
+      <workItem from="1681731143737" duration="5663000" />
+      <workItem from="1681737219509" duration="558000" />
     </task>
     <task id="LOCAL-00014" summary="create NavBarContainer">
       <created>1673008989843</created>
@@ -483,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681734901204</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="refactor">
+      <created>1681736209644</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1681736209644</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="step 66 --&gt; thunks (get request in the ProfileContainer + follow/unfollow)" />
     <MESSAGE value="step 67 --&gt; thunks (get request in the HeaderContainer(me))" />
     <MESSAGE value="Redirect from 'Messages Page' and 'Profile Page' to 'Login'" />
     <MESSAGE value="Creating HOC(ToAuthRedirect)" />
@@ -526,6 +524,7 @@
     <MESSAGE value="add img weather" />
     <MESSAGE value="install gh-pages, update package.json" />
     <MESSAGE value="refactor, add login redirect" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor, add login redirect" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
 </project>
