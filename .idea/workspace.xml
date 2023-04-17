@@ -4,71 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="switch to hashrouter">
-      <change afterPath="$PROJECT_DIR$/src/api/profile-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/users-api.ts" afterDir="false" />
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="new news api for deploy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/feed-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/feed-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/weather-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/weather-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/appReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/app-network-error-util.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/app-network-error-util.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/app-server-error-util.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/app-server-error-util.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Feed/Feed.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Feed/Feed.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Feed/Feed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Feed/Feed.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Feed/FeedItem/FeedItem.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Feed/FeedItem/FeedItem.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Feed/FeedItem/FeedItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Feed/FeedItem/FeedItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Feed/feedReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Feed/feedReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Login/Login.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/Login.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Login/loginInputs/CheckBoxInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/loginInputs/CheckBoxInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Login/loginInputs/EmailInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/loginInputs/EmailInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Login/loginInputs/PasswordInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/loginInputs/PasswordInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/Message/Message.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Messages/Message/Message.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/Message/Message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Messages/Message/Message.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/Messages.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Messages/Messages.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Messages/Messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/MessagesContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Messages/MessagesContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Messages/messagePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Messages/messagePageReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/NavBar/NavBar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/NavBar/NavBar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/NavBar/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/NavBar/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/NewsBar/News/News.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/NewsBar/News/News.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/NewsBar/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/NewsBar/News/News.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/NewsBar/NewsBar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/NewsBar/NewsBar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/NewsBar/NewsBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/NewsBar/NewsBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyPosts/MyPosts.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPostsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Popup/Popup.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyPosts/Popup/Popup.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Popup/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyPosts/Popup/Popup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyPosts/Post/Post.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyPosts/Post/Post.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyProfile/ProfileInfo.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyProfile/ProfileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/Profile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyProfile/Profile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyProfile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/MyProfile/ProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/UserProfile/userProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/UserProfile/userProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/UserProfile/userProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/UserProfile/userProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/profilePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Profile/profilePageReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/User/User.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Users/User/User.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/User/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Users/User/User.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Users/Users.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/Users.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Users/Users.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Users/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Users/UsersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/UsersRecommends/Recommendation/Recommendation.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/Recommendation/Recommendation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/UsersRecommends/Recommendation/Recommendation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/UsersRecommends/UsersRecommends.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/UsersRecommends/UsersRecommends.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/UsersRecommends/UsersRecommends.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Weather/Weather.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Weather/Weather.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Weather/Weather.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Weather/Weather.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Weather/weatherReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Weather/weatherReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Users/UsersPageReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/authReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/authReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/users-selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Users/users-selectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,21 +136,7 @@
       <workItem from="1681291047086" duration="96535000" />
       <workItem from="1681731143737" duration="5663000" />
       <workItem from="1681737219509" duration="796000" />
-      <workItem from="1681738039220" duration="2309000" />
-    </task>
-    <task id="LOCAL-00015" summary="create usersReducer">
-      <created>1673018456561</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1673018456561</updated>
-    </task>
-    <task id="LOCAL-00016" summary="create UsersContainer and Users">
-      <created>1673038611272</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1673038611272</updated>
+      <workItem from="1681738039220" duration="8127000" />
     </task>
     <task id="LOCAL-00017" summary="get Users from server">
       <created>1673190396896</created>
@@ -543,7 +467,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681737837989</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="general refactor">
+      <created>1681740576212</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1681740576212</updated>
+    </task>
+    <task id="LOCAL-00065" summary="new news api for deploy">
+      <created>1681747099925</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1681747099925</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,8 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Redirect from 'Messages Page' and 'Profile Page' to 'Login'" />
-    <MESSAGE value="Creating HOC(ToAuthRedirect)" />
     <MESSAGE value="Add function compose()()" />
     <MESSAGE value="Step 71. Adding changeable status" />
     <MESSAGE value="Step 72. Get status" />
@@ -586,6 +522,8 @@
     <MESSAGE value="refactor, add login redirect" />
     <MESSAGE value="refactor" />
     <MESSAGE value="switch to hashrouter" />
-    <option name="LAST_COMMIT_MESSAGE" value="switch to hashrouter" />
+    <MESSAGE value="general refactor" />
+    <MESSAGE value="new news api for deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="new news api for deploy" />
   </component>
 </project>

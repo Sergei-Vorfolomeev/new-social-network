@@ -16,9 +16,7 @@ const rerenderEntireTree = (state: StateType) => {
     root.render(
         <Provider store={store}>
             <HashRouter>
-                <React.StrictMode>
                     <App/>
-                </React.StrictMode>
             </HashRouter>
         </Provider>
     );
