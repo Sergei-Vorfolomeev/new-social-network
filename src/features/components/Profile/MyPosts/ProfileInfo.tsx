@@ -2,7 +2,7 @@ import React from 'react';
 import s from 'features/components/Profile/MyPosts/ProfileInfo.module.scss'
 import {ProfileResponseType} from "app/store";
 import {ProfileStatus} from "common/components/ProfileStatus/ProfileStatus";
-import defaultAvatar from 'common/assets/img/defaultAva.png'
+import defaultAvatar from '../../../../common/assets/img/defaultAva.png'
 
 type ProfileInfoPropsType = {
     profile: ProfileResponseType | null

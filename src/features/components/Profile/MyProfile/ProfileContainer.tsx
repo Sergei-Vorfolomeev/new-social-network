@@ -6,7 +6,7 @@ import {getProfile, getStatus, setProfileUser, updateStatus} from "features/comp
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {compose} from "redux";
 import {toggleIsFetching} from "store/UsersPageReducer";
-import {ToAuthRedirect} from "HOC/ToAuthRedirect";
+import {ToAuthRedirect} from "hoc/ToAuthRedirect";
 
 class ProfileAPIContainerClass extends React.Component<ProfilePropsType, ProfileResponseType> {
 

@@ -9,7 +9,6 @@ import {useNavigate} from "react-router-dom";
 
 export const UsersRecommends = () => {
 
-    // const usersRecommends = useSelector<AppRootStateType, ItemsResponseType[]>(state => state.usersRecommends.items)
     const usersRecommends = useSelector<AppRootStateType, ItemsResponseType[]>(state => state.usersPage.items)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
