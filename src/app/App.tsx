@@ -16,7 +16,7 @@ import {NavBar} from "features/components/NavBar/NavBar";
 import {SnackBar} from "common/components/SnackBar/SnackBar";
 import {UserProfile} from "features/components/Profile/UserProfile/userProfile";
 import Feed from "features/components/Feed/Feed";
-import {Loader} from "features/components/common/Loader/Loader";
+import {Loader} from "common/components/Loader/Loader";
 import {Weather} from "features/components/Weather/Weather";
 
 
@@ -52,9 +52,7 @@ export class App extends React.Component <AppPropsType> {
                         <Route path={'/login'} element={<div></div>}/>
                     </Routes>
                 </div>
-                {/*{this.props.error && */}
                     <SnackBar />
-                {/*}*/}
             </div>
         )
     }

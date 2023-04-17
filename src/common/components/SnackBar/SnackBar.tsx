@@ -5,10 +5,6 @@ import {useSelector} from "react-redux";
 import {AppRootStateType, useAppDispatch} from "app/store";
 import {setErrorAC} from "app/appReducer";
 
-// type PropsType = {
-//     error: string | null
-// }
-
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
     ref,

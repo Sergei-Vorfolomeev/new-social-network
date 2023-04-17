@@ -4,19 +4,16 @@ import {ProfileInfo} from "features/components/Profile/MyPosts/ProfileInfo";
 import {MyPostsContainer} from "features/components/Profile/MyPosts/MyPostsContainer";
 import {AppRootStateType, ProfileResponseType} from "app/store";
 import CircularProgress from "@mui/material/CircularProgress";
-import {Loader} from "features/components/common/Loader/Loader";
 import {useSelector} from "react-redux";
 
 type ProfilePagePropsType = {
     profile: ProfileResponseType | null
-    isFetching: boolean
     status: string
     updateStatus: (newStatus: string) => void
 }
 
 export const Profile: React.FC<ProfilePagePropsType> = ({
                                                             profile,
-                                                            isFetching,
                                                             status,
                                                             updateStatus
                                                         }: ProfilePagePropsType) => {
@@ -24,7 +21,6 @@ export const Profile: React.FC<ProfilePagePropsType> = ({
 
         if (loading) return <div className={s.loading}><CircularProgress/></div>
         return (
-            <>
                 <div className={s.mainContainer}>
                     <div className={s.content}>
                         <ProfileInfo profile={profile}
@@ -33,8 +29,6 @@ export const Profile: React.FC<ProfilePagePropsType> = ({
                         <MyPostsContainer/>
                     </div>
                 </div>
-
-            </>
         );
     }
 ;

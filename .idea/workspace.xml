@@ -4,36 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="feat: ability of update post content">
-      <change afterPath="$PROJECT_DIR$/src/api/weather-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/components/ProfileStatus/ProfileStatus.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Users/Users.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Weather/Weather.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Weather/Weather.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/components/Weather/weatherReducer.ts" afterDir="false" />
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="install gh-pages, update package.json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/appReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Feed/Feed.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Feed/Feed.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Feed/Feed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Feed/Feed.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Feed/feedReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Feed/feedReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/SnackBar/SnackBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/SnackBar/SnackBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Header/Header.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Header/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Header/HeaderContainer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Login/Login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/Messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Messages/Messages.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/NavBar/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/NavBar/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPostsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Popup/Popup.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Popup/Popup.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Popup/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Popup/Popup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/Post/Post.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyPosts/ProfileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/Profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/ProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/MyProfile/Status/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/ProfileStatus/ProfileStatus.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Profile/UserProfile/userProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/UserProfile/userProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Users/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/profilePageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Profile/profilePageReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/Weather/Weather.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/components/Weather/Weather.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/common/Loader/Loader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Loader/Loader.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/components/common/Loader/Loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Loader/Loader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UsersPageReducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,34 +54,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/sergey/Documents/Programming/react/new-social-network/src/features/components/Weather&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.TypeScript&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/sergey/Documents/Programming/react/new-social-network/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/sergey/Documents/Programming/react/new-social-network/src/common/assets/img",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.TypeScript",
+    "ts.external.directory.path": "/Users/sergey/Documents/Programming/react/new-social-network/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/common/assets/img" />
       <recent name="$PROJECT_DIR$/src/features/components/Weather" />
       <recent name="$PROJECT_DIR$/src/features/components/Users" />
       <recent name="$PROJECT_DIR$/src/common/components/ProfileStatus" />
       <recent name="$PROJECT_DIR$/src/features/components/common" />
-      <recent name="$PROJECT_DIR$/src/features/components/Feed/FeedItem" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/common/assets/img" />
       <recent name="$PROJECT_DIR$/src/common/components" />
+      <recent name="$PROJECT_DIR$/src/common/assets/img" />
       <recent name="$PROJECT_DIR$/src/features/components/Profile" />
       <recent name="$PROJECT_DIR$/src/features/components/NewsBar" />
       <recent name="$PROJECT_DIR$/src/features/components/Profile/MyProfile/Status" />
@@ -161,20 +149,7 @@
       <workItem from="1681162011328" duration="44000" />
       <workItem from="1681169339613" duration="18311000" />
       <workItem from="1681291047086" duration="96535000" />
-    </task>
-    <task id="LOCAL-00010" summary="create redux-store">
-      <created>1672675298318</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1672675298318</updated>
-    </task>
-    <task id="LOCAL-00011" summary="create redux-store">
-      <created>1672776394849</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1672776394849</updated>
+      <workItem from="1681731143737" duration="3307000" />
     </task>
     <task id="LOCAL-00012" summary="create messagesContainer">
       <created>1672839762780</created>
@@ -505,7 +480,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681607983393</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="add img weather">
+      <created>1681731372833</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1681731372834</updated>
+    </task>
+    <task id="LOCAL-00060" summary="install gh-pages, update package.json">
+      <created>1681731526844</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1681731526844</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,8 +512,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="step 63 --&gt; Creating followAPI, profileAPI, authAPI" />
-    <MESSAGE value="step 64 --&gt; disable buttons follow/unfollow during request to server" />
     <MESSAGE value="step 66 --&gt; thunks (get request in the usersContainer)" />
     <MESSAGE value="step 66 --&gt; thunks (get request in the ProfileContainer + follow/unfollow)" />
     <MESSAGE value="step 67 --&gt; thunks (get request in the HeaderContainer(me))" />
@@ -548,6 +535,8 @@
     <MESSAGE value="handle network errors, design messages" />
     <MESSAGE value="connect bbc api and create feed page" />
     <MESSAGE value="feat: ability of update post content" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: ability of update post content" />
+    <MESSAGE value="add img weather" />
+    <MESSAGE value="install gh-pages, update package.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="install gh-pages, update package.json" />
   </component>
 </project>

@@ -1,5 +1,6 @@
 import {Dispatch} from "redux";
 import {usersAPI} from "api/api";
+import {appNetworkErrorUtil} from "common/utils/app-network-error-util";
 
 export type UsersResponseType = {
     items: ItemsResponseType[]
@@ -155,56 +156,58 @@ export const toggleFollowingProgress = (isFetching: boolean, id: number) => {
 }
 
 // THUNK CREATORS
-export const getUsersTC = (currentPage: number, pageSize: number) => (dispatch: Dispatch) => {
+export const getUsersTC = (currentPage: number, pageSize: number) => async (dispatch: Dispatch) => {
     dispatch(toggleIsFetching(true))
-    usersAPI.getUsers(currentPage, pageSize)
-        .then(data => {
-            dispatch(setUsers(data.items))
-            dispatch(setTotalCount(data.totalCount))
-            dispatch(toggleIsFetching(false))
-        })
+    try {
+        const res = await usersAPI.getUsers(currentPage, pageSize)
+        dispatch(setUsers(res.items))
+        dispatch(setTotalCount(res.totalCount))
+    } catch (e) {
+        appNetworkErrorUtil(e, dispatch)
+    } finally {
+        dispatch(toggleIsFetching(false))
+    }
 }
-export const setUsersTC = (pageNumber: number, pageSize: number) => (dispatch: Dispatch) => {
+export const setUsersTC = (pageNumber: number, pageSize: number) => async (dispatch: Dispatch) => {
     dispatch(toggleIsFetching(true))
     dispatch(setCurrentPage(pageNumber))
+    try {
+        const res = await usersAPI.setSelectedPage(pageNumber, pageSize)
+        dispatch(setUsers(res.items))
+    } catch (e) {
+        appNetworkErrorUtil(e, dispatch)
+    } finally {
+        dispatch(toggleIsFetching(false))
+    }
+}
 
-    usersAPI.setSelectedPage(pageNumber, pageSize)
-        .then(data => {
-            dispatch(setUsers(data.items))
-            dispatch(toggleIsFetching(false))
-        })
-}
-export const followTC = (id: number) => (dispatch: Dispatch) => {
+export const followTC = (id: number) => async (dispatch: Dispatch) => {
     dispatch(toggleFollowingProgress(true, id))
-    usersAPI.follow(id)
-        .then(data => {
-            if (data.resultCode === 0) {
-                dispatch(follow(id))
-            } else {
-                alert(data.messages[0])
-            }
-        })
-        .catch((e) => {
-            alert(e.message)
-        })
-        .finally(() => {
-            dispatch(toggleFollowingProgress(false, id))
-        })
+    try {
+        const res = await usersAPI.follow(id)
+        if (res.resultCode === 0) {
+            dispatch(follow(id))
+        } else {
+            alert(res.messages[0])
+        }
+    } catch (e) {
+        appNetworkErrorUtil(e, dispatch)
+    } finally {
+        dispatch(toggleFollowingProgress(false, id))
+    }
 }
-export const unfollowTC = (id: number) => (dispatch: Dispatch) => {
+export const unfollowTC = (id: number) => async (dispatch: Dispatch) => {
     dispatch(toggleFollowingProgress(true, id))
-    usersAPI.unfollow(id)
-        .then(data => {
-            if (data.resultCode === 0) {
-                dispatch(unfollow(id))
-            } else {
-                alert(data.messages[0])
-            }
-        })
-        .catch((e) => {
-            alert(e.message)
-        })
-        .finally(() => {
-            dispatch(toggleFollowingProgress(false, id))
-        })
+    try {
+        const res = await usersAPI.unfollow(id)
+        if (res.resultCode === 0) {
+            dispatch(unfollow(id))
+        } else {
+            alert(res.messages[0])
+        }
+    } catch (e) {
+        appNetworkErrorUtil(e, dispatch)
+    } finally {
+        dispatch(toggleFollowingProgress(false, id))
+    }
 }

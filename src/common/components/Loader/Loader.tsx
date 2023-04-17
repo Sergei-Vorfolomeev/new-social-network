@@ -1,4 +1,4 @@
-import s from 'features/components/common/Loader/Loader.module.scss'
+import s from 'common/components/Loader/Loader.module.scss'
 
 export const Loader = () => {
   return (

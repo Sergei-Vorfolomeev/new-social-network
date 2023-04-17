@@ -1,11 +1,8 @@
 import React from 'react';
 import s from 'features/components/Profile/MyPosts/ProfileInfo.module.scss'
-import {AppRootStateType, ProfileResponseType} from "app/store";
+import {ProfileResponseType} from "app/store";
 import {ProfileStatus} from "common/components/ProfileStatus/ProfileStatus";
 import defaultAvatar from 'common/assets/img/defaultAva.png'
-import {Button} from "common/components/Button/Button";
-import {useSelector} from "react-redux";
-import {followTC, unfollowTC} from "store/UsersPageReducer";
 
 type ProfileInfoPropsType = {
     profile: ProfileResponseType | null
@@ -14,14 +11,6 @@ type ProfileInfoPropsType = {
 }
 
 export const ProfileInfo = (props: ProfileInfoPropsType) => {
-
-    const userLogin = useSelector<AppRootStateType, string | null>(state => state.auth.login)
-
-    // debugger
-    // if (!props.profile) {
-    //     <Preloader/>
-    // } else {
-
     return (
         <div className={s.profileInfoContainer}>
             <div className={s.mainInfoContainer}>

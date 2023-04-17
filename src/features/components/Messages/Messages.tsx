@@ -27,7 +27,6 @@ export const Messages: React.FC<MessagesPagePropsType> = (props) => {
     const onEnterHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
         if (e.key === 'Enter') sendMessageHandler()
     }
-    // if (!props.isAuth) return <Navigate to={'/login'}/>
 
     return (
             <div className={s.mainContainer}>

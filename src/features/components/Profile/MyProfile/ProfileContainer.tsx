@@ -20,7 +20,6 @@ class ProfileAPIContainerClass extends React.Component<ProfilePropsType, Profile
     render() {
         return <Profile {...this.props}
                         profile={this.props.profile}
-                        isFetching={this.props.isFetching}
                         status={this.props.status}
                         updateStatus={this.props.updateStatus}/>
     }
@@ -30,7 +29,6 @@ class ProfileAPIContainerClass extends React.Component<ProfilePropsType, Profile
 type ProfilePropsType = MapStateToPropsType & MapDispatchToPropsType & WithRouterProps
 type MapStateToPropsType = {
     profile: null | ProfileResponseType
-    isFetching: boolean
     status: string
 }
 type MapDispatchToPropsType = {
@@ -50,7 +48,6 @@ type WithRouterProps = {
 const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
     return {
         profile: state.profilePage.profile,
-        isFetching: state.usersPage.isFetching,
         status: state.profilePage.status
     }
 }
