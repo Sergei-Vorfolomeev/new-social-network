@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="new news api for deploy">
+    <list default="true" id="a56c7e5e-877f-4d7a-96d7-0f2bc6e08212" name="Changes" comment="remove strict mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,14 +135,9 @@
       <workItem from="1681291047086" duration="96535000" />
       <workItem from="1681731143737" duration="5663000" />
       <workItem from="1681737219509" duration="796000" />
-      <workItem from="1681738039220" duration="8127000" />
-    </task>
-    <task id="LOCAL-00017" summary="get Users from server">
-      <created>1673190396896</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1673190396896</updated>
+      <workItem from="1681738039220" duration="9356000" />
+      <workItem from="1682770722844" duration="304000" />
+      <workItem from="1684324945782" duration="57000" />
     </task>
     <task id="LOCAL-00018" summary="create user component">
       <created>1673196937506</created>
@@ -481,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681747099925</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="remove strict mode">
+      <created>1681759815398</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1681759815398</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add function compose()()" />
     <MESSAGE value="Step 71. Adding changeable status" />
     <MESSAGE value="Step 72. Get status" />
     <MESSAGE value="Step 72. Get status / Update status" />
@@ -524,6 +524,7 @@
     <MESSAGE value="switch to hashrouter" />
     <MESSAGE value="general refactor" />
     <MESSAGE value="new news api for deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="new news api for deploy" />
+    <MESSAGE value="remove strict mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove strict mode" />
   </component>
 </project>
