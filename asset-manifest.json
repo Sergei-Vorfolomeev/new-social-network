@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/new-social-network/static/css/main.bbc9b995.css",
+    "main.css": "/new-social-network/static/css/main.c7d41d31.css",
     "main.js": "/new-social-network/static/js/main.45267f44.js",
     "static/js/787.5f07d9dd.chunk.js": "/new-social-network/static/js/787.5f07d9dd.chunk.js",
     "static/media/alert.png": "/new-social-network/static/media/alert.ad3d85b6409fdea6f343.png",
@@ -16,12 +16,12 @@
     "index.html": "/new-social-network/index.html",
     "static/media/eye-off.svg": "/new-social-network/static/media/eye-off.cae665a627b70e724b35c67236a636a9.svg",
     "static/media/eye.svg": "/new-social-network/static/media/eye.a0e7779d11a558ef0ba69f4ede0d084a.svg",
-    "main.bbc9b995.css.map": "/new-social-network/static/css/main.bbc9b995.css.map",
+    "main.c7d41d31.css.map": "/new-social-network/static/css/main.c7d41d31.css.map",
     "main.45267f44.js.map": "/new-social-network/static/js/main.45267f44.js.map",
     "787.5f07d9dd.chunk.js.map": "/new-social-network/static/js/787.5f07d9dd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbc9b995.css",
+    "static/css/main.c7d41d31.css",
     "static/js/main.45267f44.js"
   ]
 }
